@@ -1,0 +1,451 @@
+<!-- ===========================
+     apropos.html — FEJEB ONG
+     Domaine officiel : https://fejebong.org/apropos.html
+     Référence design identique (CSS/JS globaux)
+     =========================== -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="format-detection" content="telephone=no" />
+
+  <title>À propos — FEJEB ONG | Mission, vision, valeurs & gouvernance</title>
+  <meta name="description" content="Découvrez FEJEB ONG : mission, vision, valeurs, objectifs, approche de terrain et engagement pour l’autonomisation des femmes, la protection des enfants et l’épanouissement des jeunes au Bénin." />
+  <meta name="keywords" content="À propos FEJEB ONG, mission FEJEB, vision ONG Bénin, valeurs, gouvernance, transparence, autonomisation femmes, protection enfants, jeunesse, développement communautaire" />
+  <meta name="author" content="FEJEB ONG" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+
+  <link rel="canonical" href="https://fejebong.org/apropos.html" />
+
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <meta name="theme-color" content="#0A5D3A" />
+  <meta name="color-scheme" content="light" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="FEJEB ONG" />
+  <meta property="og:title" content="À propos — FEJEB ONG" />
+  <meta property="og:description" content="Mission, vision, valeurs, objectifs et gouvernance : comprenez l’identité et l’engagement de FEJEB ONG au Bénin." />
+  <meta property="og:url" content="https://fejebong.org/apropos.html" />
+  <meta property="og:image" content="https://fejebong.org/logo.png" />
+  <meta property="og:locale" content="fr_FR" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="À propos — FEJEB ONG" />
+  <meta name="twitter:description" content="Une ONG engagée au Bénin pour les femmes, les enfants et les jeunes : mission, vision, valeurs et gouvernance." />
+  <meta name="twitter:image" content="https://fejebong.org/logo.png" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://fejebong.org/#organization",
+        "name": "FEJEB ONG",
+        "alternateName": "Femmes, Enfants et Jeunes Épanouis du Bénin",
+        "url": "https://fejebong.org/",
+        "logo": "https://fejebong.org/logo.png",
+        "sameAs": ["https://www.facebook.com/profile.php?id=61574007833322"],
+        "areaServed": { "@type": "Country", "name": "Bénin" }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://fejebong.org/apropos.html#webpage",
+        "url": "https://fejebong.org/apropos.html",
+        "name": "À propos — FEJEB ONG",
+        "isPartOf": { "@id": "https://fejebong.org/#website" },
+        "about": { "@id": "https://fejebong.org/#organization" },
+        "inLanguage": "fr"
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+  <header>
+    <div class="container">
+      <div class="topbar">
+        <a class="brand" href="index.html" aria-label="Retour à l'accueil FEJEB ONG">
+          <img src="logo.png" alt="Logo FEJEB ONG" width="44" height="44" />
+          <div class="name">
+            <strong>FEJEB ONG</strong>
+            <span>Femmes, Enfants & Jeunes Épanouis</span>
+          </div>
+        </a>
+
+        <nav class="nav" aria-label="Navigation principale">
+          <a href="index.html">Accueil</a>
+          <a href="apropos.html" aria-current="page">À propos</a>
+          <a href="actions.html">Actions</a>
+          <a href="impact.html">Impact</a>
+          <a href="fiches.html">Fiche Signaletique</a>
+          <a href="equipe.html">Équipe</a>
+          <a href="actualites.html">Actualités</a>
+          <a href="don.html">Don</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <button class="menu-btn" id="menuBtn" aria-label="Ouvrir le menu" aria-controls="drawer" aria-expanded="false" type="button">
+          <span class="menu-icon" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="drawer-overlay" id="overlay" aria-hidden="true"></div>
+  <aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Menu mobile">
+    <div class="drawer-head">
+      <div class="drawer-title">
+        <img src="logo.png" alt="" width="38" height="38" />
+        <div>
+          <strong>FEJEB ONG</strong>
+          <span>Menu & accès rapide</span>
+        </div>
+      </div>
+      <button class="drawer-close" id="closeBtn" type="button" aria-label="Fermer le menu">✕</button>
+    </div>
+
+    <nav class="drawer-nav" aria-label="Navigation mobile">
+      <a href="index.html">Accueil</a>
+      <a href="apropos.html">À propos</a>
+      <a href="actions.html">Actions</a>
+      <a href="impact.html">Impact</a>
+      <a href="fiches.html">Fiche Signaletique</a>
+      <a href="equipe.html">Équipe</a>
+      <a href="actualites.html">Actualités</a>
+      <a href="don.html">Don</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="drawer-actions">
+      <a class="btn btn-primary" href="don.html">Soutenir FEJEB</a>
+      <a class="btn btn-ghost" href="contact.html">Nous contacter</a>
+      <small>Navigation pensée pour une lecture mobile claire et rapide (signature FEJEB).</small>
+    </div>
+  </aside>
+
+  <!-- HERO (sobre, institutionnel) -->
+  <section class="hero" aria-label="À propos de FEJEB ONG">
+    <div class="container">
+      <div class="hero-inner">
+        <div class="kicker">
+          <b>À PROPOS</b> Identité · Gouvernance · Engagement
+        </div>
+
+        <h1>Qui sommes-nous ?</h1>
+        <p>
+          FEJEB ONG (Femmes, Enfants et Jeunes Épanouis du Bénin) est une organisation engagée au service
+          des communautés. Notre action s’appuie sur une approche de terrain, la co-construction avec les acteurs locaux
+          et une orientation vers des résultats concrets et durables.
+        </p>
+
+        <div class="hero-cta" role="group" aria-label="Raccourcis À propos">
+          <a class="btn btn-primary" href="don.html">Soutenir FEJEB</a>
+          <a class="btn btn-outline" href="#identite">Notre identité</a>
+          <a class="btn btn-outline" href="#gouvernance">Gouvernance</a>
+        </div>
+
+        <div class="hero-proof" aria-label="Engagements clés">
+          <div class="proof">
+            <strong>Dignité & protection</strong>
+            <span>Priorité aux publics vulnérables et au respect des droits.</span>
+          </div>
+          <div class="proof">
+            <strong>Transparence</strong>
+            <span>Clarté des actions, documentation et amélioration continue.</span>
+          </div>
+          <div class="proof">
+            <strong>Partenariats</strong>
+            <span>Ouverture à la collaboration institutionnelle et communautaire.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main id="contenu">
+    <div class="container">
+
+      <!-- Identité -->
+      <section class="section" id="identite" aria-labelledby="identite-title">
+        <div class="section-head">
+          <h2 id="identite-title">Notre identité</h2>
+          <p>
+            Une identité institutionnelle forte : des objectifs clairs, une mission centrée sur l’humain,
+            et une vision orientée vers le développement social inclusif.
+          </p>
+        </div>
+        <div class="section-body">
+          <div class="grid-3">
+            <div class="card">
+              <div class="icon" aria-hidden="true">🎯</div>
+              <h3>Mission</h3>
+              <p>
+                Concevoir et mettre en œuvre des actions éducatives, sociales et citoyennes
+                au profit de l’autonomisation des femmes, de la protection des enfants et de l’épanouissement des jeunes.
+              </p>
+            </div>
+            <div class="card">
+              <div class="icon" aria-hidden="true">🌍</div>
+              <h3>Vision</h3>
+              <p>
+                Contribuer à une société où chaque femme, enfant et jeune dispose des moyens,
+                de la protection et des opportunités nécessaires pour s’épanouir et participer au progrès collectif.
+              </p>
+            </div>
+            <div class="card">
+              <div class="icon" aria-hidden="true">🧭</div>
+              <h3>Valeurs</h3>
+              <p>
+                Dignité, équité, responsabilité, solidarité — et une culture d’écoute, de respect et de redevabilité
+                envers les bénéficiaires et les partenaires.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Objectifs stratégiques -->
+      <section class="section" aria-labelledby="objectifs-title">
+        <div class="section-head">
+          <h2 id="objectifs-title">Objectifs stratégiques</h2>
+          <p>
+            FEJEB structure son action autour d’objectifs concrets pour générer un impact social mesurable,
+            tout en renforçant les capacités locales.
+          </p>
+        </div>
+        <div class="section-body">
+          <ul class="checklist">
+            <li>
+              <span class="check" aria-hidden="true"></span>
+              <div>
+                <b>Renforcer l’autonomisation des femmes</b>
+                <span>Accompagnement, formation, leadership, inclusion et accès aux opportunités socio-économiques.</span>
+              </div>
+            </li>
+            <li>
+              <span class="check" aria-hidden="true"></span>
+              <div>
+                <b>Protéger les enfants et promouvoir leur bien-être</b>
+                <span>Prévention des violences, soutien éducatif, sensibilisation et actions de protection.</span>
+              </div>
+            </li>
+            <li>
+              <span class="check" aria-hidden="true"></span>
+              <div>
+                <b>Favoriser l’épanouissement et l’engagement des jeunes</b>
+                <span>Citoyenneté, orientation, formation, sensibilisation et promotion d’initiatives locales.</span>
+              </div>
+            </li>
+            <li>
+              <span class="check" aria-hidden="true"></span>
+              <div>
+                <b>Développer des actions communautaires durables</b>
+                <span>Approche participative, mobilisation locale, partenariats et suivi-évaluation des résultats.</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Domaines d'intervention -->
+      <section class="section" aria-labelledby="domaines-title">
+        <div class="section-head">
+          <h2 id="domaines-title">Domaines d’intervention</h2>
+          <p>
+            Les domaines ci-dessous traduisent la logique FEJEB : agir au plus près des réalités,
+            en combinant prévention, sensibilisation, accompagnement et mesure d’impact.
+          </p>
+        </div>
+        <div class="section-body">
+          <div class="grid-3">
+            <div class="card">
+              <div class="icon" aria-hidden="true">📚</div>
+              <h3>Éducation & appui scolaire</h3>
+              <p>
+                Soutien à l’éducation, promotion de l’assiduité, dotation en kits et amélioration de l’accès aux ressources.
+              </p>
+            </div>
+            <div class="card">
+              <div class="icon" aria-hidden="true">🛡️</div>
+              <h3>Protection & prévention</h3>
+              <p>
+                Sensibilisations (alcool, violences, risques), protection des enfants, et accompagnement des publics vulnérables.
+              </p>
+            </div>
+            <div class="card">
+              <div class="icon" aria-hidden="true">🩺</div>
+              <h3>Santé communautaire</h3>
+              <p>
+                Activités de prévention, mobilisation et actions sociales de proximité, en lien avec les acteurs locaux.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Approche / Méthode -->
+      <section class="section" aria-labelledby="approche-title">
+        <div class="section-head">
+          <h2 id="approche-title">Notre approche</h2>
+          <p>
+            Une méthode structurée qui garantit cohérence, efficacité et redevabilité :
+            écouter, co-construire, agir, mesurer, améliorer.
+          </p>
+        </div>
+        <div class="section-body">
+          <div class="grid-3">
+            <div class="card">
+              <div class="icon" aria-hidden="true">1</div>
+              <h3>Identifier</h3>
+              <p>Analyse des besoins, collecte d’informations, priorisation avec les leaders communautaires.</p>
+            </div>
+            <div class="card">
+              <div class="icon" aria-hidden="true">2</div>
+              <h3>Co-construire</h3>
+              <p>Conception des activités avec les acteurs locaux pour assurer appropriation et pertinence.</p>
+            </div>
+            <div class="card">
+              <div class="icon" aria-hidden="true">3</div>
+              <h3>Mesurer</h3>
+              <p>Indicateurs simples, documentation, retours terrain et amélioration continue des programmes.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Gouvernance / Transparence -->
+      <section class="section" id="gouvernance" aria-labelledby="gouv-title">
+        <div class="section-head">
+          <h2 id="gouv-title">Gouvernance & transparence</h2>
+          <p>
+            Notre gouvernance vise la confiance : une organisation claire, des responsabilités définies,
+            et une culture de transparence envers les bénéficiaires, donateurs et partenaires.
+          </p>
+        </div>
+        <div class="section-body">
+          <div class="split">
+            <div class="card">
+              <div class="icon" aria-hidden="true">🏛️</div>
+              <h3>Principes de gouvernance</h3>
+              <p>
+                FEJEB structure ses activités autour d’une coordination, d’un pilotage opérationnel et d’une dynamique de terrain.
+                Les rôles sont définis pour faciliter la mise en œuvre, la supervision et la qualité des actions.
+              </p>
+              <div class="pill-list" aria-label="Principes clés">
+                <span class="pill">Responsabilité</span>
+                <span class="pill">Redevabilité</span>
+                <span class="pill">Éthique</span>
+                <span class="pill">Protection</span>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="icon" aria-hidden="true">📌</div>
+              <h3>Redevabilité (ce que nous garantissons)</h3>
+              <p>
+                Communication régulière sur les actions, publication d’actualités, documentation des activités,
+                et disponibilité pour échanges avec partenaires et institutions.
+              </p>
+              <ul class="checklist" style="margin-top:12px">
+                <li>
+                  <span class="check" aria-hidden="true"></span>
+                  <div>
+                    <b>Documentation</b>
+                    <span>Photos, bilans d’activités, comptes rendus et actualités.</span>
+                  </div>
+                </li>
+                <li>
+                  <span class="check" aria-hidden="true"></span>
+                  <div>
+                    <b>Protection des bénéficiaires</b>
+                    <span>Respect des droits, dignité, prévention des risques et confidentialité.</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ À propos -->
+      <section class="section" aria-labelledby="faq-title">
+        <div class="section-head">
+          <h2 id="faq-title">Questions fréquentes</h2>
+          <p>Des réponses rapides pour mieux comprendre FEJEB et faciliter la prise de contact.</p>
+        </div>
+        <div class="section-body">
+          <details>
+            <summary>Quelle est la zone d’intervention de FEJEB ?</summary>
+            <p>FEJEB intervient au Bénin et adapte ses actions aux besoins identifiés avec les communautés et partenaires.</p>
+          </details>
+          <details>
+            <summary>Comment FEJEB définit ses priorités ?</summary>
+            <p>Par un diagnostic terrain et des échanges avec les acteurs locaux, puis une priorisation orientée résultats.</p>
+          </details>
+          <details>
+            <summary>Comment rejoindre l’équipe ou devenir volontaire ?</summary>
+            <p>Contactez-nous via la page <b>Contact</b>. Nous étudions les candidatures selon les besoins et programmes en cours.</p>
+          </details>
+        </div>
+      </section>
+
+      <!-- CTA final -->
+      <section class="cta" aria-label="Appel à action FEJEB">
+        <div>
+          <h2>Construisons un impact durable, ensemble</h2>
+          <p>
+            Rejoignez une dynamique de terrain : dons, partenariats, volontariat ou relais de nos actions.
+            Chaque soutien contribue à renforcer l’avenir des femmes, des enfants et des jeunes.
+          </p>
+        </div>
+        <div class="hero-cta" style="margin:0">
+          <a class="btn btn-primary" href="don.html">Soutenir FEJEB</a>
+          <a class="btn btn-outline" href="contact.html">Nous contacter</a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer aria-label="Pied de page">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-box">
+          <h3>FEJEB ONG</h3>
+          <p>Femmes, Enfants et Jeunes Épanouis du Bénin.</p>
+          <p style="margin-top:8px; opacity:.9">Site officiel : <b>fejebong.org</b></p>
+        </div>
+
+        <div class="footer-box">
+          <h3>Navigation</h3>
+          <ul class="footer-links">
+            <li><a href="apropos.html" aria-current="page">À propos</a></li>
+            <li><a href="actions.html">Actions</a></li>
+            <li><a href="impact.html">Impact</a></li>
+            <li><a href="actualites.html">Actualités</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> FEJEB ONG — Tous droits réservés</span>
+        <span class="credit">Conception & développement : <b>DineTech</b></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

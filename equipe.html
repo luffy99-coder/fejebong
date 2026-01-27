@@ -1,0 +1,351 @@
+<!-- ===========================
+     equipe.html — FEJEB ONG
+     Données membres depuis Google Sheet (CSV)
+     Lien CSV : (fourni par Dine)
+     Référence design identique (CSS/JS globaux)
+     Header SANS CTA + page Fiches incluse partout
+     =========================== -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="format-detection" content="telephone=no" />
+
+  <title>Équipe — FEJEB ONG | Membres, profils & organisation</title>
+  <meta name="description" content="Découvrez l’équipe FEJEB ONG : membres, rôles, profils et engagements. Une présentation claire et institutionnelle, avec fiches membres consultables." />
+  <meta name="keywords" content="Équipe FEJEB ONG, membres FEJEB, organigramme ONG Bénin, profils, coordination, volontaires, responsables, gouvernance" />
+  <meta name="author" content="FEJEB ONG" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+
+  <link rel="canonical" href="https://fejebong.org/equipe.html" />
+
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <meta name="theme-color" content="#0A5D3A" />
+  <meta name="color-scheme" content="light" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="FEJEB ONG" />
+  <meta property="og:title" content="Équipe — FEJEB ONG" />
+  <meta property="og:description" content="Membres, rôles et profils : découvrez l’équipe FEJEB ONG." />
+  <meta property="og:url" content="https://fejebong.org/equipe.html" />
+  <meta property="og:image" content="https://fejebong.org/logo.png" />
+  <meta property="og:locale" content="fr_FR" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Équipe — FEJEB ONG" />
+  <meta name="twitter:description" content="Présentation de l’équipe FEJEB ONG : profils et rôles." />
+  <meta name="twitter:image" content="https://fejebong.org/logo.png" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://fejebong.org/#organization",
+        "name": "FEJEB ONG",
+        "alternateName": "Femmes, Enfants et Jeunes Épanouis du Bénin",
+        "url": "https://fejebong.org/",
+        "logo": "https://fejebong.org/logo.png",
+        "sameAs": ["https://www.facebook.com/profile.php?id=61574007833322"],
+        "areaServed": { "@type": "Country", "name": "Bénin" }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://fejebong.org/equipe.html#webpage",
+        "url": "https://fejebong.org/equipe.html",
+        "name": "Équipe — FEJEB ONG",
+        "isPartOf": { "@id": "https://fejebong.org/#website" },
+        "about": { "@id": "https://fejebong.org/#organization" },
+        "inLanguage": "fr"
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+  <header>
+    <div class="container">
+      <div class="topbar">
+        <a class="brand" href="index.html" aria-label="Retour à l'accueil FEJEB ONG">
+          <img src="logo.png" alt="Logo FEJEB ONG" width="44" height="44" />
+          <div class="name">
+            <strong>FEJEB ONG</strong>
+            <span>Femmes, Enfants & Jeunes Épanouis</span>
+          </div>
+        </a>
+
+        <!-- Desktop (SANS CTA) -->
+        <nav class="nav" aria-label="Navigation principale">
+          <a href="index.html">Accueil</a>
+          <a href="apropos.html">À propos</a>
+          <a href="actions.html">Actions</a>
+          <a href="impact.html">Impact</a>
+          <a href="fiches.html">Fiche signalétiques</a>
+          <a href="equipe.html" aria-current="page">Équipe</a>
+          <a href="actualites.html">Actualités</a>
+          <a href="don.html">Don</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+
+        <!-- Mobile -->
+        <button class="menu-btn" id="menuBtn" aria-label="Ouvrir le menu" aria-controls="drawer" aria-expanded="false" type="button">
+          <span class="menu-icon" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="drawer-overlay" id="overlay" aria-hidden="true"></div>
+  <aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Menu mobile">
+    <div class="drawer-head">
+      <div class="drawer-title">
+        <img src="logo.png" alt="" width="38" height="38" />
+        <div>
+          <strong>FEJEB ONG</strong>
+          <span>Menu & accès rapide</span>
+        </div>
+      </div>
+      <button class="drawer-close" id="closeBtn" type="button" aria-label="Fermer le menu">✕</button>
+    </div>
+
+    <nav class="drawer-nav" aria-label="Navigation mobile">
+      <a href="index.html">Accueil</a>
+      <a href="apropos.html">À propos</a>
+      <a href="actions.html">Actions</a>
+      <a href="impact.html">Impact</a>
+      <a href="fiches.html">Fiche signalétiques</a>
+      <a href="equipe.html" aria-current="page">Équipe</a>
+      <a href="actualites.html">Actualités</a>
+      <a href="don.html">Don</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="drawer-actions">
+      <a class="btn btn-primary" href="don.html">Soutenir FEJEB</a>
+      <a class="btn btn-ghost" href="contact.html">Nous contacter</a>
+      <small>Navigation pensée pour une lecture mobile claire et rapide (signature FEJEB).</small>
+    </div>
+  </aside>
+
+  <!-- HERO -->
+  <section class="hero" aria-label="Équipe FEJEB ONG">
+    <div class="container">
+      <div class="hero-inner">
+        <div class="kicker">
+          <b>ÉQUIPE</b> Profils · Rôles · Organisation
+        </div>
+
+        <h1>Des profils engagés, au service des communautés</h1>
+        <p>
+          FEJEB s’appuie sur une équipe structurée : coordination, terrain, appui technique et volontariat.
+          Cette page est synchronisée avec une base officielle (Google Sheet) pour afficher des profils
+          consultables et à jour.
+        </p>
+
+        <div class="hero-cta" role="group" aria-label="Raccourcis Équipe">
+          <a class="btn btn-primary" href="#membres">Voir les membres</a>
+          <a class="btn btn-outline" href="#fonctionnement">Fonctionnement</a>
+          <a class="btn btn-outline" href="contact.html">Rejoindre FEJEB</a>
+        </div>
+
+        <div class="hero-proof" aria-label="Promesses">
+          <div class="proof">
+            <strong>Lisibilité</strong>
+            <span>Profils clairs, rôles visibles, structure institutionnelle.</span>
+          </div>
+          <div class="proof">
+            <strong>Mise à jour facile</strong>
+            <span>Un Google Sheet = la page se met à jour automatiquement.</span>
+          </div>
+          <div class="proof">
+            <strong>Profil complet</strong>
+            <span>Un clic “Voir le profil” ouvre la fiche membre.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main id="contenu">
+    <div class="container">
+
+      <!-- Fonctionnement -->
+      <section class="section" id="fonctionnement" aria-labelledby="fonctionnement-title">
+        <div class="section-head">
+          <h2 id="fonctionnement-title">Comment l’équipe est présentée</h2>
+          <p>
+            Une page “Équipe” de niveau institutionnel doit être simple, crédible et structurée.
+            FEJEB présente les membres par rôle, avec une fiche consultable et des informations de contact si autorisées.
+          </p>
+        </div>
+        <div class="section-body">
+          <div class="grid-3">
+            <div class="card">
+              <div class="icon" aria-hidden="true">🏛️</div>
+              <h3>Rôles & responsabilités</h3>
+              <p>Chaque membre est associé à un rôle : coordination, terrain, programme, communication, etc.</p>
+            </div>
+            <div class="card">
+              <div class="icon" aria-hidden="true">🧩</div>
+              <h3>Une base unique (Sheet)</h3>
+              <p>La page lit un fichier CSV publié. Modifier le Sheet suffit pour mettre à jour le site.</p>
+            </div>
+            <div class="card">
+              <div class="icon" aria-hidden="true">🛡️</div>
+              <h3>Respect & protection</h3>
+              <p>Les données affichées doivent être celles que FEJEB autorise (contact / réseaux si souhaités).</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Moteur + liste -->
+      <section class="section" id="membres" aria-labelledby="membres-title">
+        <div class="section-head">
+          <h2 id="membres-title">Membres FEJEB (chargés depuis Google Sheet)</h2>
+          <p>
+            Recherchez un membre, filtrez par rôle, puis cliquez sur <b>Voir le profil</b> pour consulter la fiche complète.
+          </p>
+        </div>
+
+        <div class="section-body">
+          <div class="team-controls" role="search" aria-label="Recherche équipe">
+            <label class="sr-only" for="teamSearch">Rechercher un membre</label>
+            <input id="teamSearch" class="team-input" type="search" placeholder="Rechercher : nom, rôle, ville, compétence…" autocomplete="off" />
+
+            <label class="sr-only" for="teamRole">Filtrer par rôle</label>
+            <select id="teamRole" class="team-select" aria-label="Filtrer par rôle">
+              <option value="">Tous les rôles</option>
+            </select>
+
+            <button id="teamReset" class="btn btn-ghost team-reset" type="button">Réinitialiser</button>
+          </div>
+
+          <div class="team-stats" aria-live="polite">
+            <span id="teamCount">—</span>
+            <span class="team-dot" aria-hidden="true"></span>
+            <span class="team-hint">Source : Google Sheet (base officielle)</span>
+          </div>
+
+          <!-- États -->
+          <div id="teamState" class="team-state" aria-live="polite">
+            <div class="team-loading">
+              <div class="team-spinner" aria-hidden="true"></div>
+              <div>
+                <b>Chargement des membres…</b>
+                <div class="team-muted">Synchronisation avec la base FEJEB</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Grille -->
+          <div id="teamGrid" class="team-grid" aria-label="Liste des membres"></div>
+        </div>
+      </section>
+
+      <!-- CTA final -->
+      <section class="cta" aria-label="Appel à action FEJEB">
+        <div>
+          <h2>Vous souhaitez rejoindre FEJEB ?</h2>
+          <p>
+            Volontariat, appui technique, partenariats : contactez-nous pour intégrer une dynamique utile, structurée et de terrain.
+          </p>
+        </div>
+        <div class="hero-cta" style="margin:0">
+          <a class="btn btn-primary" href="contact.html">Nous contacter</a>
+          <a class="btn btn-outline" href="actions.html">Voir nos actions</a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer aria-label="Pied de page">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-box">
+          <h3>FEJEB ONG</h3>
+          <p>Femmes, Enfants et Jeunes Épanouis du Bénin.</p>
+          <p style="margin-top:8px; opacity:.9">Site officiel : <b>fejebong.org</b></p>
+        </div>
+
+        <div class="footer-box">
+          <h3>Navigation</h3>
+          <ul class="footer-links">
+            <li><a href="apropos.html">À propos</a></li>
+            <li><a href="actions.html">Actions</a></li>
+            <li><a href="impact.html">Impact</a></li>
+            <li><a href="fiches.html">Fiche signalétiques</a></li>
+            <li><a href="equipe.html" aria-current="page">Équipe</a></li>
+            <li><a href="actualites.html">Actualités</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> FEJEB ONG — Tous droits réservés</span>
+        <span class="credit">Conception & développement : <b>DineTech</b></span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal profil (injecté/contrôlé par script.js) -->
+  <div class="team-modal-overlay" id="teamModalOverlay" aria-hidden="true"></div>
+  <section class="team-modal" id="teamModal" role="dialog" aria-modal="true" aria-label="Profil membre" aria-hidden="true">
+    <div class="team-modal-head">
+      <div class="team-modal-title">
+        <b id="teamModalName">Profil</b>
+        <span id="teamModalRole" class="team-muted"></span>
+      </div>
+      <button class="team-modal-close" id="teamModalClose" type="button" aria-label="Fermer le profil">✕</button>
+    </div>
+
+    <div class="team-modal-body">
+      <div class="team-profile">
+        <div class="team-profile-left">
+          <div class="team-avatar-xl" id="teamModalAvatar" aria-hidden="true"></div>
+          <div class="team-links" id="teamModalLinks"></div>
+        </div>
+
+        <div class="team-profile-right">
+          <div class="team-badges" id="teamModalBadges"></div>
+
+          <div class="team-block">
+            <h3>Présentation</h3>
+            <p id="teamModalBio" class="team-text">—</p>
+          </div>
+
+          <div class="team-block">
+            <h3>Informations</h3>
+            <div class="team-info" id="teamModalInfo"></div>
+          </div>
+
+          <div class="team-block">
+            <h3>Contact</h3>
+            <div class="team-actions" id="teamModalActions"></div>
+            <p class="team-muted" style="margin-top:8px">
+              Les contacts affichés correspondent aux informations autorisées par FEJEB.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
