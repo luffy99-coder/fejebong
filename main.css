@@ -695,3 +695,195 @@ footer{
   html{ scroll-behavior:auto; }
   *{ transition:none !important; }
 }
+
+/* =========================================================
+   CORRECTIONS AJOUTÉES (SANS SUPPRIMER NI ABRÉGER)
+   Objectifs :
+   - supprimer tout débordement horizontal (mobile)
+   - drawer/nav mobile : textes bien alignés, pas coupés, pas décalés
+   - textes globalement plus lisibles sur mobile
+   ========================================================= */
+
+/* 1) Anti-débordement global */
+html, body{
+  width:100%;
+  max-width:100%;
+  overflow-x:hidden;
+}
+
+*,
+*::before,
+*::after{
+  max-width:100%;
+}
+
+img, svg, video, canvas{
+  max-width:100%;
+  height:auto;
+}
+
+/* 2) Lisibilité générale (un peu plus grand) */
+body{
+  font-size:16.5px;
+  line-height:1.78;
+}
+
+.section-head p,
+.card p,
+.kpi p,
+.checklist span,
+details p{
+  font-size:15.5px;
+  line-height:1.8;
+}
+
+/* 3) Fix Drawer (menu mobile) : pas de texte décalé/coupé + scroll interne */
+.drawer{
+  overflow-y:auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.drawer-title{
+  min-width:0;
+}
+
+.drawer-title strong,
+.drawer-title span{
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  max-width:240px;
+}
+
+.drawer-nav a{
+  line-height:1.35;
+  white-space:normal;
+  word-break:break-word;
+  overflow-wrap:anywhere;
+}
+
+/* 4) Fix Header en mobile : éviter le squeeze du logo + empêcher débordement */
+.topbar{
+  min-width:0;
+}
+
+.brand{
+  min-width:0;
+  max-width: calc(100% - 56px);
+}
+
+.brand .name{
+  min-width:0;
+}
+
+.brand .name strong,
+.brand .name span{
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+/* 5) Hero mobile : boutons full largeur + éviter éléments cachés */
+@media (max-width: 980px){
+  .container{
+    width: min(100% - 28px, var(--container));
+  }
+
+  .hero{
+    min-height: 86vh;
+  }
+
+  .hero-inner{
+    padding: 58px 0 52px;
+  }
+
+  .hero h1{
+    font-size: clamp(30px, 7vw, 40px);
+    line-height: 1.15;
+  }
+
+  .hero p{
+    font-size: 17px;
+    max-width: 100%;
+  }
+
+  .hero-cta{
+    width:100%;
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  .hero-cta .btn{
+    width:100%;
+    justify-content:center;
+  }
+
+  .proof strong{
+    font-size: 17px;
+  }
+
+  .proof span{
+    font-size: 13px;
+    line-height: 1.55;
+  }
+}
+
+/* 6) Typo mobile : + lisible partout */
+@media (max-width: 600px){
+  body{
+    font-size:17px;
+    line-height:1.85;
+  }
+
+  .btn{
+    font-size:15px;
+    padding: 12px 16px;
+  }
+
+  .section-head h2{
+    font-size: clamp(20px, 6.2vw, 26px);
+  }
+
+  .section-head p{
+    font-size:16px;
+  }
+
+  .card h3{
+    font-size:17px;
+  }
+
+  .card p{
+    font-size:15.8px;
+  }
+
+  .pill{
+    font-size:14px;
+  }
+
+  .kpi strong{
+    font-size:32px;
+  }
+
+  .kpi span{
+    font-size:15px;
+  }
+
+  .kpi p{
+    font-size:15.5px;
+  }
+
+  .footer-box p, .footer-box a, .footer-box li{
+    font-size:14px;
+    line-height:1.75;
+  }
+
+  .footer-bottom{
+    font-size:13px;
+  }
+}
+
+/* 7) Sécurité : éviter les débordements causés par de longs mots/URLs */
+p, h1, h2, h3, h4, li, a, span{
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
