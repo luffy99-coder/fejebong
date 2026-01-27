@@ -1,12 +1,11 @@
+<!-- ===========================
+     index.html — FEJEB ONG
+     Domaine officiel : https://fejebong.org/
+     Référence respectée + CSS/JS externalisés
+     =========================== -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <!-- =========================================
-       FEJEB ONG — ACCUEIL (index.html)
-       Domaine : fejebong.org
-       CSS/JS globaux : main.css / main.js
-       ========================================= -->
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="format-detection" content="telephone=no" />
@@ -17,6 +16,7 @@
   <meta name="author" content="FEJEB ONG" />
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
 
+  <!-- Canonical (domaine payé) -->
   <link rel="canonical" href="https://fejebong.org/" />
 
   <!-- Favicon -->
@@ -79,8 +79,8 @@
   }
   </script>
 
-  <!-- Global CSS -->
-  <link rel="stylesheet" href="main.css" />
+  <!-- CSS global unique -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
@@ -100,19 +100,18 @@
         <!-- Desktop -->
         <nav class="nav" aria-label="Navigation principale">
           <a href="index.html" aria-current="page">Accueil</a>
-          <a href="a propos.html">À propos</a>
+          <a href="apropos.html">À propos</a>
           <a href="actions.html">Actions</a>
           <a href="impact.html">Impact</a>
-          <a href="fiche signaletiques.html">Fiche signalétiques</a>
-          <a href="membres.html">Équipe</a>
+          <a href="fiches.html">Fiche Signaletique</a>
+          <a href="equipe.html">Équipe</a>
           <a href="actualites.html">Actualités</a>
           <a href="don.html">Don</a>
           <a href="contact.html">Contact</a>
         </nav>
 
         <div class="nav-cta" aria-label="Actions rapides">
-          <a class="btn btn-ghost" href="actions.html">Voir nos actions</a>
-          <a class="btn btn-primary" href="don.html">Soutenir FEJEB</a>
+          <a class="btn btn-primary btn-cta-small" href="don.html">Soutenir FEJEB</a>
         </div>
 
         <!-- Mobile -->
@@ -141,11 +140,11 @@
 
     <nav class="drawer-nav" aria-label="Navigation mobile">
       <a href="index.html">Accueil</a>
-      <a href="a propos.html">À propos</a>
+      <a href="apropos.html">À propos</a>
       <a href="actions.html">Actions</a>
       <a href="impact.html">Impact</a>
-      <a href="fiche signaletiques.html">Fiche signalétiques</a>
-      <a href="membres.html">Équipe</a>
+      <a href="fiches.html">Fiche Signaletique</a>
+      <a href="equipe.html">Équipe</a>
       <a href="actualites.html">Actualités</a>
       <a href="don.html">Don</a>
       <a href="contact.html">Contact</a>
@@ -175,7 +174,7 @@
 
         <div class="hero-cta" role="group" aria-label="Boutons d'action">
           <a class="btn btn-primary" href="don.html">Soutenir notre action</a>
-          <a class="btn btn-outline" href="a propos.html">Découvrir FEJEB</a>
+          <a class="btn btn-outline" href="apropos.html">Découvrir FEJEB</a>
           <a class="btn btn-outline" href="#priorites">Nos priorités</a>
         </div>
 
@@ -248,7 +247,7 @@
         </div>
       </section>
 
-      <!-- Priorités -->
+      <!-- Priorités (Domaines d'intervention) -->
       <section class="section" id="priorites" aria-labelledby="priorites-title">
         <div class="section-head">
           <h2 id="priorites-title">Nos domaines d’intervention</h2>
@@ -278,7 +277,7 @@
         </div>
       </section>
 
-      <!-- Approche -->
+      <!-- Méthodologie / Approche -->
       <section class="section" aria-labelledby="approche">
         <div class="section-head">
           <h2 id="approche">Notre approche de terrain</h2>
@@ -338,7 +337,7 @@
         </div>
       </section>
 
-      <!-- Confiance -->
+      <!-- Confiance / Gouvernance -->
       <section class="section" aria-labelledby="confiance">
         <div class="section-head">
           <h2 id="confiance">Pourquoi nous faire confiance ?</h2>
@@ -403,7 +402,7 @@
         </div>
       </section>
 
-      <!-- CTA -->
+      <!-- CTA final -->
       <section class="cta" aria-label="Appel à action FEJEB">
         <div>
           <h2>Ensemble, renforçons l’impact de FEJEB</h2>
@@ -433,12 +432,11 @@
         <div class="footer-box">
           <h3>Navigation</h3>
           <ul class="footer-links">
-            <li><a href="a propos.html">À propos</a></li>
+            <li><a href="apropos.html">À propos</a></li>
             <li><a href="actions.html">Actions</a></li>
             <li><a href="impact.html">Impact</a></li>
             <li><a href="actualites.html">Actualités</a></li>
             <li><a href="contact.html">Contact</a></li>
-            <li><a href="fiche signaletiques.html">Fiche signalétiques</a></li>
           </ul>
         </div>
       </div>
@@ -450,7 +448,7 @@
     </div>
   </footer>
 
-  <!-- Global JS -->
-  <script src="main.js" defer></script>
+  <!-- JS global unique -->
+  <script src="script.js" defer></script>
 </body>
 </html>
