@@ -941,6 +941,17 @@
     outline-offset: 2px;
     border-radius: 10px;
   }
+   /* Aperçu (desktop) : scroll interne */
+@media (min-width: 980px){
+  .preview{
+    max-height: calc(100vh - 110px); /* 92px top + marge */
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+@media (min-width: 980px){
+  .preview-media{ position: sticky; top: 0; }
+}
 </style>
 
   <!-- Schema.org (Organisation + Site + Page) -->
@@ -2027,4 +2038,5 @@
   </script>
 </body>
 </html>
+
 
