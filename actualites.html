@@ -377,30 +377,31 @@
     background: rgba(255,255,255,.72);
   }
   .hero::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:
-      linear-gradient(180deg, rgba(255,255,255,.88), rgba(255,255,255,.72)),
-      url("fond.jpg");
-    background-size: cover;
-    background-position: center;
-    filter: saturate(1.05) contrast(1.02);
-    transform: scale(1.02);
-    z-index: 0;
-  }
-  .hero::after{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:
-      radial-gradient(900px 420px at 25% 0%, rgba(0,168,107,.16), transparent 60%),
-      radial-gradient(900px 420px at 75% 0%, rgba(11,94,215,.16), transparent 60%),
-      linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.05));
-    z-index: 0;
-    pointer-events:none;
-  }
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    /* overlay sombre léger = image plus visible */
+    linear-gradient(180deg, rgba(7,16,35,.58), rgba(7,16,35,.28)),
+    url("fond.jpg");
+  background-size: cover;
+  background-position: center;
+  filter: saturate(1.12) contrast(1.08) brightness(1.02);
+  transform: scale(1.02);
+  z-index: 0;
+}
 
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(900px 420px at 25% 0%, rgba(0,168,107,.22), transparent 60%),
+    radial-gradient(900px 420px at 75% 0%, rgba(11,94,215,.22), transparent 60%),
+    linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+  z-index: 0;
+  pointer-events:none;
+}
   .hero-inner{
     position: relative;
     z-index: 1;
@@ -408,6 +409,28 @@
     display: grid;
     gap: 14px;
   }
+  /* Texte du HERO lisible (comme les autres pages) */
+.hero h1,
+.hero .lead{
+  color: rgba(255,255,255,.96);
+  text-shadow: 0 8px 28px rgba(0,0,0,.55);
+}
+
+.hero .lead{
+  color: rgba(255,255,255,.90);
+}
+
+/* Badge + panel restent clairs */
+.hero .badge{
+  background: rgba(255,255,255,.85);
+  color: rgba(11,18,32,.95);
+}
+
+.hero .panel{
+  background: rgba(255,255,255,.88);
+  border-color: rgba(255,255,255,.35);
+}
+
   @media (min-width: 900px){
     .hero-inner{
       grid-template-columns: 1.2fr .8fr;
@@ -949,6 +972,65 @@
     -webkit-overflow-scrolling: touch;
   }
 }
+/* =========================
+   FIX UI — ACTUALITÉS (uniforme)
+   À coller à la FIN du CSS
+   ========================= */
+
+/* 1) La colonne gauche reste propre + pas de “vide” énorme */
+.controls{
+  align-content: start;
+}
+
+/* 2) Barre chips: même style + scroll horizontal propre (comme une barre de filtres) */
+.chips{
+  display: flex;
+  gap: 10px;
+  flex-wrap: nowrap;         /* important */
+  overflow-x: auto;          /* scroll horizontal */
+  overflow-y: hidden;
+  padding: 6px 4px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;     /* Firefox */
+}
+.chips::-webkit-scrollbar{ height: 8px; }
+.chips::-webkit-scrollbar-thumb{
+  background: rgba(15,23,42,.18);
+  border-radius: 999px;
+}
+.chips::-webkit-scrollbar-track{
+  background: rgba(15,23,42,.06);
+  border-radius: 999px;
+}
+
+/* 3) Les chips restent sur 1 ligne, taille uniforme */
+.chip{
+  white-space: nowrap;
+  flex: 0 0 auto;
+}
+
+/* 4) Compteur résultat aligné propre (plus centré bizarre) */
+.control-top{
+  align-items: center;
+}
+#resultsCount{
+  margin-left: auto;
+  text-align: right;
+  font-weight: 800;
+}
+
+/* 5) Sur desktop: colonne gauche “stable” (pas trop large/pas trop étroite) */
+@media (min-width: 980px){
+  .controls{
+    min-width: 420px;
+  }
+}
+
+/* 6) Sur mobile: filtres + recherche restent bien serrés */
+@media (max-width: 979px){
+  .chips{ padding-bottom: 10px; }
+}
+
 </style>
 
   <!-- Schema.org (Organisation + Site + Page) -->
@@ -2034,7 +2116,3 @@
   </script>
 </body>
 </html>
-
-
-
-
