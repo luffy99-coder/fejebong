@@ -1720,7 +1720,34 @@
             return hay.includes(q);
           })
         );
+        // ✅ Force "À la une" (featured) en premier (et garde un tri par date ensuite si dispo)
+function toBoolFeatured(v){
+  const s = String(v ?? "").trim().toLowerCase();
+  return s === "1" || s === "true" || s === "yes" || s === "oui" || s === "a la une" || s === "à la une" || s === "featured";
+}
 
+// ⚠️ si tu as déjà "date" ou "published_at" adapte ici
+function toTime(d){
+  if (!d) return 0;
+  const t = Date.parse(String(d).trim());
+  return Number.isFinite(t) ? t : 0;
+}
+
+// Juste après ton parsing CSV -> items :
+items.forEach((it, i) => { it._idx = i; }); // garde l’ordre d’origine si égalité
+items.sort((a,b) => {
+  const af = toBoolFeatured(a.featured);
+  const bf = toBoolFeatured(b.featured);
+  if (af !== bf) return bf - af; // featured d'abord
+
+  // Ensuite tri par date (du + récent au + ancien) si tu as une colonne date
+  const ta = toTime(a.date || a.published_at || a.created_at);
+  const tb = toTime(b.date || b.published_at || b.created_at);
+  if (ta !== tb) return tb - ta;
+
+  // Sinon, garde l’ordre d’origine
+  return (a._idx ?? 0) - (b._idx ?? 0);
+});
         renderList();
 
         if (!filtered.length) {
@@ -2035,6 +2062,7 @@
   </script>
 </body>
 </html>
+
 
 
 
