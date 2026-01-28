@@ -1,0 +1,1992 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="format-detection" content="telephone=no" />
+
+  <title id="metaTitle">Actualités — ONG FEJEB | Activités, communiqués & résultats</title>
+  <meta id="metaDesc" name="description" content="Suivez les actualités de l’ONG FEJEB : activités, communiqués, résultats et initiatives. Filtre par catégorie, recherche, partage et soutien." />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="theme-color" content="#0B5ED7" />
+  <meta name="color-scheme" content="light" />
+
+  <link rel="canonical" id="canonicalLink" href="https://fejebong.org/actualites.html" />
+  <link rel="alternate" hreflang="fr" href="https://fejebong.org/actualites.html" />
+  <link rel="alternate" hreflang="x-default" href="https://fejebong.org/actualites.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="ONG FEJEB" />
+  <meta property="og:title" id="ogTitle" content="Actualités — ONG FEJEB" />
+  <meta property="og:description" id="ogDesc" content="Activités, communiqués, résultats et initiatives : l’actualité officielle de l’ONG FEJEB." />
+  <meta property="og:url" id="ogUrl" content="https://fejebong.org/actualites.html" />
+  <meta property="og:image" id="ogImg" content="https://fejebong.org/og-image.jpg" />
+  <meta property="og:locale" content="fr_FR" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" id="twTitle" content="Actualités — ONG FEJEB" />
+  <meta name="twitter:description" id="twDesc" content="Suivez les activités et résultats de l’ONG FEJEB. Partage et soutien en un clic." />
+  <meta name="twitter:image" id="twImg" content="https://fejebong.org/og-image.jpg" />
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="apple-touch-icon" href="favicon.png" />
+
+  <style>
+    /* =========================
+       FEJEB — ACTUALITÉS
+       CSS intégré (1 seul fichier : actualites.html)
+       ========================= */
+
+    :root{
+      --ink: #0b1220;
+      --muted: #42526b;
+      --card: rgba(255,255,255,.92);
+      --card-strong: rgba(255,255,255,.96);
+      --stroke: rgba(15, 23, 42, .12);
+
+      --brand-blue: #0B5ED7;
+      --brand-green: #00A86B;
+      --brand-cyan: #00B3C8;
+
+      --shadow: 0 18px 55px rgba(2, 8, 23, .14);
+      --shadow-soft: 0 10px 28px rgba(2, 8, 23, .10);
+
+      --radius-xl: 22px;
+      --radius-lg: 16px;
+      --radius-md: 12px;
+
+      --container: 1160px;
+
+      --fs-base: 18px;
+      --lh-base: 1.65;
+      --fs-sm: 16px;
+      --fs-lg: 20px;
+      --fs-xl: 40px;
+      --fs-h2: 28px;
+      --fs-h3: 20px;
+
+      --gap: 18px;
+    }
+
+    *{ box-sizing: border-box; }
+    html{ scroll-behavior: smooth; }
+    body{
+      margin: 0;
+      color: var(--ink);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      font-size: var(--fs-base);
+      line-height: var(--lh-base);
+
+      /* Fond arc-en-ciel “pro” : pastel + overlay pour lisibilité */
+      background:
+        radial-gradient(1200px 900px at 10% 10%, rgba(0,168,107,.18), transparent 60%),
+        radial-gradient(900px 700px at 85% 15%, rgba(11,94,215,.18), transparent 55%),
+        radial-gradient(900px 700px at 20% 85%, rgba(255,107,107,.12), transparent 55%),
+        radial-gradient(900px 700px at 85% 85%, rgba(255,193,7,.12), transparent 55%),
+        linear-gradient(135deg,
+          rgba(255, 0, 150, .10),
+          rgba(0, 204, 255, .10),
+          rgba(0, 200, 83, .10),
+          rgba(255, 193, 7, .10),
+          rgba(156, 39, 176, .10)
+        );
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Overlay global léger pour stabiliser la lisibilité */
+    body::before{
+      content:"";
+      position: fixed;
+      inset: 0;
+      pointer-events:none;
+      background: linear-gradient(180deg, rgba(255,255,255,.42), rgba(255,255,255,.22));
+      z-index: -1;
+    }
+
+    a{ color: inherit; }
+    img{ max-width: 100%; height: auto; }
+    .sr-only{
+      position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0;
+    }
+
+    .skip-link{
+      position: absolute;
+      top: 10px; left: 10px;
+      padding: 10px 12px;
+      background: var(--card-strong);
+      border: 1px solid var(--stroke);
+      border-radius: 12px;
+      box-shadow: var(--shadow-soft);
+      transform: translateY(-140%);
+      transition: transform .2s ease;
+      z-index: 9999;
+    }
+    .skip-link:focus{ transform: translateY(0); outline: 3px solid rgba(11,94,215,.25); }
+
+    .container{
+      width: min(var(--container), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    /* =========================
+       Header / Nav
+       ========================= */
+    .site-header{
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      background: rgba(255,255,255,.70);
+      border-bottom: 1px solid var(--stroke);
+    }
+
+    .header-inner{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 0;
+      gap: 12px;
+    }
+
+    .brand{
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      min-width: 220px;
+    }
+
+    .logo{
+      width: 44px; height: 44px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--brand-blue), var(--brand-green));
+      box-shadow: 0 10px 24px rgba(11,94,215,.18);
+      border: 1px solid rgba(255,255,255,.55);
+      flex: 0 0 auto;
+      overflow: hidden;
+    }
+    .logo img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .brand-title{
+      display: flex;
+      flex-direction: column;
+      line-height: 1.15;
+    }
+    .brand-title strong{
+      font-size: 16px;
+      letter-spacing: .2px;
+    }
+    .brand-title span{
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .nav{
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-links{
+      display: none;
+      align-items: center;
+      gap: 6px;
+      padding: 6px;
+      border-radius: 999px;
+      border: 1px solid var(--stroke);
+      background: rgba(255,255,255,.72);
+    }
+
+    .nav-links a{
+      text-decoration: none;
+      font-size: 15px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      color: rgba(11,18,32,.92);
+      transition: background .18s ease, transform .18s ease;
+      white-space: nowrap;
+    }
+    .nav-links a:hover{
+      background: rgba(11,94,215,.08);
+      transform: translateY(-1px);
+    }
+    .nav-links a[aria-current="page"]{
+      background: rgba(11,94,215,.10);
+      border: 1px solid rgba(11,94,215,.18);
+    }
+
+    .btn{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 12px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--stroke);
+      background: rgba(255,255,255,.78);
+      box-shadow: 0 10px 24px rgba(2,8,23,.06);
+      font-weight: 800;
+      text-decoration: none;
+      transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+      cursor: pointer;
+      user-select: none;
+      font-size: 16px;
+    }
+    .btn:hover{ transform: translateY(-1px); box-shadow: 0 16px 34px rgba(2,8,23,.10); }
+    .btn:active{ transform: translateY(0px); }
+
+    .btn-primary{
+      border-color: rgba(11,94,215,.28);
+      background: linear-gradient(135deg, rgba(11,94,215,.98), rgba(0,168,107,.90));
+      color: #fff;
+    }
+    .btn-primary:hover{
+      background: linear-gradient(135deg, rgba(11,94,215,1), rgba(0,168,107,.98));
+    }
+
+    .btn-ghost{ background: rgba(255,255,255,.65); }
+    .btn-dark{
+      background: rgba(11,18,32,.92);
+      color: #fff;
+      border-color: rgba(11,18,32,.22);
+    }
+
+    .menu-btn{
+      width: 46px; height: 46px;
+      border-radius: 16px;
+      border: 1px solid var(--stroke);
+      background: rgba(255,255,255,.76);
+      display: grid;
+      place-items: center;
+      box-shadow: 0 10px 24px rgba(2,8,23,.06);
+      cursor: pointer;
+    }
+    .menu-btn svg{ width: 22px; height: 22px; }
+
+    @media (min-width: 1020px){
+      .nav-links{ display: flex; }
+      .menu-btn{ display: none; }
+    }
+
+    /* =========================
+       Mobile Drawer (scrollable)
+       ========================= */
+    .drawer-backdrop{
+      position: fixed;
+      inset: 0;
+      background: rgba(2,8,23,.36);
+      display: none;
+      z-index: 1200;
+    }
+    .drawer{
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      left: 10px;
+      max-width: 560px;
+      margin-left: auto;
+      background: rgba(255,255,255,.92);
+      border: 1px solid var(--stroke);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+      display: none;
+      z-index: 1300;
+      overflow: hidden;
+    }
+    .drawer-head{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 14px 10px 14px;
+      border-bottom: 1px solid var(--stroke);
+      background: rgba(255,255,255,.86);
+    }
+    .drawer-title{
+      font-weight: 900;
+      letter-spacing: .2px;
+      font-size: 16px;
+    }
+    .drawer-close{
+      width: 42px; height: 42px;
+      border-radius: 14px;
+      border: 1px solid var(--stroke);
+      background: rgba(255,255,255,.8);
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+    }
+    .drawer-body{
+      max-height: min(70vh, 520px);
+      overflow: auto;
+      -webkit-overflow-scrolling: touch;
+      padding: 10px 14px 14px 14px;
+    }
+    .drawer-nav{
+      display: grid;
+      gap: 10px;
+    }
+    .drawer-nav a{
+      text-decoration: none;
+      padding: 12px 12px;
+      border-radius: 16px;
+      border: 1px solid rgba(15,23,42,.10);
+      background: rgba(255,255,255,.78);
+      font-weight: 800;
+      font-size: 16px;
+    }
+    .drawer-actions{
+      display: grid;
+      gap: 10px;
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px dashed rgba(15,23,42,.18);
+    }
+
+    .is-open .drawer-backdrop{ display: block; }
+    .is-open .drawer{ display: block; }
+
+    /* =========================
+       Main layout
+       ========================= */
+    main{ padding: 26px 0 56px; }
+
+    .hero{
+      margin-top: 14px;
+      border-radius: calc(var(--radius-xl) + 6px);
+      border: 1px solid var(--stroke);
+      background:
+        radial-gradient(900px 420px at 25% 0%, rgba(0,168,107,.14), transparent 60%),
+        radial-gradient(900px 420px at 75% 0%, rgba(11,94,215,.14), transparent 60%),
+        linear-gradient(180deg, rgba(255,255,255,.86), rgba(255,255,255,.70));
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+    }
+    .hero-inner{
+      padding: 26px 18px;
+      display: grid;
+      gap: 14px;
+    }
+    @media (min-width: 900px){
+      .hero-inner{
+        grid-template-columns: 1.2fr .8fr;
+        align-items: center;
+        padding: 34px 34px;
+      }
+    }
+
+    .badge{
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(11,94,215,.22);
+      background: rgba(11,94,215,.07);
+      color: rgba(11,18,32,.92);
+      font-weight: 900;
+      width: fit-content;
+      font-size: 14px;
+    }
+    .badge i{
+      width: 10px; height: 10px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--brand-blue), var(--brand-green));
+      display: inline-block;
+    }
+
+    h1{
+      margin: 0;
+      font-size: clamp(28px, 3.7vw, 40px);
+      line-height: 1.12;
+      letter-spacing: -0.4px;
+    }
+    .lead{
+      margin: 0;
+      color: rgba(11,18,32,.84);
+      font-size: 18px;
+      max-width: 70ch;
+    }
+
+    .panel{
+      padding: 16px;
+      border-radius: var(--radius-xl);
+      background: rgba(255,255,255,.78);
+      border: 1px solid rgba(15,23,42,.10);
+      box-shadow: 0 14px 34px rgba(2,8,23,.08);
+      display: grid;
+      gap: 10px;
+    }
+    .panel strong{ font-size: 16px; }
+    .panel p{ margin: 0; color: var(--muted); font-size: 15px; line-height: 1.55; }
+
+    .section{
+      margin-top: 18px;
+      padding: 18px;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--stroke);
+      background: var(--card);
+      box-shadow: var(--shadow-soft);
+    }
+    @media (min-width: 900px){
+      .section{ padding: 22px; }
+    }
+
+    .board{
+      display: grid;
+      gap: 16px;
+    }
+    @media (min-width: 980px){
+      .board{
+        grid-template-columns: 1.05fr .95fr;
+        align-items: start;
+      }
+    }
+
+    /* Controls */
+    .controls{
+      display: grid;
+      gap: 12px;
+    }
+
+    .control-top{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .pill{
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(15,23,42,.12);
+      background: rgba(255,255,255,.86);
+      font-weight: 900;
+      font-size: 14px;
+      box-shadow: 0 10px 24px rgba(2,8,23,.06);
+    }
+    .pill-dot{
+      width: 10px; height: 10px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--brand-blue), var(--brand-green));
+      display: inline-block;
+    }
+
+    .search{
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      border: 1px solid rgba(15,23,42,.12);
+      background: rgba(255,255,255,.86);
+      border-radius: 16px;
+      padding: 10px 12px;
+    }
+    .search input{
+      border: 0;
+      outline: none;
+      background: transparent;
+      width: 100%;
+      font-size: 16px;
+      color: var(--ink);
+    }
+    .search svg{ width: 18px; height: 18px; opacity: .7; }
+
+    .chips{
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .chip{
+      border: 1px solid rgba(15,23,42,.12);
+      background: rgba(255,255,255,.86);
+      border-radius: 999px;
+      padding: 10px 12px;
+      font-weight: 900;
+      font-size: 14px;
+      cursor: pointer;
+      transition: transform .18s ease, background .18s ease;
+      user-select: none;
+    }
+    .chip:hover{ transform: translateY(-1px); background: rgba(11,94,215,.06); }
+    .chip[aria-pressed="true"]{
+      background: rgba(11,94,215,.10);
+      border-color: rgba(11,94,215,.22);
+    }
+
+    .meta-line{
+      color: var(--muted);
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    /* List */
+    .list{
+      display: grid;
+      gap: 12px;
+    }
+
+    .news-card{
+      border: 1px solid rgba(15,23,42,.10);
+      background: rgba(255,255,255,.90);
+      border-radius: var(--radius-xl);
+      box-shadow: 0 14px 30px rgba(2,8,23,.06);
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+    .news-card:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 18px 44px rgba(2,8,23,.10);
+    }
+    .news-card[aria-selected="true"]{
+      outline: 3px solid rgba(11,94,215,.20);
+    }
+
+    .news-thumb{
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: linear-gradient(135deg, rgba(11,94,215,.08), rgba(0,168,107,.08));
+      position: relative;
+      overflow: hidden;
+    }
+    .news-thumb img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transform: scale(1.01);
+    }
+    .news-thumb img.is-logo{
+      object-fit: contain;
+      padding: 18px;
+      background: rgba(255,255,255,.88);
+    }
+
+    .news-body{
+      padding: 14px 14px 16px;
+      display: grid;
+      gap: 8px;
+    }
+    .news-topline{
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .tag{
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(15,23,42,.10);
+      background: rgba(255,255,255,.86);
+      font-weight: 900;
+      font-size: 12.5px;
+      color: rgba(11,18,32,.92);
+    }
+    .tag.featured{
+      border-color: rgba(255,193,7,.30);
+      background: rgba(255,193,7,.14);
+    }
+
+    .news-title{
+      margin: 0;
+      font-size: 18px;
+      letter-spacing: -.2px;
+      line-height: 1.25;
+    }
+    .news-excerpt{
+      margin: 0;
+      color: var(--muted);
+      font-size: 15.5px;
+      line-height: 1.6;
+    }
+
+    /* Preview */
+    .preview{
+      border: 1px solid rgba(15,23,42,.10);
+      background: rgba(255,255,255,.90);
+      border-radius: var(--radius-xl);
+      box-shadow: 0 14px 30px rgba(2,8,23,.06);
+      overflow: hidden;
+      position: sticky;
+      top: 92px;
+    }
+    @media (max-width: 979px){
+      .preview{ position: static; }
+    }
+
+    .preview-media{
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      background: linear-gradient(135deg, rgba(11,94,215,.10), rgba(0,168,107,.10));
+      overflow: hidden;
+    }
+    .preview-media img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .preview-media img.is-logo{
+      object-fit: contain;
+      padding: 18px;
+      background: rgba(255,255,255,.88);
+    }
+
+    .preview-body{
+      padding: 14px 14px 16px;
+      display: grid;
+      gap: 10px;
+    }
+    .preview-title{
+      margin: 0;
+      font-size: 22px;
+      line-height: 1.22;
+      letter-spacing: -.3px;
+    }
+    .preview-meta{
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .actions{
+      display: grid;
+      gap: 10px;
+    }
+    .actions-row{
+      display: grid;
+      gap: 10px;
+      grid-template-columns: 1fr 1fr;
+    }
+    @media (max-width: 420px){
+      .actions-row{ grid-template-columns: 1fr; }
+    }
+
+    .btn-wide{ width: 100%; }
+
+    .hint{
+      color: var(--muted);
+      font-size: 14.5px;
+      line-height: 1.55;
+      margin: 0;
+    }
+
+    /* Status */
+    .status{
+      display: grid;
+      gap: 10px;
+      padding: 14px;
+      border-radius: var(--radius-xl);
+      border: 1px dashed rgba(15,23,42,.18);
+      background: rgba(255,255,255,.78);
+      color: rgba(11,18,32,.92);
+      font-weight: 800;
+    }
+    .status small{ font-weight: 700; color: var(--muted); }
+
+    /* Modal (détail) */
+    .modal-backdrop{
+      position: fixed;
+      inset: 0;
+      background: rgba(2,8,23,.54);
+      display: none;
+      z-index: 2000;
+      padding: 14px;
+    }
+    .modal{
+      width: min(980px, 100%);
+      margin: 0 auto;
+      background: rgba(255,255,255,.96);
+      border: 1px solid rgba(255,255,255,.35);
+      border-radius: 26px;
+      box-shadow: 0 24px 80px rgba(2,8,23,.28);
+      overflow: hidden;
+      display: grid;
+      max-height: calc(100vh - 28px);
+    }
+    .modal-head{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 12px 14px;
+      border-bottom: 1px solid rgba(15,23,42,.10);
+      background: rgba(255,255,255,.92);
+    }
+    .modal-head strong{ font-size: 14.5px; letter-spacing: .2px; }
+    .modal-close{
+      width: 44px;
+      height: 44px;
+      border-radius: 16px;
+      border: 1px solid rgba(15,23,42,.12);
+      background: rgba(255,255,255,.92);
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+    }
+
+    .modal-body{
+      overflow: auto;
+      -webkit-overflow-scrolling: touch;
+      padding: 14px;
+      display: grid;
+      gap: 12px;
+    }
+    .modal-grid{
+      display: grid;
+      gap: 12px;
+    }
+    @media (min-width: 900px){
+      .modal-grid{
+        grid-template-columns: 1.05fr .95fr;
+        align-items: start;
+      }
+    }
+
+    .detail-media{
+      border-radius: 22px;
+      overflow: hidden;
+      border: 1px solid rgba(15,23,42,.10);
+      background: linear-gradient(135deg, rgba(11,94,215,.08), rgba(0,168,107,.08));
+      aspect-ratio: 4 / 3;
+    }
+    .detail-media img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .detail-media img.is-logo{
+      object-fit: contain;
+      padding: 22px;
+      background: rgba(255,255,255,.88);
+    }
+
+    .detail-card{
+      border: 1px solid rgba(15,23,42,.10);
+      background: rgba(255,255,255,.92);
+      border-radius: 22px;
+      padding: 14px;
+      box-shadow: 0 14px 30px rgba(2,8,23,.06);
+      display: grid;
+      gap: 10px;
+    }
+
+    .detail-title{
+      margin: 0;
+      font-size: 26px;
+      letter-spacing: -.4px;
+      line-height: 1.18;
+    }
+    .detail-text{
+      margin: 0;
+      color: rgba(11,18,32,.88);
+      font-size: 16.5px;
+      line-height: 1.7;
+      white-space: pre-wrap;
+    }
+
+    .share-row{
+      display: grid;
+      gap: 10px;
+      grid-template-columns: 1fr 1fr;
+    }
+    @media (max-width: 460px){
+      .share-row{ grid-template-columns: 1fr; }
+    }
+
+    .toast{
+      position: fixed;
+      left: 50%;
+      bottom: 16px;
+      transform: translateX(-50%);
+      background: rgba(11,18,32,.92);
+      color: #fff;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.18);
+      box-shadow: 0 18px 55px rgba(2,8,23,.25);
+      z-index: 3000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .2s ease, transform .2s ease;
+      font-weight: 800;
+      font-size: 14px;
+    }
+    .toast.show{
+      opacity: 1;
+      transform: translateX(-50%) translateY(-2px);
+    }
+
+    /* Footer */
+    footer{
+      padding: 28px 0 44px;
+      color: rgba(11,18,32,.88);
+    }
+    .footer-box{
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--stroke);
+      background: rgba(255,255,255,.78);
+      box-shadow: var(--shadow-soft);
+      padding: 18px;
+    }
+    .footer-box p{
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.65;
+    }
+    .footer-box .line{
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px dashed rgba(15,23,42,.18);
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      html{ scroll-behavior: auto; }
+      .btn, .nav-links a, .news-card, .chip{ transition: none; }
+    }
+
+    :focus-visible{
+      outline: 3px solid rgba(11,94,215,.24);
+      outline-offset: 2px;
+      border-radius: 10px;
+    }
+  </style>
+
+  <!-- Schema.org (Organisation + Site + Page) -->
+  <script type="application/ld+json" id="ldBase">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":"Organization",
+        "@id":"https://fejebong.org/#organization",
+        "name":"ONG FEJEB",
+        "legalName":"FEJEB (Femmes, Enfants et Jeunes Épanouis du Bénin)",
+        "description":"Organisation Non Gouvernementale à but non lucratif, apolitique et laïque. FEJEB œuvre pour l’épanouissement des femmes, enfants et jeunes au Bénin.",
+        "url":"https://fejebong.org/",
+        "email":"fejeb.ong@gmail.com",
+        "telephone":[ "+2290148484048", "+2290155268484" ],
+        "areaServed":"BJ",
+        "address":{
+          "@type":"PostalAddress",
+          "addressCountry":"BJ",
+          "addressRegion":"Borgou",
+          "addressLocality":"Nikki",
+          "streetAddress":"Quartier Gah-Maro (Nikki)"
+        },
+        "sameAs":[
+          "https://www.facebook.com/profile.php?id=61574007833322"
+        ]
+      },
+      {
+        "@type":"WebSite",
+        "@id":"https://fejebong.org/#website",
+        "url":"https://fejebong.org/",
+        "name":"ONG FEJEB",
+        "publisher":{"@id":"https://fejebong.org/#organization"},
+        "inLanguage":"fr"
+      },
+      {
+        "@type":"CollectionPage",
+        "@id":"https://fejebong.org/actualites.html#webpage",
+        "url":"https://fejebong.org/actualites.html",
+        "name":"Actualités — ONG FEJEB",
+        "isPartOf":{"@id":"https://fejebong.org/#website"},
+        "about":{"@id":"https://fejebong.org/#organization"},
+        "inLanguage":"fr"
+      }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD article (injecté en JS quand une actualité est ouverte) -->
+  <script type="application/ld+json" id="ldArticle"></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu principal</a>
+
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="container">
+      <div class="header-inner">
+        <a class="brand" href="index.html" aria-label="ONG FEJEB — Accueil">
+          <div class="logo" aria-hidden="true">
+            <img src="logo.png" alt="" onerror="this.style.display='none'">
+          </div>
+          <div class="brand-title">
+            <strong>ONG FEJEB</strong>
+            <span>Femmes • Enfants • Jeunes — Bénin</span>
+          </div>
+        </a>
+
+        <nav class="nav" aria-label="Navigation principale">
+          <div class="nav-links" aria-label="Liens de navigation (bureau)">
+            <a href="index.html">Accueil</a>
+            <a href="apropos.html">À propos</a>
+            <a href="actions.html">Actions</a>
+            <a href="fiche-signalétique.html">Fiche signalétique</a>
+            <a href="equipe.html">Équipe</a>
+            <a href="actualites.html" aria-current="page">Actualités</a>
+            <a href="don.html">Don</a>
+            <a href="contact.html">Contact</a>
+          </div>
+
+          <a class="btn btn-primary" href="don.html" aria-label="Aller à la page Don">Faire un don</a>
+
+          <button class="menu-btn" id="openMenu" type="button" aria-label="Ouvrir le menu" aria-controls="mobileDrawer" aria-expanded="false">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 7h16" stroke="#0b1220" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M4 12h16" stroke="#0b1220" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M4 17h16" stroke="#0b1220" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </button>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="drawer-backdrop" id="drawerBackdrop" hidden></div>
+  <aside class="drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-label="Menu mobile" hidden>
+    <div class="drawer-head">
+      <div class="drawer-title">Menu</div>
+      <button class="drawer-close" id="closeMenu" type="button" aria-label="Fermer le menu">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M7 7l10 10" stroke="#0b1220" stroke-width="1.8" stroke-linecap="round"/>
+          <path d="M17 7L7 17" stroke="#0b1220" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+    <div class="drawer-body">
+      <nav class="drawer-nav" aria-label="Navigation mobile (scrollable)">
+        <a href="index.html">Accueil</a>
+        <a href="apropos.html">À propos</a>
+        <a href="actions.html">Actions</a>
+        <a href="fiche-signalétique.html">Fiche signalétique</a>
+        <a href="equipe.html">Équipe</a>
+        <a href="actualites.html" aria-current="page">Actualités</a>
+        <a href="don.html">Don</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="drawer-actions">
+        <a class="btn btn-primary" href="don.html">Faire un don</a>
+        <a class="btn btn-ghost" href="contact.html">Nous contacter</a>
+      </div>
+    </div>
+  </aside>
+
+  <main id="contenu" class="container" role="main">
+    <!-- HERO -->
+    <section class="hero" aria-label="Actualités FEJEB">
+      <div class="hero-inner">
+        <div>
+          <div class="badge"><i></i> Informations officielles • Mises à jour • Résultats</div>
+          <h1>Actualités & activités de l’ONG FEJEB</h1>
+          <p class="lead">
+            Cette page regroupe les informations officielles, les activités, les communiqués et les initiatives menées par FEJEB.
+            Les contenus sont chargés automatiquement depuis notre registre (Sheet) pour garantir une information fiable et accessible.
+          </p>
+        </div>
+
+        <div class="panel" aria-label="Mode d’emploi">
+          <strong>Comment utiliser ?</strong>
+          <p>Filtre par catégorie, recherche par mots-clés, puis ouvre une actualité pour lire, partager ou soutenir l’action.</p>
+          <p><b>Astuce :</b> chaque actualité possède son propre lien partageable.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-label="Liste des actualités">
+      <div class="board">
+        <!-- Colonne gauche : contrôles + liste -->
+        <div class="controls">
+          <div class="control-top">
+            <div class="pill" aria-label="Filtre principal">
+              <span class="pill-dot" aria-hidden="true"></span>
+              <span id="activeFilterLabel">Toutes les actualités</span>
+            </div>
+            <div class="meta-line">
+              <span id="resultsCount">0 actualité(s) affichée(s).</span>
+            </div>
+          </div>
+
+          <div class="search" role="search" aria-label="Rechercher une actualité">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M10.5 18.5a8 8 0 1 1 0-16 8 8 0 0 1 0 16Z" stroke="#0b1220" stroke-width="1.7" opacity=".75"/>
+              <path d="M16.8 16.8 21 21" stroke="#0b1220" stroke-width="1.7" stroke-linecap="round" opacity=".75"/>
+            </svg>
+            <input id="searchInput" type="search" placeholder="Rechercher : titre, catégorie, mot-clé…" autocomplete="off" />
+          </div>
+
+          <div class="chips" id="categoryChips" aria-label="Filtrer par catégorie">
+            <!-- injecté en JS -->
+          </div>
+
+          <div id="loadingBox" class="status" aria-live="polite">
+            Chargement des actualités…
+            <small>Connexion au registre (Sheet) en cours.</small>
+          </div>
+
+          <div id="errorBox" class="status" hidden aria-live="polite">
+            Impossible de charger les actualités.
+            <small>Vérifie que le lien CSV est public, puis réessaie.</small>
+          </div>
+
+          <div id="newsList" class="list" aria-label="Résultats">
+            <!-- injecté en JS -->
+          </div>
+        </div>
+
+        <!-- Colonne droite : aperçu sélectionné -->
+        <aside class="preview" aria-label="Aperçu de l’actualité sélectionnée">
+          <div class="preview-media">
+            <img id="previewImg" src="logo.png" alt="Illustration de l’actualité" class="is-logo" />
+          </div>
+          <div class="preview-body">
+            <div class="news-topline" id="previewTopline">
+              <span class="tag">Actualités</span>
+            </div>
+
+            <h2 class="preview-title" id="previewTitle">Sélectionne une actualité</h2>
+            <div class="preview-meta" id="previewMeta">
+              <span>Pour afficher l’aperçu, clique sur une carte.</span>
+            </div>
+
+            <p class="hint" id="previewExcerpt">
+              Tu pourras ensuite lire le détail, partager le lien, ou soutenir l’action avec un message pré-rempli.
+            </p>
+
+            <div class="actions" aria-label="Actions">
+              <div class="actions-row">
+                <button class="btn btn-primary btn-wide" id="btnRead" type="button" disabled>Lire</button>
+                <button class="btn btn-dark btn-wide" id="btnShare" type="button" disabled>Partager</button>
+              </div>
+              <button class="btn btn-ghost btn-wide" id="btnSupport" type="button" disabled>Soutenir cette action</button>
+              <button class="btn btn-ghost btn-wide" id="btnCopy" type="button" disabled>Copier le lien</button>
+            </div>
+
+            <p class="hint" id="shareHint" hidden>
+              Partage : WhatsApp / Facebook / copie lien disponibles dans la lecture complète.
+            </p>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal détail -->
+  <div class="modal-backdrop" id="modalBackdrop" hidden aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-label="Détail de l’actualité" id="modalDialog" tabindex="-1">
+      <div class="modal-head">
+        <strong id="modalKicker">Actualités</strong>
+        <button class="modal-close" id="modalClose" type="button" aria-label="Fermer">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M7 7l10 10" stroke="#0b1220" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M17 7L7 17" stroke="#0b1220" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <div class="modal-grid">
+          <div class="detail-media">
+            <img id="detailImg" src="logo.png" alt="Image de l’actualité" class="is-logo" />
+          </div>
+
+          <div class="detail-card">
+            <div class="news-topline" id="detailTopline">
+              <!-- tags injectés -->
+            </div>
+
+            <h3 class="detail-title" id="detailTitle">—</h3>
+
+            <div class="preview-meta" id="detailMeta">
+              <!-- date + catégorie -->
+            </div>
+
+            <p class="detail-text" id="detailContent">—</p>
+
+            <div class="actions">
+              <div class="share-row">
+                <button class="btn btn-dark btn-wide" id="detailShare" type="button">Partager</button>
+                <button class="btn btn-ghost btn-wide" id="detailCopy" type="button">Copier le lien</button>
+              </div>
+              <div class="share-row">
+                <a class="btn btn-ghost btn-wide" id="detailWhatsApp" href="#" target="_blank" rel="noopener">WhatsApp</a>
+                <a class="btn btn-ghost btn-wide" id="detailFacebook" href="#" target="_blank" rel="noopener">Facebook</a>
+              </div>
+              <a class="btn btn-primary btn-wide" id="detailSupport" href="don.html">Soutenir cette action</a>
+            </div>
+
+            <p class="hint" id="detailHint">
+              Le lien est partageable : il ouvrira directement cette actualité sur fejebong.org.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">Lien copié ✅</div>
+
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-box">
+        <p><b>© FEJEB</b> — Tous droits réservés. Organisation à but non lucratif, apolitique et laïque.</p>
+        <p class="line">Contact : fejeb.ong@gmail.com — Nikki (Borgou), Bénin</p>
+        <p class="line"><b>Site réalisé par DineTech</b></p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    /* =========================
+       FEJEB — JS (Menu mobile)
+       ========================= */
+    (function () {
+      const openBtn = document.getElementById("openMenu");
+      const closeBtn = document.getElementById("closeMenu");
+      const drawer = document.getElementById("mobileDrawer");
+      const backdrop = document.getElementById("drawerBackdrop");
+
+      if (!openBtn || !closeBtn || !drawer || !backdrop) return;
+
+      let lastFocus = null;
+
+      const setOpenState = (open) => {
+        document.body.classList.toggle("is-open", open);
+        drawer.hidden = !open;
+        backdrop.hidden = !open;
+        openBtn.setAttribute("aria-expanded", String(open));
+
+        if (open) {
+          lastFocus = document.activeElement;
+          const firstLink = drawer.querySelector("a, button");
+          if (firstLink) firstLink.focus();
+          document.body.style.overflow = "hidden";
+        } else {
+          document.body.style.overflow = "";
+          if (lastFocus && typeof lastFocus.focus === "function") lastFocus.focus();
+        }
+      };
+
+      const openMenu = () => setOpenState(true);
+      const closeMenu = () => setOpenState(false);
+
+      openBtn.addEventListener("click", openMenu);
+      closeBtn.addEventListener("click", closeMenu);
+      backdrop.addEventListener("click", closeMenu);
+
+      document.addEventListener("keydown", (e) => {
+        if (!document.body.classList.contains("is-open")) return;
+        if (e.key === "Escape") closeMenu();
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (!document.body.classList.contains("is-open")) return;
+        if (e.key !== "Tab") return;
+
+        const focusable = drawer.querySelectorAll("a, button");
+        if (!focusable.length) return;
+
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      });
+
+      drawer.addEventListener("click", (e) => {
+        const a = e.target.closest("a");
+        if (!a) return;
+        closeMenu();
+      });
+    })();
+
+    /* =========================
+       FEJEB — ACTUALITÉS (CSV -> UI + SEO + Partage)
+       ========================= */
+    (function(){
+      const CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQF_fvn6d07XjnISJ6j-_qqCuagDHHSUV4afibtXf6iRlSCZ9qvMEW89UKO5X9WlcIL7FjWxfQX8Yzz/pub?gid=0&single=true&output=csv";
+      const FALLBACK_IMG = "logo.png";
+
+      const elList = document.getElementById("newsList");
+      const elChips = document.getElementById("categoryChips");
+      const elSearch = document.getElementById("searchInput");
+      const elCount = document.getElementById("resultsCount");
+      const elLoading = document.getElementById("loadingBox");
+      const elError = document.getElementById("errorBox");
+      const elActiveFilter = document.getElementById("activeFilterLabel");
+
+      const previewImg = document.getElementById("previewImg");
+      const previewTitle = document.getElementById("previewTitle");
+      const previewMeta = document.getElementById("previewMeta");
+      const previewExcerpt = document.getElementById("previewExcerpt");
+      const previewTopline = document.getElementById("previewTopline");
+
+      const btnRead = document.getElementById("btnRead");
+      const btnShare = document.getElementById("btnShare");
+      const btnSupport = document.getElementById("btnSupport");
+      const btnCopy = document.getElementById("btnCopy");
+
+      const modalBackdrop = document.getElementById("modalBackdrop");
+      const modalDialog = document.getElementById("modalDialog");
+      const modalClose = document.getElementById("modalClose");
+
+      const detailImg = document.getElementById("detailImg");
+      const detailTitle = document.getElementById("detailTitle");
+      const detailMeta = document.getElementById("detailMeta");
+      const detailContent = document.getElementById("detailContent");
+      const detailTopline = document.getElementById("detailTopline");
+      const detailShare = document.getElementById("detailShare");
+      const detailCopy = document.getElementById("detailCopy");
+      const detailWhatsApp = document.getElementById("detailWhatsApp");
+      const detailFacebook = document.getElementById("detailFacebook");
+      const detailSupport = document.getElementById("detailSupport");
+
+      const toast = document.getElementById("toast");
+
+      // Meta refs
+      const metaTitle = document.querySelector("title#metaTitle") || document.querySelector("title");
+      const metaDesc = document.getElementById("metaDesc");
+      const canonicalLink = document.getElementById("canonicalLink");
+      const ogTitle = document.getElementById("ogTitle");
+      const ogDesc = document.getElementById("ogDesc");
+      const ogUrl = document.getElementById("ogUrl");
+      const ogImg = document.getElementById("ogImg");
+      const twTitle = document.getElementById("twTitle");
+      const twDesc = document.getElementById("twDesc");
+      const twImg = document.getElementById("twImg");
+      const ldArticle = document.getElementById("ldArticle");
+
+      let all = [];
+      let filtered = [];
+      let activeCategory = "Toutes";
+      let selectedId = null;
+      let lastFocus = null;
+
+      const norm = (s) => String(s ?? "").trim();
+      const safeText = (s) => norm(s).replace(/\s+/g, " ").trim();
+      const stripHtml = (s) => safeText(String(s ?? "").replace(/<[^>]*>/g, " "));
+      const toKey = (row) => {
+        // clé stable sans "slug": on combine titre + date + categorie
+        const t = safeText(row.titre).toLowerCase();
+        const d = safeText(row.date).toLowerCase();
+        const c = safeText(row.categorie).toLowerCase();
+        return encodeURIComponent((t + "|" + d + "|" + c).slice(0, 220));
+      };
+
+      const parseDateFR = (s) => {
+        const v = safeText(s);
+        // formats tolérés : dd/mm/yyyy, dd-mm-yyyy, yyyy-mm-dd
+        if (!v) return null;
+
+        // yyyy-mm-dd
+        const iso = v.match(/^(\d{4})-(\d{1,2})-(\d{1,2})$/);
+        if (iso) {
+          const y = Number(iso[1]), m = Number(iso[2]) - 1, d = Number(iso[3]);
+          const dt = new Date(y, m, d);
+          return Number.isNaN(dt.getTime()) ? null : dt;
+        }
+
+        // dd/mm/yyyy ou dd-mm-yyyy
+        const fr = v.match(/^(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{4})$/);
+        if (fr) {
+          const d = Number(fr[1]), m = Number(fr[2]) - 1, y = Number(fr[3]);
+          const dt = new Date(y, m, d);
+          return Number.isNaN(dt.getTime()) ? null : dt;
+        }
+
+        // fallback: Date.parse
+        const dt = new Date(v);
+        return Number.isNaN(dt.getTime()) ? null : dt;
+      };
+
+      const fmtDate = (s) => {
+        const dt = parseDateFR(s);
+        if (!dt) return safeText(s) || "—";
+        return dt.toLocaleDateString("fr-FR", { year:"numeric", month:"long", day:"2-digit" });
+      };
+
+      function csvParse(text){
+        // CSV robuste (gère guillemets et virgules)
+        const rows = [];
+        let i = 0, field = "", row = [], inQuotes = false;
+
+        while (i < text.length) {
+          const c = text[i];
+
+          if (c === '"' ) {
+            if (inQuotes && text[i+1] === '"') { field += '"'; i += 2; continue; }
+            inQuotes = !inQuotes;
+            i++;
+            continue;
+          }
+
+          if (!inQuotes && (c === "," || c === "\n" || c === "\r")) {
+            if (c === ",") {
+              row.push(field);
+              field = "";
+              i++;
+              continue;
+            }
+            // newline (support \r\n, \n, \r)
+            if (c === "\r" && text[i+1] === "\n") i++;
+            row.push(field);
+            field = "";
+            rows.push(row);
+            row = [];
+            i++;
+            continue;
+          }
+
+          field += c;
+          i++;
+        }
+
+        // last field
+        if (field.length || row.length) {
+          row.push(field);
+          rows.push(row);
+        }
+
+        // remove empty trailing rows
+        return rows.filter(r => r.some(cell => safeText(cell).length));
+      }
+
+      const buildRow = (headers, cols) => {
+        const obj = {};
+        headers.forEach((h, idx) => obj[h] = cols[idx] ?? "");
+        return obj;
+      };
+
+      function showToast(msg){
+        toast.textContent = msg;
+        toast.classList.add("show");
+        setTimeout(() => toast.classList.remove("show"), 1200);
+      }
+
+      function setImg(imgEl, url){
+        const u = safeText(url);
+        imgEl.classList.remove("is-logo");
+        imgEl.src = u ? u : FALLBACK_IMG;
+        if (!u) imgEl.classList.add("is-logo");
+
+        imgEl.onerror = () => {
+          imgEl.onerror = null;
+          imgEl.src = FALLBACK_IMG;
+          imgEl.classList.add("is-logo");
+        };
+      }
+
+      function parseTags(s){
+        const raw = safeText(s);
+        if (!raw) return [];
+        // accepte séparateurs : virgule, point-virgule, espaces multiples
+        return raw
+          .split(/[;,]/g)
+          .map(x => safeText(x))
+          .filter(Boolean)
+          .slice(0, 10);
+      }
+
+      function isFeatured(v){
+        const t = safeText(v).toLowerCase();
+        return t === "1" || t === "true" || t === "oui" || t === "yes";
+      }
+
+      function excerptFrom(content){
+        const txt = stripHtml(content);
+        if (!txt) return "—";
+        return txt.length > 170 ? (txt.slice(0, 170).trim() + "…") : txt;
+      }
+
+      function sortByDateDesc(items){
+        return [...items].sort((a,b) => {
+          const da = parseDateFR(a.date)?.getTime() ?? 0;
+          const db = parseDateFR(b.date)?.getTime() ?? 0;
+          return db - da;
+        });
+      }
+
+      function buildChips(categories){
+        elChips.innerHTML = "";
+
+        const mk = (label) => {
+          const b = document.createElement("button");
+          b.type = "button";
+          b.className = "chip";
+          b.textContent = label;
+          b.setAttribute("aria-pressed", label === activeCategory ? "true" : "false");
+          b.addEventListener("click", () => {
+            activeCategory = label;
+            [...elChips.querySelectorAll(".chip")].forEach(x => x.setAttribute("aria-pressed", x.textContent === label ? "true" : "false"));
+            elActiveFilter.textContent = label === "Toutes" ? "Toutes les actualités" : ("Catégorie : " + label);
+            applyFilters();
+          });
+          return b;
+        };
+
+        elChips.appendChild(mk("Toutes"));
+        categories.forEach(cat => elChips.appendChild(mk(cat)));
+      }
+
+      function applyFilters(){
+        const q = safeText(elSearch.value).toLowerCase();
+        const inCat = (row) => {
+          if (activeCategory === "Toutes") return true;
+          return safeText(row.categorie).toLowerCase() === activeCategory.toLowerCase();
+        };
+
+        filtered = sortByDateDesc(
+          all.filter(row => {
+            if (!inCat(row)) return false;
+            if (!q) return true;
+
+            const hay = [
+              safeText(row.titre),
+              safeText(row.categorie),
+              stripHtml(row.contenu),
+              parseTags(row.tags).join(" ")
+            ].join(" ").toLowerCase();
+
+            return hay.includes(q);
+          })
+        );
+
+        renderList();
+        if (!filtered.length) {
+          setPreviewEmpty("Aucune actualité trouvée", "Essaie de modifier la recherche ou change de catégorie.", true);
+          return;
+        }
+
+        // si sélection invalide, reprendre le 1er
+        const keep = filtered.find(x => x._id === selectedId);
+        if (!keep) select(filtered[0]._id, { scroll: false });
+        updateCount();
+      }
+
+      function updateCount(){
+        elCount.textContent = filtered.length + " actualité(s) affichée(s).";
+      }
+
+      function setPreviewEmpty(title, meta, disable){
+        previewTitle.textContent = title;
+        previewMeta.innerHTML = "<span>" + meta + "</span>";
+        previewExcerpt.textContent = "—";
+        previewTopline.innerHTML = '<span class="tag">Actualités</span>';
+        setImg(previewImg, FALLBACK_IMG);
+        previewImg.classList.add("is-logo");
+
+        btnRead.disabled = disable;
+        btnShare.disabled = disable;
+        btnSupport.disabled = disable;
+        btnCopy.disabled = disable;
+      }
+
+      function renderList(){
+        elList.innerHTML = "";
+
+        if (!filtered.length) {
+          updateCount();
+          return;
+        }
+
+        filtered.forEach(row => {
+          const card = document.createElement("article");
+          card.className = "news-card";
+          card.tabIndex = 0;
+          card.setAttribute("role", "button");
+          card.setAttribute("aria-label", "Ouvrir l’aperçu : " + safeText(row.titre));
+          card.setAttribute("aria-selected", row._id === selectedId ? "true" : "false");
+
+          const thumb = document.createElement("div");
+          thumb.className = "news-thumb";
+
+          const img = document.createElement("img");
+          img.alt = "Illustration : " + safeText(row.titre);
+          setImg(img, row.image);
+          thumb.appendChild(img);
+
+          const body = document.createElement("div");
+          body.className = "news-body";
+
+          const top = document.createElement("div");
+          top.className = "news-topline";
+
+          const cat = safeText(row.categorie) || "Actualités";
+          const date = fmtDate(row.date);
+
+          const tagCat = document.createElement("span");
+          tagCat.className = "tag";
+          tagCat.textContent = cat;
+
+          top.appendChild(tagCat);
+
+          if (isFeatured(row.featured)) {
+            const t = document.createElement("span");
+            t.className = "tag featured";
+            t.textContent = "À la une";
+            top.appendChild(t);
+          }
+
+          const tTitle = document.createElement("h3");
+          tTitle.className = "news-title";
+          tTitle.textContent = safeText(row.titre) || "Sans titre";
+
+          const ex = document.createElement("p");
+          ex.className = "news-excerpt";
+          ex.textContent = excerptFrom(row.contenu);
+
+          const meta = document.createElement("div");
+          meta.className = "meta-line";
+          meta.textContent = date;
+
+          body.appendChild(top);
+          body.appendChild(tTitle);
+          body.appendChild(meta);
+          body.appendChild(ex);
+
+          card.appendChild(thumb);
+          card.appendChild(body);
+
+          const open = () => select(row._id, { scroll: false });
+
+          card.addEventListener("click", open);
+          card.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              open();
+            }
+          });
+
+          elList.appendChild(card);
+        });
+
+        updateCount();
+      }
+
+      function buildShareUrl(row){
+        // lien partageable: actualites.html#actu=<id>
+        const base = "https://fejebong.org/actualites.html";
+        return base + "#actu=" + row._id;
+      }
+
+      function setMetaForList(){
+        const title = "Actualités — ONG FEJEB | Activités, communiqués & résultats";
+        const desc = "Suivez les actualités de l’ONG FEJEB : activités, communiqués, résultats et initiatives. Filtre par catégorie, recherche, partage et soutien.";
+        const url = "https://fejebong.org/actualites.html";
+        const img = "https://fejebong.org/og-image.jpg";
+
+        document.title = title;
+        if (metaDesc) metaDesc.setAttribute("content", desc);
+        if (canonicalLink) canonicalLink.setAttribute("href", url);
+
+        if (ogTitle) ogTitle.setAttribute("content", "Actualités — ONG FEJEB");
+        if (ogDesc) ogDesc.setAttribute("content", "Activités, communiqués, résultats et initiatives : l’actualité officielle de l’ONG FEJEB.");
+        if (ogUrl) ogUrl.setAttribute("content", url);
+        if (ogImg) ogImg.setAttribute("content", img);
+
+        if (twTitle) twTitle.setAttribute("content", "Actualités — ONG FEJEB");
+        if (twDesc) twDesc.setAttribute("content", "Suivez les activités et résultats de l’ONG FEJEB. Partage et soutien en un clic.");
+        if (twImg) twImg.setAttribute("content", img);
+
+        // JSON-LD article vide
+        if (ldArticle) ldArticle.textContent = "";
+      }
+
+      function setMetaForArticle(row){
+        const t = safeText(row.titre) || "Actualité — ONG FEJEB";
+        const c = safeText(row.categorie) || "Actualités";
+        const d = fmtDate(row.date);
+        const desc = excerptFrom(row.contenu);
+        const url = buildShareUrl(row);
+        const imgUrl = safeText(row.image) ? safeText(row.image) : "https://fejebong.org/logo.png";
+
+        document.title = t + " — ONG FEJEB";
+        if (metaDesc) metaDesc.setAttribute("content", desc);
+        if (canonicalLink) canonicalLink.setAttribute("href", url);
+
+        if (ogTitle) ogTitle.setAttribute("content", t + " — ONG FEJEB");
+        if (ogDesc) ogDesc.setAttribute("content", desc);
+        if (ogUrl) ogUrl.setAttribute("content", url);
+        if (ogImg) ogImg.setAttribute("content", imgUrl);
+
+        if (twTitle) twTitle.setAttribute("content", t + " — ONG FEJEB");
+        if (twDesc) twDesc.setAttribute("content", desc);
+        if (twImg) twImg.setAttribute("content", imgUrl);
+
+        // JSON-LD NewsArticle
+        const published = parseDateFR(row.date);
+        const iso = published ? new Date(published.getTime() - (published.getTimezoneOffset()*60000)).toISOString().slice(0,10) : null;
+
+        const articleLd = {
+          "@context":"https://schema.org",
+          "@type":"NewsArticle",
+          "headline": t,
+          "description": desc,
+          "image": [ imgUrl ],
+          "datePublished": iso || undefined,
+          "mainEntityOfPage": { "@type":"WebPage", "@id": url },
+          "publisher": { "@id":"https://fejebong.org/#organization" },
+          "about": [ c ],
+          "inLanguage": "fr"
+        };
+
+        // clean undefined
+        const clean = (obj) => JSON.parse(JSON.stringify(obj));
+        if (ldArticle) ldArticle.textContent = JSON.stringify(clean(articleLd));
+      }
+
+      function select(id, opts){
+        const row = filtered.find(x => x._id === id) || all.find(x => x._id === id);
+        if (!row) return;
+
+        selectedId = id;
+
+        // update selection UI
+        [...elList.querySelectorAll(".news-card")].forEach(card => {
+          card.setAttribute("aria-selected", "false");
+        });
+
+        const idx = filtered.findIndex(x => x._id === id);
+        if (idx >= 0) {
+          const card = elList.children[idx];
+          if (card) card.setAttribute("aria-selected", "true");
+        }
+
+        // preview top tags
+        const cat = safeText(row.categorie) || "Actualités";
+        const date = fmtDate(row.date);
+
+        previewTopline.innerHTML = "";
+        const tagCat = document.createElement("span");
+        tagCat.className = "tag";
+        tagCat.textContent = cat;
+        previewTopline.appendChild(tagCat);
+
+        if (isFeatured(row.featured)) {
+          const t = document.createElement("span");
+          t.className = "tag featured";
+          t.textContent = "À la une";
+          previewTopline.appendChild(t);
+        }
+
+        previewTitle.textContent = safeText(row.titre) || "Sans titre";
+        previewMeta.innerHTML = "<span>" + date + "</span><span>•</span><span>" + cat + "</span>";
+        previewExcerpt.textContent = excerptFrom(row.contenu);
+
+        setImg(previewImg, row.image);
+
+        btnRead.disabled = false;
+        btnShare.disabled = false;
+        btnSupport.disabled = false;
+        btnCopy.disabled = false;
+
+        btnRead.onclick = () => openDetail(row);
+        btnShare.onclick = () => shareRow(row);
+        btnCopy.onclick = () => copyLink(buildShareUrl(row));
+        btnSupport.onclick = () => supportRow(row);
+
+        if (opts && opts.scroll) {
+          document.querySelector(".preview")?.scrollIntoView({ behavior: "smooth", block:"start" });
+        }
+      }
+
+      function copyLink(url){
+        const text = url;
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(() => showToast("Lien copié ✅")).catch(() => fallbackCopy(text));
+        } else {
+          fallbackCopy(text);
+        }
+      }
+
+      function fallbackCopy(text){
+        const ta = document.createElement("textarea");
+        ta.value = text;
+        ta.style.position = "fixed";
+        ta.style.left = "-9999px";
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand("copy"); showToast("Lien copié ✅"); }
+        catch(e){ showToast("Copie impossible"); }
+        document.body.removeChild(ta);
+      }
+
+      function shareRow(row){
+        const url = buildShareUrl(row);
+        const title = safeText(row.titre) || "Actualité — ONG FEJEB";
+        const text = "ONG FEJEB — " + title;
+
+        if (navigator.share) {
+          navigator.share({ title, text, url }).catch(() => {});
+        } else {
+          copyLink(url);
+        }
+      }
+
+      function supportRow(row){
+        const title = safeText(row.titre) || "Actualité FEJEB";
+        const cat = safeText(row.categorie) || "Actualités";
+        const date = fmtDate(row.date);
+
+        const msg =
+          "Bonjour FEJEB,\n\n" +
+          "Je souhaite soutenir cette action : " + title + ".\n" +
+          "Catégorie : " + cat + "\n" +
+          "Date : " + date + "\n\n" +
+          "Merci de me préciser la meilleure manière de contribuer (don / partenariat / appui matériel).\n";
+
+        const url = "don.html?message=" + encodeURIComponent(msg);
+        window.location.href = url;
+      }
+
+      function openDetail(row){
+        lastFocus = document.activeElement;
+
+        // URL hash
+        const hash = "#actu=" + row._id;
+        if (location.hash !== hash) history.pushState(null, "", hash);
+
+        // SEO dynamic
+        setMetaForArticle(row);
+
+        // Fill modal
+        const cat = safeText(row.categorie) || "Actualités";
+        const date = fmtDate(row.date);
+        const tags = parseTags(row.tags);
+
+        detailTopline.innerHTML = "";
+        const t1 = document.createElement("span");
+        t1.className = "tag";
+        t1.textContent = cat;
+        detailTopline.appendChild(t1);
+
+        if (isFeatured(row.featured)) {
+          const t = document.createElement("span");
+          t.className = "tag featured";
+          t.textContent = "À la une";
+          detailTopline.appendChild(t);
+        }
+
+        tags.slice(0, 6).forEach(tag => {
+          const tt = document.createElement("span");
+          tt.className = "tag";
+          tt.textContent = tag;
+          detailTopline.appendChild(tt);
+        });
+
+        detailTitle.textContent = safeText(row.titre) || "Sans titre";
+        detailMeta.innerHTML = "<span>" + date + "</span><span>•</span><span>" + cat + "</span>";
+        detailContent.textContent = stripHtml(row.contenu) || "—";
+
+        setImg(detailImg, row.image);
+
+        // Share links
+        const shareUrl = buildShareUrl(row);
+        const shareText = "ONG FEJEB — " + (safeText(row.titre) || "Actualité");
+        detailWhatsApp.href = "https://wa.me/?text=" + encodeURIComponent(shareText + "\n" + shareUrl);
+        detailFacebook.href = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(shareUrl);
+
+        // Support
+        const msg =
+          "Bonjour FEJEB,\n\n" +
+          "Je souhaite soutenir cette action : " + (safeText(row.titre) || "Actualité FEJEB") + ".\n" +
+          "Catégorie : " + cat + "\n" +
+          "Date : " + date + "\n\n" +
+          "Merci de me préciser la meilleure manière de contribuer (don / partenariat / appui matériel).\n";
+
+        detailSupport.href = "don.html?message=" + encodeURIComponent(msg);
+
+        // Buttons
+        detailCopy.onclick = () => copyLink(shareUrl);
+        detailShare.onclick = () => shareRow(row);
+
+        // Open modal
+        modalBackdrop.hidden = false;
+        modalBackdrop.style.display = "block";
+        modalBackdrop.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+
+        // Focus
+        setTimeout(() => modalDialog.focus(), 0);
+      }
+
+      function closeDetail(){
+        modalBackdrop.hidden = true;
+        modalBackdrop.style.display = "none";
+        modalBackdrop.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+
+        // back to list SEO
+        setMetaForList();
+
+        // remove hash without reloading
+        if (location.hash.startsWith("#actu=")) {
+          history.pushState(null, "", "actualites.html");
+        }
+
+        if (lastFocus && typeof lastFocus.focus === "function") lastFocus.focus();
+      }
+
+      // Modal events
+      modalClose.addEventListener("click", closeDetail);
+      modalBackdrop.addEventListener("click", (e) => {
+        if (e.target === modalBackdrop) closeDetail();
+      });
+      document.addEventListener("keydown", (e) => {
+        if (!modalBackdrop || modalBackdrop.hidden) return;
+        if (e.key === "Escape") closeDetail();
+      });
+
+      // Focus trap modal (simple)
+      document.addEventListener("keydown", (e) => {
+        if (!modalBackdrop || modalBackdrop.hidden) return;
+        if (e.key !== "Tab") return;
+
+        const focusable = modalBackdrop.querySelectorAll("button, a, [tabindex]:not([tabindex='-1'])");
+        if (!focusable.length) return;
+
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      });
+
+      // Search event
+      elSearch.addEventListener("input", () => applyFilters());
+
+      async function init(){
+        try{
+          setMetaForList();
+
+          const res = await fetch(CSV_URL, { cache: "no-store" });
+          if (!res.ok) throw new Error("HTTP " + res.status);
+          const text = await res.text();
+
+          const rows = csvParse(text);
+          if (!rows.length) throw new Error("CSV vide");
+
+          const headers = rows[0].map(h => safeText(h).toLowerCase());
+          const data = rows.slice(1).map(r => buildRow(headers, r));
+
+          // normalize keys expected
+          all = data.map((r) => {
+            const obj = {
+              titre: r["titre"] ?? r["title"] ?? "",
+              date: r["date"] ?? "",
+              categorie: r["categorie"] ?? r["catégorie"] ?? r["category"] ?? "",
+              image: r["image"] ?? r["img"] ?? "",
+              contenu: r["contenu"] ?? r["content"] ?? "",
+              tags: r["tags"] ?? "",
+              featured: r["featured"] ?? r["a_la_une"] ?? r["à la une"] ?? ""
+            };
+            obj._id = toKey(obj);
+            return obj;
+          });
+
+          // remove invalid empty titles rows
+          all = all.filter(x => safeText(x.titre).length || safeText(x.contenu).length);
+
+          // categories
+          const cats = Array.from(new Set(all.map(x => safeText(x.categorie)).filter(Boolean)))
+            .sort((a,b) => a.localeCompare(b, "fr", { sensitivity:"base" }));
+
+          buildChips(cats);
+
+          // initial filter
+          filtered = sortByDateDesc(all);
+          elLoading.hidden = true;
+          elLoading.style.display = "none";
+          elError.hidden = true;
+
+          // Render
+          applyFilters();
+
+          // Select first by default (if exists)
+          if (filtered.length) {
+            select(filtered[0]._id, { scroll: false });
+          } else {
+            setPreviewEmpty("Aucune actualité disponible", "Le registre est vide pour le moment.", true);
+          }
+
+          // Open detail from hash if present
+          if (location.hash.startsWith("#actu=")) {
+            const id = decodeURIComponent(location.hash.replace("#actu=", ""));
+            // id already encoded; we stored _id encoded, so we compare raw string
+            const row = all.find(x => x._id === encodeURIComponent(id)) || all.find(x => x._id === (location.hash.replace("#actu=","")));
+            const target = row || all.find(x => x._id === (location.hash.replace("#actu=","")));
+            if (target) {
+              // ensure it appears in filtered
+              selectedId = target._id;
+              applyFilters();
+              select(target._id, { scroll: false });
+              openDetail(target);
+            } else {
+              // hash invalid
+              history.pushState(null, "", "actualites.html");
+              setMetaForList();
+            }
+          }
+
+        }catch(err){
+          elLoading.hidden = true;
+          elLoading.style.display = "none";
+          elError.hidden = false;
+          console.error(err);
+          setPreviewEmpty("Erreur de chargement", "Impossible de récupérer les actualités.", true);
+        }
+      }
+
+      // Buttons safety
+      btnRead.disabled = true;
+      btnShare.disabled = true;
+      btnSupport.disabled = true;
+      btnCopy.disabled = true;
+
+      init();
+    })();
+  </script>
+</body>
+</html>
