@@ -750,16 +750,20 @@
       padding: 14px;
     }
     .modal{
-      width: min(980px, 100%);
-      margin: 0 auto;
-      background: rgba(255,255,255,.96);
-      border: 1px solid rgba(255,255,255,.35);
-      border-radius: 26px;
-      box-shadow: 0 24px 80px rgba(2,8,23,.28);
-      overflow: hidden;
-      display: grid;
-      max-height: calc(100vh - 28px);
-    }
+  width: min(980px, 100%);
+  margin: 0 auto;
+  background: rgba(255,255,255,.96);
+  border: 1px solid rgba(255,255,255,.35);
+  border-radius: 26px;
+  box-shadow: 0 24px 80px rgba(2,8,23,.28);
+  overflow: hidden;
+
+  /* ✅ IMPORTANT pour le scroll desktop */
+  display: flex;
+  flex-direction: column;
+
+  max-height: calc(100vh - 28px);
+}
     .modal-head{
       display: flex;
       align-items: center;
@@ -783,12 +787,17 @@
 
     /* SCROLL dans la fenêtre (desktop + mobile) */
     .modal-body{
-      overflow: auto;
-      -webkit-overflow-scrolling: touch;
-      padding: 14px;
-      display: grid;
-      gap: 12px;
-    }
+  /* ✅ IMPORTANT : autorise le scroll dans le modal */
+  flex: 1;
+  min-height: 0;
+
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+
+  padding: 14px;
+  display: grid;
+  gap: 12px;
+}
 
     .modal-grid{
       display: grid;
@@ -876,34 +885,28 @@
       transform: translateX(-50%) translateY(-2px);
     }
 
-   /* Footer */
+    /* Footer */
     footer{
-      padding: 34px 0 46px;
+      padding: 28px 0 44px;
       color: rgba(11,18,32,.88);
     }
-
     .footer-box{
       border-radius: var(--radius-xl);
-      border: 1px solid rgba(255,255,255,.10);
-      background:
-        radial-gradient(900px 380px at 10% 0%, rgba(0,168,107,.25), transparent 60%),
-        radial-gradient(900px 380px at 70% 0%, rgba(11,94,215,.25), transparent 60%),
-        linear-gradient(135deg, #0B1B33, #062048);
-      box-shadow: var(--shadow);
+      border: 1px solid var(--stroke);
+      background: rgba(255,255,255,.78);
+      box-shadow: var(--shadow-soft);
       padding: 18px;
-      color: rgba(255,255,255,.92);
     }
     .footer-box p{
       margin: 0;
-      font-size: 15.5px;
-      line-height: 1.7;
-      color: rgba(255,255,255,.86);
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.65;
     }
     .footer-box .line{
-      margin-top: 8px;
+      margin-top: 10px;
       padding-top: 10px;
-      border-top: 1px dashed rgba(255,255,255,.22);
-      color: rgba(255,255,255,.82);
+      border-top: 1px dashed rgba(15,23,42,.18);
     }
 
     @media (prefers-reduced-motion: reduce){
@@ -1280,7 +1283,7 @@
        FEJEB — ACTUALITÉS (CSV -> UI + SEO + Partage)
        ========================= */
     (function(){
-            const CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQF_fvn6d07XjnISJ6j-_qqCuagDHHSUV4afibtXf6iRlSCZ9qvMEW89UKO5X9WlcIL7FjWxfQX8Yzz/pub?gid=0&single=true&output=csv";
+      const CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQF_fvn6d07XjnISJ6j-_qqCuagDHHSUV4afibtXf6iRlSCZ9qvMEW89UKO5X9WlcIL7FjWxfQX8Yzz/pub?gid=0&single=true&output=csv";
       const FALLBACK_IMG = "logo.png";
 
       const elList = document.getElementById("newsList");
@@ -1866,8 +1869,14 @@
         }
         document.body.style.overflow = "hidden";
 
-        setTimeout(() => { if (modalDialog) modalDialog.focus(); }, 0);
-      }
+        setTimeout(() => {
+  // focus sur le modal (ok)
+  modalDialog.focus();
+
+  // ✅ bonus : place le scroll direct dans la zone scrollable
+  const body = modalDialog.querySelector(".modal-body");
+  if (body) body.scrollTop = 0;
+}, 0);
 
       function closeDetail(){
         if (modalBackdrop) {
@@ -1998,7 +2007,7 @@
       if (btnCopy) btnCopy.disabled = true;
 
       init();
-    })();
+    }();
   </script>
 </body>
 </html>
