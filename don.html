@@ -1,0 +1,1733 @@
+<!doctype html>  
+<html lang="fr">  
+<head>  
+  <meta charset="utf-8" />  
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />  
+  <meta name="format-detection" content="telephone=no" />  
+  
+  <title>Faire un don — ONG FEJEB | Soutenir nos actions (WhatsApp & email)</title>  
+  <meta name="description" content="Faites un don à l’ONG FEJEB : choisissez un montant, une cause, et envoyez un message officiel pré-rempli via WhatsApp (ou email). Transparence, traçabilité et confirmation par la responsable des dons." />  
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />  
+  <meta name="theme-color" content="#0B5ED7" />  
+  <meta name="color-scheme" content="light" />  
+  
+  <link rel="canonical" href="https://fejebong.org/don.html" />  
+  <link rel="alternate" hreflang="fr" href="https://fejebong.org/don.html" />  
+  <link rel="alternate" hreflang="x-default" href="https://fejebong.org/don.html" />  
+  
+  <!-- Open Graph -->  
+  <meta property="og:type" content="website" />  
+  <meta property="og:site_name" content="ONG FEJEB" />  
+  <meta property="og:title" content="Faire un don — ONG FEJEB" />  
+  <meta property="og:description" content="Choisissez un montant et une cause. Un message officiel est généré automatiquement et peut être envoyé via WhatsApp (ou email). Transparence & redevabilité." />  
+  <meta property="og:url" content="https://fejebong.org/don.html" />  
+  <meta property="og:image" content="https://fejebong.org/fond.jpg" />  
+  <meta property="og:image:secure_url" content="https://fejebong.org/fond.jpg" />  
+  <meta property="og:image:width" content="1200" />  
+  <meta property="og:image:height" content="630" />  
+  <meta property="og:locale" content="fr_FR" />  
+  
+  <!-- Twitter Card -->  
+  <meta name="twitter:card" content="summary_large_image" />  
+  <meta name="twitter:title" content="Faire un don — ONG FEJEB" />  
+  <meta name="twitter:description" content="Don rapide : montant + cause + message officiel généré automatiquement. Envoi via WhatsApp ou email." />  
+  <meta name="twitter:image" content="https://fejebong.org/fond.jpg" />  
+  
+  <!-- Favicon (TES FICHIERS) -->  
+  <link rel="icon" type="image/png" href="favicon.png" />  
+  <link rel="apple-touch-icon" href="favicon.png" />  
+  
+  <style>  
+    /* =========================  
+       FEJEB — DON  
+       Base FEJEB (même design que l'accueil)  
+       ========================= */  
+  
+    :root{  
+      --ink: #0b1220;  
+      --muted: #42526b;  
+      --card: rgba(255,255,255,.92);  
+      --card-strong: rgba(255,255,255,.96);  
+      --stroke: rgba(15, 23, 42, .12);  
+  
+      --brand-blue: #0B5ED7;  
+      --brand-green: #00A86B;  
+      --brand-cyan: #00B3C8;  
+  
+      --shadow: 0 18px 55px rgba(2, 8, 23, .14);  
+      --shadow-soft: 0 10px 28px rgba(2, 8, 23, .10);  
+  
+      --radius-xl: 22px;  
+      --radius-lg: 16px;  
+      --radius-md: 12px;  
+  
+      --container: 1160px;  
+  
+      --fs-base: 18px;  
+      --lh-base: 1.65;  
+      --fs-sm: 16px;  
+      --fs-lg: 20px;  
+      --fs-xl: 40px;  
+      --fs-h2: 28px;  
+      --fs-h3: 20px;  
+  
+      --gap: 18px;  
+    }  
+  
+    *{ box-sizing: border-box; }  
+    html{ scroll-behavior: smooth; }  
+    body{  
+      margin: 0;  
+      color: var(--ink);  
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";  
+      font-size: var(--fs-base);  
+      line-height: var(--lh-base);  
+  
+      background:  
+        radial-gradient(1200px 900px at 10% 10%, rgba(0,168,107,.18), transparent 60%),  
+        radial-gradient(900px 700px at 85% 15%, rgba(11,94,215,.18), transparent 55%),  
+        radial-gradient(900px 700px at 20% 85%, rgba(255,107,107,.12), transparent 55%),  
+        radial-gradient(900px 700px at 85% 85%, rgba(255,193,7,.12), transparent 55%),  
+        linear-gradient(135deg,  
+          rgba(255, 0, 150, .10),  
+          rgba(0, 204, 255, .10),  
+          rgba(0, 200, 83, .10),  
+          rgba(255, 193, 7, .10),  
+          rgba(156, 39, 176, .10)  
+        );  
+      min-height: 100vh;  
+      overflow-x: hidden;  
+    }  
+  
+    body::before{  
+      content:"";  
+      position: fixed;  
+      inset: 0;  
+      pointer-events:none;  
+      background: linear-gradient(180deg, rgba(255,255,255,.42), rgba(255,255,255,.22));  
+      z-index: -1;  
+    }  
+  
+    a{ color: inherit; }  
+    img{ max-width: 100%; height: auto; }  
+    .sr-only{  
+      position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0;  
+    }  
+  
+    .skip-link{  
+      position: absolute;  
+      top: 10px; left: 10px;  
+      padding: 10px 12px;  
+      background: var(--card-strong);  
+      border: 1px solid var(--stroke);  
+      border-radius: 12px;  
+      box-shadow: var(--shadow-soft);  
+      transform: translateY(-140%);  
+      transition: transform .2s ease;  
+      z-index: 9999;  
+    }  
+    .skip-link:focus{ transform: translateY(0); outline: 3px solid rgba(11,94,215,.25); }  
+  
+    .container{  
+      width: min(var(--container), calc(100% - 32px));  
+      margin: 0 auto;  
+    }  
+  
+    /* =========================  
+       Header / Nav  
+       ========================= */  
+    .site-header{  
+      position: sticky;  
+      top: 0;  
+      z-index: 1000;  
+      backdrop-filter: blur(14px);  
+      -webkit-backdrop-filter: blur(14px);  
+      background: rgba(255,255,255,.70);  
+      border-bottom: 1px solid var(--stroke);  
+    }  
+  
+    .header-inner{  
+      display: flex;  
+      align-items: center;  
+      justify-content: space-between;  
+      padding: 12px 0;  
+      gap: 12px;  
+    }  
+  
+    .brand{  
+      display: flex;  
+      align-items: center;  
+      gap: 12px;  
+      text-decoration: none;  
+      min-width: 220px;  
+    }  
+  
+    .logo{  
+      width: 44px; height: 44px;  
+      border-radius: 14px;  
+      display: grid;  
+      place-items: center;  
+      background: rgba(255,255,255,.82);  
+      box-shadow: 0 10px 24px rgba(2,8,23,.08);  
+      border: 1px solid rgba(15,23,42,.12);  
+      overflow: hidden;  
+      flex: 0 0 auto;  
+    }  
+    .logo img{  
+      width: 100%;  
+      height: 100%;  
+      object-fit: contain;  
+      padding: 6px;  
+      display: block;  
+    }  
+  
+    .brand-title{  
+      display: flex;  
+      flex-direction: column;  
+      line-height: 1.15;  
+    }  
+    .brand-title strong{  
+      font-size: 16px;  
+      letter-spacing: .2px;  
+    }  
+    .brand-title span{  
+      font-size: 13px;  
+      color: var(--muted);  
+    }  
+  
+    .nav{  
+      display: flex;  
+      align-items: center;  
+      gap: 10px;  
+    }  
+  
+    .nav-links{  
+      display: none;  
+      align-items: center;  
+      gap: 6px;  
+      padding: 6px;  
+      border-radius: 999px;  
+      border: 1px solid var(--stroke);  
+      background: rgba(255,255,255,.72);  
+    }  
+  
+    .nav-links a{  
+      text-decoration: none;  
+      font-size: 15px;  
+      padding: 10px 12px;  
+      border-radius: 999px;  
+      color: rgba(11,18,32,.92);  
+      transition: background .18s ease, transform .18s ease;  
+      white-space: nowrap;  
+    }  
+    .nav-links a:hover{  
+      background: rgba(11,94,215,.08);  
+      transform: translateY(-1px);  
+    }  
+  
+    .btn{  
+      display: inline-flex;  
+      align-items: center;  
+      justify-content: center;  
+      gap: 10px;  
+      padding: 12px 14px;  
+      border-radius: 999px;  
+      border: 1px solid var(--stroke);  
+      background: rgba(255,255,255,.78);  
+      box-shadow: 0 10px 24px rgba(2,8,23,.06);  
+      font-weight: 700;  
+      text-decoration: none;  
+      transition: transform .18s ease, box-shadow .18s ease, background .18s ease;  
+      cursor: pointer;  
+      user-select: none;  
+      font-size: 16px;  
+    }  
+    .btn:hover{ transform: translateY(-1px); box-shadow: 0 16px 34px rgba(2,8,23,.10); }  
+    .btn:active{ transform: translateY(0px); }  
+  
+    .btn-primary{  
+      border-color: rgba(11,94,215,.28);  
+      background: linear-gradient(135deg, rgba(11,94,215,.98), rgba(0,168,107,.90));  
+      color: #fff;  
+    }  
+    .btn-primary:hover{  
+      background: linear-gradient(135deg, rgba(11,94,215,1), rgba(0,168,107,.98));  
+    }  
+  
+    .btn-ghost{  
+      background: rgba(255,255,255,.65);  
+    }  
+  
+    .menu-btn{  
+      width: 46px; height: 46px;  
+      border-radius: 16px;  
+      border: 1px solid var(--stroke);  
+      background: rgba(255,255,255,.76);  
+      display: grid;  
+      place-items: center;  
+      box-shadow: 0 10px 24px rgba(2,8,23,.06);  
+      cursor: pointer;  
+    }  
+    .menu-btn svg{ width: 22px; height: 22px; }  
+  
+    @media (min-width: 1020px){  
+      .nav-links{ display: flex; }  
+      .menu-btn{ display: none; }  
+    }  
+  
+    /* =========================  
+       Mobile Drawer (scrollable)  
+       ========================= */  
+    .drawer-backdrop{  
+      position: fixed;  
+      inset: 0;  
+      background: rgba(2,8,23,.36);  
+      display: none;  
+      z-index: 1200;  
+    }  
+    .drawer{  
+      position: fixed;  
+      top: 10px;  
+      right: 10px;  
+      left: 10px;  
+      max-width: 560px;  
+      margin-left: auto;  
+      background: rgba(255,255,255,.92);  
+      border: 1px solid var(--stroke);  
+      border-radius: var(--radius-xl);  
+      box-shadow: var(--shadow);  
+      display: none;  
+      z-index: 1300;  
+      overflow: hidden;  
+    }  
+    .drawer-head{  
+      display: flex;  
+      align-items: center;  
+      justify-content: space-between;  
+      padding: 14px 14px 10px 14px;  
+      border-bottom: 1px solid var(--stroke);  
+      background: rgba(255,255,255,.86);  
+    }  
+    .drawer-title{  
+      font-weight: 900;  
+      letter-spacing: .2px;  
+      font-size: 16px;  
+    }  
+    .drawer-close{  
+      width: 42px; height: 42px;  
+      border-radius: 14px;  
+      border: 1px solid var(--stroke);  
+      background: rgba(255,255,255,.8);  
+      display: grid;  
+      place-items: center;  
+      cursor: pointer;  
+    }  
+    .drawer-body{  
+      max-height: min(70vh, 520px);  
+      overflow: auto;  
+      -webkit-overflow-scrolling: touch;  
+      padding: 10px 14px 14px 14px;  
+    }  
+    .drawer-nav{  
+      display: grid;  
+      gap: 10px;  
+    }  
+    .drawer-nav a{  
+      text-decoration: none;  
+      padding: 12px 12px;  
+      border-radius: 16px;  
+      border: 1px solid rgba(15,23,42,.10);  
+      background: rgba(255,255,255,.78);  
+      font-weight: 700;  
+      font-size: 16px;  
+    }  
+    .drawer-actions{  
+      display: grid;  
+      gap: 10px;  
+      margin-top: 12px;  
+      padding-top: 12px;  
+      border-top: 1px dashed rgba(15,23,42,.18);  
+    }  
+  
+    .is-open .drawer-backdrop{ display: block; }  
+    .is-open .drawer{ display: block; }  
+  
+    /* =========================  
+       Sections  
+       ========================= */  
+    main{ padding: 26px 0 56px; }  
+  
+    /* HERO (même base FEJEB) */  
+    .hero{  
+      margin-top: 14px;  
+      border-radius: calc(var(--radius-xl) + 6px);  
+      border: 1px solid var(--stroke);  
+      box-shadow: var(--shadow);  
+      overflow: hidden;  
+      position: relative;  
+  
+      background:  
+        linear-gradient(90deg, rgba(2,8,23,.78) 0%, rgba(2,8,23,.52) 42%, rgba(2,8,23,.22) 100%),  
+        radial-gradient(900px 480px at 20% 0%, rgba(0,168,107,.22), transparent 60%),  
+        radial-gradient(900px 480px at 65% 0%, rgba(11,94,215,.22), transparent 60%),  
+        url("fond.jpg");  
+      background-size: cover;  
+      background-position: center;  
+    }  
+    .hero-inner{  
+      padding: 38px 18px;  
+      display: grid;  
+      gap: 16px;  
+    }  
+    @media (min-width: 920px){  
+      .hero-inner{  
+        grid-template-columns: 1.15fr .85fr;  
+        align-items: center;  
+        padding: 52px 40px;  
+      }  
+    }  
+  
+    .badge{  
+      display: inline-flex;  
+      align-items: center;  
+      gap: 8px;  
+      padding: 10px 12px;  
+      border-radius: 999px;  
+      border: 1px solid rgba(255,255,255,.22);  
+      background: rgba(255,255,255,.12);  
+      color: rgba(255,255,255,.92);  
+      font-weight: 800;  
+      width: fit-content;  
+      font-size: 14px;  
+      backdrop-filter: blur(8px);  
+      -webkit-backdrop-filter: blur(8px);  
+      text-shadow: 0 10px 20px rgba(0,0,0,.28);  
+    }  
+    .badge i{  
+      width: 10px; height: 10px;  
+      border-radius: 999px;  
+      background: linear-gradient(135deg, var(--brand-blue), var(--brand-green));  
+      display: inline-block;  
+    }  
+  
+    h1{  
+      margin: 10px 0 10px;  
+      font-size: clamp(30px, 4vw, var(--fs-xl));  
+      line-height: 1.12;  
+      letter-spacing: -0.4px;  
+      color: #fff;  
+      text-shadow: 0 10px 30px rgba(0,0,0,.35);  
+    }  
+    .lead{  
+      margin: 0;  
+      color: rgba(255,255,255,.92);  
+      font-size: 19px;  
+      max-width: 62ch;  
+      text-shadow: 0 10px 26px rgba(0,0,0,.28);  
+    }  
+  
+    .pills{  
+      display: flex;  
+      flex-wrap: wrap;  
+      gap: 10px;  
+      margin-top: 12px;  
+    }  
+    .pill{  
+      display: inline-flex;  
+      align-items: center;  
+      gap: 8px;  
+      padding: 10px 12px;  
+      border-radius: 999px;  
+      background: rgba(255,255,255,.14);  
+      border: 1px solid rgba(255,255,255,.22);  
+      color: rgba(255,255,255,.92);  
+      font-weight: 800;  
+      font-size: 14px;  
+      backdrop-filter: blur(8px);  
+      -webkit-backdrop-filter: blur(8px);  
+      text-shadow: 0 10px 20px rgba(0,0,0,.28);  
+    }  
+    .pill i{  
+      width: 10px; height: 10px;  
+      border-radius: 999px;  
+      background: linear-gradient(135deg, var(--brand-blue), var(--brand-green));  
+      display: inline-block;  
+    }  
+  
+    .hero-panel{  
+      padding: 16px;  
+      border-radius: var(--radius-xl);  
+      background: rgba(255,255,255,.14);  
+      border: 1px solid rgba(255,255,255,.22);  
+      box-shadow: 0 18px 55px rgba(0,0,0,.22);  
+      backdrop-filter: blur(10px);  
+      -webkit-backdrop-filter: blur(10px);  
+    }  
+    .hero-panel h3{  
+      margin: 0 0 8px;  
+      font-size: 18px;  
+      letter-spacing: .2px;  
+      color: #fff;  
+      text-shadow: 0 10px 20px rgba(0,0,0,.28);  
+    }  
+    .hero-panel p{  
+      margin: 0;  
+      color: rgba(255,255,255,.90);  
+      font-size: 16px;  
+      line-height: 1.6;  
+      text-shadow: 0 10px 20px rgba(0,0,0,.22);  
+    }  
+  
+    .section{  
+      margin-top: 22px;  
+      padding: 18px;  
+      border-radius: var(--radius-xl);  
+      border: 1px solid var(--stroke);  
+      background: var(--card);  
+      box-shadow: var(--shadow-soft);  
+    }  
+    @media (min-width: 900px){  
+      .section{ padding: 24px; }  
+    }  
+  
+    .section-head{  
+      display: flex;  
+      align-items: end;  
+      justify-content: space-between;  
+      gap: 12px;  
+      flex-wrap: wrap;  
+      margin-bottom: 14px;  
+    }  
+    .section-head h2{  
+      margin: 0;  
+      font-size: clamp(22px, 2.6vw, var(--fs-h2));  
+      line-height: 1.2;  
+      letter-spacing: -0.2px;  
+    }  
+    .section-head p{  
+      margin: 0;  
+      color: var(--muted);  
+      font-size: 16px;  
+      max-width: 78ch;  
+    }  
+  
+    .grid{  
+      display: grid;  
+      gap: var(--gap);  
+    }  
+    @media (min-width: 780px){  
+      .grid.cols-3{ grid-template-columns: repeat(3, 1fr); }  
+      .grid.cols-4{ grid-template-columns: repeat(4, 1fr); }  
+      .grid.cols-2{ grid-template-columns: repeat(2, 1fr); }  
+    }  
+  
+    .card{  
+      padding: 16px;  
+      border-radius: var(--radius-lg);  
+      border: 1px solid rgba(15,23,42,.10);  
+      background: rgba(255,255,255,.86);  
+      box-shadow: 0 14px 30px rgba(2,8,23,.06);  
+      position: relative;  
+      overflow: hidden;  
+    }  
+    .card::before{  
+      content:"";  
+      position: absolute;  
+      inset: 0;  
+      pointer-events: none;  
+      background:  
+        linear-gradient(135deg, rgba(11,94,215,.10), transparent 42%),  
+        linear-gradient(225deg, rgba(0,168,107,.10), transparent 42%);  
+      opacity: .75;  
+    }  
+    .card > *{ position: relative; z-index: 1; }  
+    .card h3{  
+      margin: 0 0 8px;  
+      font-size: var(--fs-h3);  
+      line-height: 1.25;  
+    }  
+    .card p{  
+      margin: 0;  
+      color: var(--muted);  
+      font-size: 16px;  
+      line-height: 1.6;  
+    }  
+  
+    /* =========================  
+       DON — UI  
+       ========================= */  
+    .don-steps{  
+      display:flex;  
+      flex-wrap: wrap;  
+      gap: 10px;  
+      margin-top: 10px;  
+    }  
+    .don-step{  
+      display:inline-flex;  
+      align-items:center;  
+      gap: 8px;  
+      padding: 10px 12px;  
+      border-radius: 999px;  
+      border: 1px solid rgba(15,23,42,.10);  
+      background: rgba(255,255,255,.80);  
+      font-weight: 800;  
+      font-size: 14px;  
+    }  
+    .don-step i{  
+      width: 10px; height: 10px;  
+      border-radius: 999px;  
+      background: linear-gradient(135deg, var(--brand-blue), var(--brand-green));  
+      display:inline-block;  
+    }  
+  
+    .don-layout{  
+      display: grid;  
+      gap: var(--gap);  
+    }  
+    @media (min-width: 980px){  
+      .don-layout{  
+        grid-template-columns: 1.05fr .95fr;  
+        align-items: start;  
+      }  
+    }  
+  
+    .panel{  
+      border-radius: var(--radius-xl);  
+      border: 1px solid rgba(15,23,42,.10);  
+      background: rgba(255,255,255,.88);  
+      box-shadow: 0 14px 30px rgba(2,8,23,.06);  
+      overflow: hidden;  
+    }  
+    .panel-head{  
+      padding: 14px 16px;  
+      border-bottom: 1px solid rgba(15,23,42,.10);  
+      background: rgba(255,255,255,.86);  
+      display:flex;  
+      align-items:center;  
+      justify-content: space-between;  
+      gap: 10px;  
+      flex-wrap: wrap;  
+    }  
+    .panel-head strong{  
+      display:inline-flex;  
+      align-items:center;  
+      gap: 10px;  
+      font-weight: 900;  
+      letter-spacing: .2px;  
+      font-size: 16px;  
+    }  
+    .panel-head strong i{  
+      width: 10px; height: 10px;  
+      border-radius: 999px;  
+      background: linear-gradient(135deg, var(--brand-blue), var(--brand-green));  
+      display:inline-block;  
+    }  
+    .panel-body{  
+      padding: 16px;  
+    }  
+  
+    .hint{  
+      margin: 0;  
+      color: var(--muted);  
+      font-size: 15.5px;  
+      line-height: 1.65;  
+    }  
+  
+    .fieldset{  
+      margin-top: 14px;  
+      padding-top: 14px;  
+      border-top: 1px dashed rgba(15,23,42,.16);  
+    }  
+    .fieldset:first-of-type{  
+      margin-top: 0;  
+      padding-top: 0;  
+      border-top: 0;  
+    }  
+    .fieldset h3{  
+      margin: 0 0 10px;  
+      font-size: 16.5px;  
+      letter-spacing: .1px;  
+    }  
+  
+    .chip-row{  
+      display:flex;  
+      flex-wrap: wrap;  
+      gap: 10px;  
+    }  
+    .chip{  
+      border: 1px solid rgba(15,23,42,.10);  
+      background: rgba(255,255,255,.84);  
+      border-radius: 16px;  
+      padding: 10px 12px;  
+      font-weight: 900;  
+      cursor: pointer;  
+      transition: transform .15s ease, box-shadow .15s ease, background .15s ease, border-color .15s ease;  
+      box-shadow: 0 10px 22px rgba(2,8,23,.06);  
+      user-select: none;  
+      min-width: 120px;  
+      text-align: center;  
+    }  
+    .chip:hover{ transform: translateY(-1px); box-shadow: 0 14px 30px rgba(2,8,23,.10); }  
+    .chip[aria-pressed="true"]{  
+      border-color: rgba(11,94,215,.28);  
+      background: linear-gradient(135deg, rgba(11,94,215,.12), rgba(0,168,107,.10));  
+    }  
+    .chip small{  
+      display:block;  
+      margin-top: 2px;  
+      font-size: 12.5px;  
+      color: var(--muted);  
+      font-weight: 800;  
+    }  
+  
+    .field{  
+      display:grid;  
+      gap: 8px;  
+      margin-top: 10px;  
+    }  
+    .field label{  
+      font-weight: 900;  
+      font-size: 14.5px;  
+      color: rgba(11,18,32,.92);  
+    }  
+    .input, .textarea, .select{  
+      width: 100%;  
+      padding: 12px 12px;  
+      border-radius: 14px;  
+      border: 1px solid rgba(15,23,42,.12);  
+      background: rgba(255,255,255,.92);  
+      font-size: 16px;  
+      outline: none;  
+    }  
+    .textarea{ min-height: 96px; resize: vertical; }  
+  
+    .cause-grid{  
+      display:grid;  
+      gap: 12px;  
+    }  
+    @media (min-width: 720px){  
+      .cause-grid{ grid-template-columns: repeat(2, 1fr); }  
+    }  
+  
+    .cause-card{  
+      text-align: left;  
+      border-radius: var(--radius-lg);  
+      border: 1px solid rgba(15,23,42,.10);  
+      background: rgba(255,255,255,.86);  
+      box-shadow: 0 14px 30px rgba(2,8,23,.06);  
+      padding: 14px;  
+      cursor: pointer;  
+      transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease, background .15s ease;  
+      position: relative;  
+      overflow: hidden;  
+    }  
+    .cause-card:hover{ transform: translateY(-1px); box-shadow: 0 16px 34px rgba(2,8,23,.10); }  
+    .cause-card[aria-pressed="true"]{  
+      border-color: rgba(11,94,215,.28);  
+      background:  
+        radial-gradient(700px 260px at 10% 10%, rgba(0,168,107,.12), transparent 60%),  
+        radial-gradient(700px 260px at 90% 10%, rgba(11,94,215,.12), transparent 60%),  
+        rgba(255,255,255,.92);  
+    }  
+  
+    .cause-top{  
+      display:flex;  
+      align-items: start;  
+      justify-content: space-between;  
+      gap: 10px;  
+      margin-bottom: 6px;  
+    }  
+    .cause-name{  
+      margin: 0;  
+      font-size: 16px;  
+      line-height: 1.25;  
+      font-weight: 1000;  
+      letter-spacing: .1px;  
+    }  
+    .tag{  
+      display:inline-flex;  
+      align-items:center;  
+      gap: 8px;  
+      padding: 8px 10px;  
+      border-radius: 999px;  
+      border: 1px solid rgba(15,23,42,.10);  
+      background: rgba(255,255,255,.84);  
+      font-weight: 900;  
+      font-size: 12.5px;  
+      white-space: nowrap;  
+    }  
+    .tag i{  
+      width: 8px; height: 8px;  
+      border-radius: 999px;  
+      background: linear-gradient(135deg, var(--brand-blue), var(--brand-green));  
+      display:inline-block;  
+    }  
+    .cause-desc{  
+      margin: 0;  
+      color: var(--muted);  
+      font-size: 15px;  
+      line-height: 1.6;  
+    }  
+  
+    .preview{  
+      background: rgba(10, 16, 28, .92);  
+      color: rgba(255,255,255,.92);  
+      border-radius: var(--radius-xl);  
+      border: 1px solid rgba(255,255,255,.10);  
+      box-shadow: var(--shadow);  
+      overflow: hidden;  
+    }  
+    .preview-head{  
+      padding: 12px 14px;  
+      border-bottom: 1px solid rgba(255,255,255,.12);  
+      background: rgba(255,255,255,.06);  
+      display:flex;  
+      align-items:center;  
+      justify-content: space-between;  
+      gap: 10px;  
+      flex-wrap: wrap;  
+    }  
+    .preview-head strong{  
+      display:inline-flex;  
+      align-items:center;  
+      gap: 10px;  
+      font-weight: 1000;  
+      letter-spacing: .2px;  
+      font-size: 14.5px;  
+    }  
+    .preview-head strong i{  
+      width: 10px; height: 10px;  
+      border-radius: 999px;  
+      background: linear-gradient(135deg, var(--brand-blue), var(--brand-green));  
+      display:inline-block;  
+    }  
+  
+    .preview-meta{  
+      display:flex;  
+      flex-wrap: wrap;  
+      gap: 8px;  
+      justify-content: flex-end;  
+    }  
+    .meta-pill{  
+      display:inline-flex;  
+      align-items:center;  
+      gap: 8px;  
+      padding: 8px 10px;  
+      border-radius: 999px;  
+      border: 1px solid rgba(255,255,255,.12);  
+      background: rgba(255,255,255,.06);  
+      font-weight: 900;  
+      font-size: 12.5px;  
+    }  
+  
+    .preview-body{  
+      padding: 14px;  
+    }  
+    .preview-box{  
+      border-radius: 16px;  
+      border: 1px solid rgba(255,255,255,.12);  
+      background: rgba(255,255,255,.06);  
+      padding: 12px;  
+      max-height: 340px;  
+      overflow: auto;  
+      -webkit-overflow-scrolling: touch;  
+      white-space: pre-wrap;  
+      font-size: 15.5px;  
+      line-height: 1.7;  
+    }  
+  
+    .preview-actions{  
+      display:flex;  
+      flex-wrap: wrap;  
+      gap: 10px;  
+      margin-top: 12px;  
+    }  
+    .preview-actions .btn{  
+      border-color: rgba(255,255,255,.12);  
+      background: rgba(255,255,255,.08);  
+      color: rgba(255,255,255,.92);  
+      box-shadow: none;  
+    }  
+    .preview-actions .btn:hover{  
+      background: rgba(255,255,255,.12);  
+      box-shadow: 0 16px 34px rgba(0,0,0,.25);  
+    }  
+    .preview-actions .btn-primary{  
+      background: linear-gradient(135deg, rgba(11,94,215,.98), rgba(0,168,107,.90));  
+      border-color: rgba(255,255,255,.10);  
+    }  
+  
+    .note{  
+      margin-top: 10px;  
+      padding: 10px 12px;  
+      border-radius: 16px;  
+      border: 1px solid rgba(0,168,107,.18);  
+      background:  
+        radial-gradient(700px 260px at 10% 10%, rgba(0,168,107,.12), transparent 60%),  
+        radial-gradient(700px 260px at 90% 10%, rgba(11,94,215,.10), transparent 60%),  
+        rgba(255,255,255,.06);  
+      color: rgba(255,255,255,.88);  
+      font-size: 14.5px;  
+      line-height: 1.6;  
+    }  
+    .note b{ color: #fff; }  
+  
+    .mini-actions{  
+      display:flex;  
+      gap: 10px;  
+      flex-wrap: wrap;  
+      margin-top: 10px;  
+    }  
+    .mini-link{  
+      font-size: 14.5px;  
+      color: rgba(255,255,255,.86);  
+      text-decoration: underline;  
+      cursor: pointer;  
+      background: none;  
+      border: 0;  
+      padding: 0;  
+    }  
+  
+    /* Accordéon FAQ */  
+    .faq{  
+      display: grid;  
+      gap: 10px;  
+    }  
+    .faq-item{  
+      border-radius: var(--radius-lg);  
+      border: 1px solid rgba(15,23,42,.10);  
+      background: rgba(255,255,255,.86);  
+      overflow: hidden;  
+    }  
+    .faq-q{  
+      width: 100%;  
+      text-align: left;  
+      padding: 14px 14px;  
+      border: 0;  
+      background: transparent;  
+      cursor: pointer;  
+      display:flex;  
+      align-items: center;  
+      justify-content: space-between;  
+      gap: 10px;  
+      font-weight: 1000;  
+      font-size: 15.5px;  
+    }  
+    .faq-q span{  
+      display:inline-flex;  
+      align-items:center;  
+      gap: 10px;  
+    }  
+    .faq-q span b{  
+      width: 28px; height: 28px;  
+      border-radius: 12px;  
+      display:grid;  
+      place-items:center;  
+      border: 1px solid rgba(15,23,42,.10);  
+      background: rgba(255,255,255,.9);  
+      font-size: 13px;  
+      flex: 0 0 auto;  
+    }  
+    .faq-q em{  
+      font-style: normal;  
+      opacity: .75;  
+      font-size: 18px;  
+      line-height: 1;  
+    }  
+    .faq-a{  
+      padding: 0 14px 14px;  
+      color: var(--muted);  
+      font-size: 15.5px;  
+      line-height: 1.7;  
+      display: none;  
+    }  
+    .faq-item[data-open="true"] .faq-a{ display:block; }  
+    .faq-item[data-open="true"] .faq-q em{ transform: rotate(45deg); }  
+    .faq-q em{ transition: transform .15s ease; }  
+  
+    /* Footer (identique accueil) */  
+    footer{  
+      padding: 34px 0 46px;  
+      color: rgba(11,18,32,.88);  
+    }  
+    .footer-box{  
+      border-radius: var(--radius-xl);  
+      border: 1px solid rgba(255,255,255,.10);  
+      background:  
+        radial-gradient(900px 380px at 10% 0%, rgba(0,168,107,.25), transparent 60%),  
+        radial-gradient(900px 380px at 70% 0%, rgba(11,94,215,.25), transparent 60%),  
+        linear-gradient(135deg, #0B1B33, #062048);  
+      box-shadow: var(--shadow);  
+      padding: 18px;  
+      color: rgba(255,255,255,.92);  
+    }  
+    .footer-box p{  
+      margin: 0;  
+      font-size: 15.5px;  
+      line-height: 1.7;  
+      color: rgba(255,255,255,.86);  
+    }  
+    .footer-box .line{  
+      margin-top: 8px;  
+      padding-top: 10px;  
+      border-top: 1px dashed rgba(255,255,255,.22);  
+      color: rgba(255,255,255,.82);  
+    }  
+  
+    @media (prefers-reduced-motion: reduce){  
+      html{ scroll-behavior: auto; }  
+      .btn, .nav-links a, .chip, .cause-card{ transition: none; }  
+    }  
+  
+    :focus-visible{  
+      outline: 3px solid rgba(11,94,215,.24);  
+      outline-offset: 2px;  
+      border-radius: 10px;  
+    }  
+  </style>  
+  
+  <!-- Schema.org (Organisation + Page Don) -->  
+  <script type="application/ld+json">  
+  {  
+    "@context":"https://schema.org",  
+    "@graph":[  
+      {  
+        "@type":"Organization",  
+        "@id":"https://fejebong.org/#organization",  
+        "name":"ONG FEJEB",  
+        "legalName":"FEJEB (Femmes, Enfants et Jeunes Épanouis du Bénin)",  
+        "description":"Organisation Non Gouvernementale à but non lucratif, apolitique et laïque. FEJEB œuvre pour l’épanouissement des femmes, enfants et jeunes au Bénin : éducation, santé, protection sociale, autonomisation et développement durable.",  
+        "url":"https://fejebong.org/",  
+        "logo":"https://fejebong.org/logo.png",  
+        "image":"https://fejebong.org/fond.jpg",  
+        "email":"fejeb.ong@gmail.com",  
+        "telephone":[ "+2290148484048", "+2290155268484" ],  
+        "areaServed":"BJ",  
+        "sameAs":[ "https://www.facebook.com/profile.php?id=61574007833322" ]  
+      },  
+      {  
+        "@type":"WebPage",  
+        "@id":"https://fejebong.org/don.html#webpage",  
+        "url":"https://fejebong.org/don.html",  
+        "name":"Faire un don — ONG FEJEB",  
+        "isPartOf":{"@id":"https://fejebong.org/#website"},  
+        "about":{"@id":"https://fejebong.org/#organization"},  
+        "inLanguage":"fr"  
+      },  
+      {  
+        "@type":"BreadcrumbList",  
+        "@id":"https://fejebong.org/don.html#breadcrumbs",  
+        "itemListElement":[  
+          { "@type":"ListItem","position":1,"name":"Accueil","item":"https://fejebong.org/" },  
+          { "@type":"ListItem","position":2,"name":"Don","item":"https://fejebong.org/don.html" }  
+        ]  
+      },  
+      {  
+        "@type":"WebSite",  
+        "@id":"https://fejebong.org/#website",  
+        "url":"https://fejebong.org/",  
+        "name":"ONG FEJEB",  
+        "publisher":{"@id":"https://fejebong.org/#organization"},  
+        "inLanguage":"fr"  
+      }  
+    ]  
+  }  
+  </script>  
+</head>  
+  
+<body>  
+  <a class="skip-link" href="#contenu">Aller au contenu principal</a>  
+  
+  <!-- Header -->  
+  <header class="site-header" role="banner">  
+    <div class="container">  
+      <div class="header-inner">  
+        <a class="brand" href="index.html" aria-label="ONG FEJEB — Accueil">  
+          <div class="logo" aria-hidden="true">  
+            <img src="logo.png" alt="" />  
+          </div>  
+          <div class="brand-title">  
+            <strong>ONG FEJEB</strong>  
+            <span>Femmes • Enfants • Jeunes — Bénin</span>  
+          </div>  
+        </a>  
+  
+        <nav class="nav" aria-label="Navigation principale">  
+          <div class="nav-links" aria-label="Liens de navigation (bureau)">  
+            <a href="index.html">Accueil</a>  
+            <a href="apropos.html">À propos</a>  
+            <a href="actions.html">Actions</a>  
+            <a href="fiche-signalétique.html">Fiche signalétique</a>  
+            <a href="equipe.html">Équipe</a>  
+            <a href="actualites.html">Actualités</a>  
+            <a href="don.html" aria-current="page">Don</a>  
+            <a href="contact.html">Contact</a>  
+          </div>  
+  
+          <a class="btn btn-primary" href="don.html" aria-label="Aller à la page Don">Faire un don</a>  
+  
+          <button class="menu-btn" id="openMenu" type="button" aria-label="Ouvrir le menu" aria-controls="mobileDrawer" aria-expanded="false">  
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">  
+              <path d="M4 7h16" stroke="#0b1220" stroke-width="1.8" stroke-linecap="round"/>  
+              <path d="M4 12h16" stroke="#0b1220" stroke-width="1.8" stroke-linecap="round"/>  
+              <path d="M4 17h16" stroke="#0b1220" stroke-width="1.8" stroke-linecap="round"/>  
+            </svg>  
+          </button>  
+        </nav>  
+      </div>  
+    </div>  
+  </header>  
+  
+  <!-- Mobile Drawer -->  
+  <div class="drawer-backdrop" id="drawerBackdrop" hidden></div>  
+  <aside class="drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-label="Menu mobile" hidden>  
+    <div class="drawer-head">  
+      <div class="drawer-title">Menu</div>  
+      <button class="drawer-close" id="closeMenu" type="button" aria-label="Fermer le menu">  
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">  
+          <path d="M7 7l10 10" stroke="#0b1220" stroke-width="1.8" stroke-linecap="round"/>  
+          <path d="M17 7L7 17" stroke="#0b1220" stroke-width="1.8" stroke-linecap="round"/>  
+        </svg>  
+      </button>  
+    </div>  
+    <div class="drawer-body">  
+      <nav class="drawer-nav" aria-label="Navigation mobile (scrollable)">  
+        <a href="index.html">Accueil</a>  
+        <a href="apropos.html">À propos</a>  
+        <a href="actions.html">Actions</a>  
+        <a href="fiche-signalétique.html">Fiche signalétique</a>  
+        <a href="equipe.html">Équipe</a>  
+        <a href="actualites.html">Actualités</a>  
+        <a href="don.html" aria-current="page">Don</a>  
+        <a href="contact.html">Contact</a>  
+      </nav>  
+  
+      <div class="drawer-actions">  
+        <a class="btn btn-primary" href="don.html">Faire un don</a>  
+        <a class="btn btn-ghost" href="contact.html">Nous contacter</a>  
+      </div>  
+    </div>  
+  </aside>  
+  
+  <main id="contenu" class="container" role="main">  
+    <!-- HERO -->  
+    <section class="hero" aria-label="Faire un don à FEJEB">  
+      <div class="hero-inner">  
+        <div>  
+          <div class="badge"><i></i> Don sécurisé • Message officiel • Confirmation</div>  
+          <h1>Faire un don à l’ONG FEJEB</h1>  
+          <p class="lead">  
+            Choisissez un <b>montant</b> et une <b>cause</b>. Le message officiel est généré automatiquement :  
+            vous pouvez l’envoyer via <b>WhatsApp</b> (recommandé) ou par <b>email</b>.  
+          </p>  
+  
+          <div class="don-steps" aria-label="Étapes du don">  
+            <span class="don-step"><i></i> Montant</span>  
+            <span class="don-step"><i></i> Cause</span>  
+            <span class="don-step"><i></i> Aperçu</span>  
+            <span class="don-step"><i></i> Envoi</span>  
+          </div>  
+  
+          <div class="pills" aria-label="Garanties">  
+            <span class="pill"><i></i> WhatsApp uniquement : suivi rapide</span>  
+            <span class="pill"><i></i> Traçabilité : cause + montant</span>  
+            <span class="pill"><i></i> Transparence & redevabilité</span>  
+          </div>  
+        </div>  
+  
+        <div class="hero-panel" aria-label="Repères Don">  
+          <h3>Responsable des dons</h3>  
+          <p>  
+            <b>Canal prioritaire :</b> WhatsApp.<br/>  
+            <b>Confirmation :</b> procédure & moyen de paiement après réception.<br/>  
+            <b>Email :</b> fejeb.ong@gmail.com  
+          </p>  
+        </div>  
+      </div>  
+    </section>  
+  
+    <!-- DON (Form + Preview) -->  
+    <section class="section" aria-label="Don rapide FEJEB">  
+      <div class="section-head">  
+        <div>  
+          <h2>Don rapide & cause à soutenir</h2>  
+          <p>  
+            Astuce : si vous arrivez depuis une <b>actualité</b>, le contexte (titre/date/catégorie/lien) peut être ajouté automatiquement au message.  
+          </p>  
+        </div>  
+      </div>  
+  
+      <div class="don-layout">  
+        <!-- Form -->  
+        <div class="panel" aria-label="Formulaire don">  
+          <div class="panel-head">  
+            <strong><i></i> Formulaire</strong>  
+            <span class="hint" id="contextHint">Aucun contexte d’actualité détecté.</span>  
+          </div>  
+          <div class="panel-body">  
+            <!-- 1) Montant -->  
+            <div class="fieldset" aria-label="Montant">  
+              <h3>1) Montant (FCFA)</h3>  
+              <p class="hint">Sélectionnez un montant ou indiquez “Autre”.</p>  
+  
+              <div class="chip-row" role="group" aria-label="Montants rapides">  
+                <button class="chip" type="button" data-amount="2000" aria-pressed="false">2 000<small>FCFA</small></button>  
+                <button class="chip" type="button" data-amount="5000" aria-pressed="false">5 000<small>FCFA</small></button>  
+                <button class="chip" type="button" data-amount="10000" aria-pressed="false">10 000<small>FCFA</small></button>  
+                <button class="chip" type="button" data-amount="25000" aria-pressed="false">25 000<small>FCFA</small></button>  
+                <button class="chip" type="button" data-amount="50000" aria-pressed="false">50 000<small>FCFA</small></button>  
+                <button class="chip" type="button" data-amount="other" aria-pressed="false">Autre<small>montant</small></button>  
+              </div>  
+  
+              <div class="field" id="otherAmountWrap" style="display:none">  
+                <label for="otherAmount">Autre montant (FCFA)</label>  
+                <input class="input" id="otherAmount" inputmode="numeric" autocomplete="off" placeholder="Ex : 15000" />  
+              </div>  
+            </div>  
+  
+            <!-- 2) Causes -->  
+            <div class="fieldset" aria-label="Cause">  
+              <h3>2) Cause à financer</h3>  
+              <p class="hint">Cliquez pour sélectionner une cause. “Don général” est recommandé si vous ne savez pas.</p>  
+  
+              <div class="cause-grid" id="causeGrid" aria-label="Liste des causes"></div>  
+            </div>  
+  
+            <!-- 3) Infos -->  
+            <div class="fieldset" aria-label="Informations du donateur">  
+              <h3>3) Informations (optionnel)</h3>  
+  
+              <div class="field">  
+                <label for="donorName">Nom & Prénom (optionnel)</label>  
+                <input class="input" id="donorName" autocomplete="name" placeholder="Ex : Jean Dupont" />  
+              </div>  
+  
+              <div class="field">  
+                <label for="donorEmail">Email (optionnel — pour envoyer aussi par email)</label>  
+                <input class="input" id="donorEmail" type="email" autocomplete="email" placeholder="Ex : nom@email.com" />  
+              </div>  
+  
+              <div class="field">  
+                <label for="donorNote">Message (optionnel)</label>  
+                <textarea class="textarea" id="donorNote" placeholder="Ex : Je souhaite soutenir cette action. Merci."></textarea>  
+              </div>  
+  
+              <p class="hint" style="margin-top:10px;">  
+                Si vous venez d’une actualité, le contexte peut être ajouté automatiquement (titre/date/catégorie/lien).  
+              </p>  
+            </div>  
+          </div>  
+        </div>  
+  
+        <!-- Preview -->  
+        <div class="preview" aria-label="Aperçu du message">  
+          <div class="preview-head">  
+            <strong><i></i> Aperçu du message</strong>  
+            <div class="preview-meta" aria-label="Résumé">  
+              <span class="meta-pill" id="metaAmount">Montant : —</span>  
+              <span class="meta-pill" id="metaCause">Cause : —</span>  
+            </div>  
+          </div>  
+  
+          <div class="preview-body">  
+            <div class="preview-box" id="previewBox" aria-label="Contenu du message">  
+Bonjour,  
+Je souhaite faire un don à l’ONG FEJEB (Femmes, Enfants et Jeunes Épanouis du Bénin).  
+  
+Cause / Affectation : Don général (priorités terrain)  
+Montant : —  
+  
+Merci de me confirmer le moyen de paiement et la procédure.  
+            </div>  
+  
+            <div class="preview-actions" aria-label="Actions">  
+              <a class="btn btn-primary" id="btnWhatsApp" href="#" target="_blank" rel="noopener">Envoyer sur WhatsApp</a>  
+              <button class="btn" type="button" id="btnCopy">Copier le message</button>  
+              <a class="btn" id="btnEmail" href="#">Envoyer par email</a>  
+              <button class="btn" type="button" id="btnReset">Réinitialiser</button>  
+            </div>  
+  
+            <div class="note" id="statusNote" role="status" aria-live="polite">  
+              <b>Info :</b> Le message est prêt. Cliquez sur “Envoyer sur WhatsApp” pour contacter la responsable des dons FEJEB.  
+            </div>  
+  
+            <div class="mini-actions" aria-label="Options">  
+              <button class="mini-link" type="button" id="btnForgetContext">Oublier le contexte d’actualité</button>  
+              <a class="mini-link" href="contact.html">Besoin d’aide ? Contact</a>  
+            </div>  
+          </div>  
+        </div>
+
+      </div>  
+    </section>  
+  
+    <!-- Transparence -->  
+    <section class="section" aria-label="Transparence et redevabilité">  
+      <div class="section-head">  
+        <div>  
+          <h2>Transparence & redevabilité</h2>  
+          <p>FEJEB s’engage pour une gestion responsable : traçabilité, priorité terrain et réponse claire.</p>  
+        </div>  
+      </div>  
+  
+      <div class="grid cols-4" role="list">  
+        <article class="card" role="listitem">  
+          <h3>Traçabilité</h3>  
+          <p>Chaque don est pris en compte avec le contexte (cause + montant) pour un suivi transparent.</p>  
+        </article>  
+        <article class="card" role="listitem">  
+          <h3>Priorité terrain</h3>  
+          <p>Les actions sont orientées vers les besoins réels des communautés : femmes, enfants et jeunes.</p>  
+        </article>  
+        <article class="card" role="listitem">  
+          <h3>Impact</h3>  
+          <p>Les dons soutiennent des actions concrètes : sensibilisations, appuis et interventions.</p>  
+        </article>  
+        <article class="card" role="listitem">  
+          <h3>Dialogue</h3>  
+          <p>Vous pouvez demander des précisions : la responsable des dons confirme la procédure et l’affectation.</p>  
+        </article>  
+      </div>  
+    </section>  
+  
+    <!-- FAQ -->  
+    <section class="section" aria-label="FAQ Don">  
+      <div class="section-head">  
+        <div>  
+          <h2>FAQ — Questions fréquentes</h2>  
+          <p>Des réponses rapides, claires et institutionnelles.</p>  
+        </div>  
+      </div>  
+  
+      <div class="faq" id="faq">  
+        <div class="faq-item" data-open="false">  
+          <button class="faq-q" type="button" aria-expanded="false">  
+            <span><b>1</b> Comment se déroule le don via WhatsApp ?</span>  
+            <em>+</em>  
+          </button>  
+          <div class="faq-a">  
+            Vous choisissez un montant et une cause, puis vous envoyez le message généré via WhatsApp.  
+            La responsable des dons vous confirme le moyen de paiement et la procédure.  
+          </div>  
+        </div>  
+  
+        <div class="faq-item" data-open="false">  
+          <button class="faq-q" type="button" aria-expanded="false">  
+            <span><b>2</b> Puis-je faire un don sans indiquer mon nom ?</span>  
+            <em>+</em>  
+          </button>  
+          <div class="faq-a">  
+            Oui. Les champs “Nom & Prénom” et “Message” sont optionnels. Le suivi se fait grâce au contexte “cause + montant”.  
+          </div>  
+        </div>  
+  
+        <div class="faq-item" data-open="        false">  
+          <button class="faq-q" type="button" aria-expanded="false">  
+            <span><b>3</b> Puis-je envoyer le don par email au lieu de WhatsApp ?</span>  
+            <em>+</em>  
+          </button>  
+          <div class="faq-a">  
+            Oui. Vous pouvez cliquer sur “Envoyer par email”. WhatsApp reste recommandé pour un suivi plus rapide.  
+          </div>  
+        </div>  
+
+        <div class="faq-item" data-open="false">  
+          <button class="faq-q" type="button" aria-expanded="false">  
+            <span><b>4</b> À quoi sert le “contexte d’actualité” ?</span>  
+            <em>+</em>  
+          </button>  
+          <div class="faq-a">  
+            Si vous venez d’une actualité, le message peut inclure automatiquement le titre, la date, la catégorie et le lien.  
+            Cela aide FEJEB à relier votre don à une action précise et à assurer une meilleure traçabilité.  
+          </div>  
+        </div>  
+
+        <div class="faq-item" data-open="false">  
+          <button class="faq-q" type="button" aria-expanded="false">  
+            <span><b>5</b> Comment FEJEB confirme la réception et l’affectation ?</span>  
+            <em>+</em>  
+          </button>  
+          <div class="faq-a">  
+            Après l’envoi de votre message, la responsable des dons vous confirme la procédure et le moyen de paiement,  
+            puis vous répond sur l’affectation (cause choisie) et les modalités de suivi.  
+          </div>  
+        </div>  
+      </div>  
+    </section>  
+  </main>  
+
+  <footer role="contentinfo">  
+    <div class="container">  
+      <div class="footer-box">  
+        <p><b>© FEJEB</b> — Tous droits réservés.</p>  
+        <p>Organisation à but non lucratif, apolitique et laïque — Nikki (Borgou), République du Bénin.</p>  
+        <p class="line"><b>Site réalisé par DineTech</b></p>  
+      </div>  
+    </div>  
+  </footer>  
+
+  <script>  
+    /* =========================  
+       FEJEB — JS (Menu mobile + Don + FAQ)  
+       ========================= */  
+
+    (function () {  
+      const openBtn = document.getElementById("openMenu");  
+      const closeBtn = document.getElementById("closeMenu");  
+      const drawer = document.getElementById("mobileDrawer");  
+      const backdrop = document.getElementById("drawerBackdrop");  
+      if (!openBtn || !closeBtn || !drawer || !backdrop) return;  
+
+      let lastFocus = null;  
+
+      const setOpenState = (open) => {  
+        document.body.classList.toggle("is-open", open);  
+        drawer.hidden = !open;  
+        backdrop.hidden = !open;  
+        openBtn.setAttribute("aria-expanded", String(open));  
+
+        if (open) {  
+          lastFocus = document.activeElement;  
+          const firstLink = drawer.querySelector("a, button");  
+          if (firstLink) firstLink.focus();  
+          document.body.style.overflow = "hidden";  
+        } else {  
+          document.body.style.overflow = "";  
+          if (lastFocus && typeof lastFocus.focus === "function") lastFocus.focus();  
+        }  
+      };  
+
+      openBtn.addEventListener("click", () => setOpenState(true));  
+      closeBtn.addEventListener("click", () => setOpenState(false));  
+      backdrop.addEventListener("click", () => setOpenState(false));  
+
+      document.addEventListener("keydown", (e) => {  
+        if (!document.body.classList.contains("is-open")) return;  
+        if (e.key === "Escape") setOpenState(false);  
+      });  
+
+      document.addEventListener("keydown", (e) => {  
+        if (!document.body.classList.contains("is-open")) return;  
+        if (e.key !== "Tab") return;  
+
+        const focusable = drawer.querySelectorAll("a, button");  
+        if (!focusable.length) return;  
+
+        const first = focusable[0];  
+        const last = focusable[focusable.length - 1];  
+
+        if (e.shiftKey && document.activeElement === first) {  
+          e.preventDefault();  
+          last.focus();  
+        } else if (!e.shiftKey && document.activeElement === last) {  
+          e.preventDefault();  
+          first.focus();  
+        }  
+      });  
+
+      drawer.addEventListener("click", (e) => {  
+        const a = e.target.closest("a");  
+        if (!a) return;  
+        setOpenState(false);  
+      });  
+    })();  
+
+    (function(){  
+      /* =========================  
+         DON — Don + Preview + Envoi  
+         ========================= */  
+
+      const PHONE_WA = "2290197391012";  
+      const EMAIL_TO = "fejeb.ong@gmail.com";  
+
+      const contextHint = document.getElementById("contextHint");  
+      const metaAmount = document.getElementById("metaAmount");  
+      const metaCause = document.getElementById("metaCause");  
+      const previewBox = document.getElementById("previewBox");  
+      const btnWhatsApp = document.getElementById("btnWhatsApp");  
+      const btnEmail = document.getElementById("btnEmail");  
+      const btnCopy = document.getElementById("btnCopy");  
+      const btnReset = document.getElementById("btnReset");  
+      const statusNote = document.getElementById("statusNote");  
+      const btnForgetContext = document.getElementById("btnForgetContext");  
+      const causeGrid = document.getElementById("causeGrid");  
+      const otherAmountWrap = document.getElementById("otherAmountWrap");  
+      const otherAmount = document.getElementById("otherAmount");  
+
+      const donorName = document.getElementById("donorName");  
+      const donorEmail = document.getElementById("donorEmail");  
+      const donorNote = document.getElementById("donorNote");  
+
+      if (!previewBox || !btnWhatsApp || !btnEmail || !btnCopy || !btnReset || !causeGrid) return;  
+
+      // Causes FEJEB (classées)  
+      const CAUSES = [  
+        { id:"general", name:"Don général (priorités terrain)", desc:"Affectation flexible selon les urgences et besoins prioritaires.", tag:"Recommandé" },  
+        { id:"sante", name:"Santé communautaire", desc:"Prévention, sensibilisation et appui aux services de santé adaptés.", tag:"Santé" },  
+        { id:"education", name:"Éducation & droits humains", desc:"Accès à l’apprentissage, inclusion, citoyenneté et protection.", tag:"Éducation" },  
+        { id:"wash", name:"Eau, hygiène & assainissement", desc:"Actions WASH et hygiène pour renforcer le mieux-être durable.", tag:"WASH" },  
+        { id:"autonomisation", name:"Formation & autonomisation", desc:"Compétences, insertion et autonomisation économique des jeunes/femmes.", tag:"Autonomisation" },  
+        { id:"cohesion", name:"Paix & cohésion sociale", desc:"Vivre-ensemble, dialogue communautaire et prévention des conflits.", tag:"Cohésion" },  
+        { id:"environnement", name:"Environnement & reboisement", desc:"Reboisement, résilience et développement durable des communautés.", tag:"Environnement" },  
+        { id:"agriculture", name:"Agriculture & moyens de subsistance", desc:"Initiatives locales et appui aux ménages pour une résilience accrue.", tag:"Agriculture" }  
+      ];  
+
+      // State  
+      const state = {  
+        amountType: null,  
+        amount: null,  
+        causeId: "general",  
+        context: null // {title, date, category, url}  
+      };  
+
+      // Helpers  
+      const formatFCFA = (n) => {  
+        try{  
+          return new Intl.NumberFormat("fr-FR").format(Number(n)) + " FCFA";  
+        }catch(_){  
+          return String(n) + " FCFA";  
+        }  
+      };  
+
+      const getCleanNumber = (v) => {  
+        if (!v) return "";  
+        return String(v).replace(/[^\d]/g,"");  
+      };  
+
+      const setNote = (html) => {  
+        if (!statusNote) return;  
+        statusNote.innerHTML = html;  
+      };  
+
+      const buildMessage = () => {  
+        const amountLine = state.amount ? formatFCFA(state.amount) : "—";  
+        const causeObj = CAUSES.find(c => c.id === state.causeId) || CAUSES[0];  
+
+        const name = (donorName && donorName.value || "").trim();  
+        const email = (donorEmail && donorEmail.value || "").trim();  
+        const note = (donorNote && donorNote.value || "").trim();  
+
+        const parts = [];  
+        parts.push("Bonjour,");  
+        parts.push("Je souhaite faire un don à l’ONG FEJEB (Femmes, Enfants et Jeunes Épanouis du Bénin).");  
+        parts.push("");  
+        parts.push("Cause / Affectation : " + causeObj.name);  
+        parts.push("Montant : " + amountLine);  
+
+        if (state.context) {  
+          parts.push("");  
+          parts.push("Contexte (actualité) :");  
+          if (state.context.title) parts.push("- Titre : " + state.context.title);  
+          if (state.context.date) parts.push("- Date : " + state.context.date);  
+          if (state.context.category) parts.push("- Catégorie : " + state.context.category);  
+          if (state.context.url) parts.push("- Lien : " + state.context.url);  
+        }  
+
+        if (name || email || note) {  
+          parts.push("");  
+          parts.push("Informations du donateur :");  
+          if (name) parts.push("- Nom : " + name);  
+          if (email) parts.push("- Email : " + email);  
+          if (note) parts.push("- Message : " + note);  
+        }  
+
+        parts.push("");  
+        parts.push("Merci de me confirmer le moyen de paiement et la procédure.");  
+
+        return parts.join("\n");  
+      };  
+
+      const syncPreview = () => {  
+        const causeObj = CAUSES.find(c => c.id === state.causeId) || CAUSES[0];  
+
+        metaAmount.textContent = "Montant : " + (state.amount ? formatFCFA(state.amount) : "—");  
+        metaCause.textContent = "Cause : " + (causeObj ? causeObj.tag : "—");  
+
+        const msg = buildMessage();  
+        previewBox.textContent = msg;  
+
+        const waText = encodeURIComponent(msg);  
+        btnWhatsApp.href = `https://wa.me/${PHONE_WA}?text=${waText}`;  
+
+        const subject = encodeURIComponent("Don — ONG FEJEB");  
+        const body = encodeURIComponent(msg);  
+        btnEmail.href = `mailto:${EMAIL_TO}?subject=${subject}&body=${body}`;  
+
+        if (!state.amount) {  
+          setNote("<b>Info :</b> Choisissez un montant pour finaliser votre message.");  
+        } else {  
+          setNote("<b>Info :</b> Le message est prêt. Cliquez sur “Envoyer sur WhatsApp” pour contacter la responsable des dons FEJEB.");  
+        }  
+      };  
+
+      // Render causes  
+      const renderCauses = () => {  
+        causeGrid.innerHTML = "";  
+        CAUSES.forEach(c => {  
+          const btn = document.createElement("button");  
+          btn.type = "button";  
+          btn.className = "cause-card";  
+          btn.setAttribute("aria-pressed", String(c.id === state.causeId));  
+          btn.dataset.causeId = c.id;  
+
+          btn.innerHTML = `  
+            <div class="cause-top">  
+              <p class="cause-name">${c.name}</p>  
+              <span class="tag"><i></i> ${c.tag}</span>  
+            </div>  
+            <p class="cause-desc">${c.desc}</p>  
+          `;  
+
+          btn.addEventListener("click", () => {  
+            state.causeId = c.id;  
+            // update pressed state  
+            causeGrid.querySelectorAll(".cause-card").forEach(el => el.setAttribute("aria-pressed","false"));  
+            btn.setAttribute("aria-pressed","true");  
+            syncPreview();  
+          });  
+
+          causeGrid.appendChild(btn);  
+        });  
+      };  
+
+      // Amount chips  
+      const amountChips = Array.from(document.querySelectorAll('.chip[data-amount]'));  
+      const setPressedChip = (active) => {  
+        amountChips.forEach(b => b.setAttribute("aria-pressed", String(b === active)));  
+      };  
+
+      amountChips.forEach(btn => {  
+        btn.addEventListener("click", () => {  
+          const v = btn.dataset.amount;  
+          setPressedChip(btn);  
+
+          if (v === "other") {  
+            state.amountType = "other";  
+            otherAmountWrap.style.display = "grid";  
+            otherAmount.focus();  
+            const cleaned = getCleanNumber(otherAmount.value);  
+            state.amount = cleaned ? Number(cleaned) : null;  
+          } else {  
+            state.amountType = "preset";  
+            otherAmountWrap.style.display = "none";  
+            state.amount = Number(v);  
+          }  
+          syncPreview();  
+        });  
+      });  
+
+      if (otherAmount) {  
+        otherAmount.addEventListener("input", () => {  
+          if (state.amountType !== "other") return;  
+          const cleaned = getCleanNumber(otherAmount.value);  
+          state.amount = cleaned ? Number(cleaned) : null;  
+          syncPreview();  
+        });  
+      }  
+
+      // Donor fields => live update  
+      [donorName, donorEmail, donorNote].forEach(el => {  
+        if (!el) return;  
+        el.addEventListener("input", () => syncPreview());  
+      });  
+
+      // Copy  
+      btnCopy.addEventListener("click", async () => {  
+        try{  
+          await navigator.clipboard.writeText(previewBox.textContent || "");  
+          setNote("<b>OK :</b> Message copié. Vous pouvez le coller dans WhatsApp ou un email.");  
+          setTimeout(syncPreview, 1400);  
+        }catch(e){  
+          setNote("<b>Info :</b> Copie impossible sur ce navigateur. Sélectionnez le texte et copiez manuellement.");  
+        }  
+      });  
+
+      // Reset  
+      btnReset.addEventListener("click", () => {  
+        state.amountType = null;  
+        state.amount = null;  
+        state.causeId = "general";  
+
+        amountChips.forEach(b => b.setAttribute("aria-pressed","false"));  
+        otherAmountWrap.style.display = "none";  
+        otherAmount.value = "";  
+
+        if (donorName) donorName.value = "";  
+        if (donorEmail) donorEmail.value = "";  
+        if (donorNote) donorNote.value = "";  
+
+        renderCauses();  
+        syncPreview();  
+      });  
+
+      // Context from actualites (query params)  
+      const readContext = () => {  
+        const url = new URL(window.location.href);  
+        const ctx = {  
+          title: (url.searchParams.get("t") || "").trim(),  
+          date: (url.searchParams.get("d") || "").trim(),  
+          category: (url.searchParams.get("c") || "").trim(),  
+          url: (url.searchParams.get("u") || "").trim()  
+        };  
+        const hasAny = ctx.title || ctx.date || ctx.category || ctx.url;  
+        if (!hasAny) return null;  
+        return ctx;  
+      };  
+
+      const applyContextUI = () => {  
+        const ctx = state.context;  
+        if (!contextHint) return;  
+        if (!ctx) {  
+          contextHint.textContent = "Aucun contexte d’actualité détecté.";  
+          return;  
+        }  
+        const parts = [];  
+        if (ctx.title) parts.push(`Titre : ${ctx.title}`);  
+        if (ctx.date) parts.push(`Date : ${ctx.date}`);  
+        if (ctx.category) parts.push(`Catégorie : ${ctx.category}`);  
+        contextHint.textContent = "Contexte détecté — " + parts.join(" • ");  
+      };  
+
+      state.context = readContext();  
+      applyContextUI();  
+
+      if (btnForgetContext) {  
+        btnForgetContext.addEventListener("click", () => {  
+          state.context = null;  
+          // nettoyer URL sans recharger  
+          try{  
+            const clean = new URL(window.location.href);  
+            ["t","d","c","u"].forEach(k => clean.searchParams.delete(k));  
+            window.history.replaceState({}, "", clean.toString());  
+          }catch(_){}  
+          applyContextUI();  
+          syncPreview();  
+          setNote("<b>OK :</b> Contexte d’actualité supprimé pour ce message.");  
+          setTimeout(syncPreview, 1400);  
+        });  
+      }  
+
+      // Init  
+      renderCauses();  
+      syncPreview();  
+    })();  
+
+    (function(){  
+      /* =========================  
+         FAQ — accordéon simple  
+         ========================= */  
+      const faq = document.getElementById("faq");  
+      if (!faq) return;  
+      faq.addEventListener("click", (e) => {  
+        const btn = e.target.closest(".faq-q");  
+        if (!btn) return;  
+        const item = btn.closest(".faq-item");  
+        if (!item) return;  
+        const isOpen = item.getAttribute("data-open") === "true";  
+        item.setAttribute("data-open", String(!isOpen));  
+        btn.setAttribute("aria-expanded", String(!isOpen));  
+      });  
+    })();  
+  </script>  
+</body>  
+</html>
