@@ -362,19 +362,44 @@
        ========================= */
     main{ padding: 26px 0 56px; }
 
+    /* HERO avec image fond.jpg + overlay (comme les autres pages FEJEB) */
     .hero{
       margin-top: 14px;
       border-radius: calc(var(--radius-xl) + 6px);
       border: 1px solid var(--stroke);
-      background:
-        radial-gradient(900px 420px at 25% 0%, rgba(0,168,107,.14), transparent 60%),
-        radial-gradient(900px 420px at 75% 0%, rgba(11,94,215,.14), transparent 60%),
-        linear-gradient(180deg, rgba(255,255,255,.86), rgba(255,255,255,.70));
       box-shadow: var(--shadow);
       overflow: hidden;
       position: relative;
+      background: rgba(255,255,255,.72);
     }
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.88), rgba(255,255,255,.72)),
+        url("fond.jpg");
+      background-size: cover;
+      background-position: center;
+      filter: saturate(1.05) contrast(1.02);
+      transform: scale(1.02);
+      z-index: 0;
+    }
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(900px 420px at 25% 0%, rgba(0,168,107,.16), transparent 60%),
+        radial-gradient(900px 420px at 75% 0%, rgba(11,94,215,.16), transparent 60%),
+        linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.05));
+      z-index: 0;
+      pointer-events:none;
+    }
+
     .hero-inner{
+      position: relative;
+      z-index: 1;
       padding: 26px 18px;
       display: grid;
       gap: 14px;
@@ -394,11 +419,12 @@
       padding: 10px 12px;
       border-radius: 999px;
       border: 1px solid rgba(11,94,215,.22);
-      background: rgba(11,94,215,.07);
+      background: rgba(255,255,255,.80);
       color: rgba(11,18,32,.92);
       font-weight: 900;
       width: fit-content;
       font-size: 14px;
+      box-shadow: 0 10px 24px rgba(2,8,23,.06);
     }
     .badge i{
       width: 10px; height: 10px;
@@ -412,18 +438,20 @@
       font-size: clamp(28px, 3.7vw, 40px);
       line-height: 1.12;
       letter-spacing: -0.4px;
+      text-shadow: 0 2px 18px rgba(255,255,255,.55);
     }
     .lead{
       margin: 0;
-      color: rgba(11,18,32,.84);
+      color: rgba(11,18,32,.86);
       font-size: 18px;
       max-width: 70ch;
+      text-shadow: 0 2px 18px rgba(255,255,255,.55);
     }
 
     .panel{
       padding: 16px;
       border-radius: var(--radius-xl);
-      background: rgba(255,255,255,.78);
+      background: rgba(255,255,255,.86);
       border: 1px solid rgba(15,23,42,.10);
       box-shadow: 0 14px 34px rgba(2,8,23,.08);
       display: grid;
@@ -622,7 +650,7 @@
       line-height: 1.6;
     }
 
-    /* Preview */
+    /* Preview (desktop) */
     .preview{
       border: 1px solid rgba(15,23,42,.10);
       background: rgba(255,255,255,.90);
@@ -632,8 +660,11 @@
       position: sticky;
       top: 92px;
     }
+
+    /* MOBILE: pas d’aperçu (comme tu l’as demandé) */
     @media (max-width: 979px){
-      .preview{ position: static; }
+      .preview{ display: none; }
+      .board{ grid-template-columns: 1fr; }
     }
 
     .preview-media{
@@ -750,6 +781,7 @@
       place-items: center;
     }
 
+    /* SCROLL dans la fenêtre (desktop + mobile) */
     .modal-body{
       overflow: auto;
       -webkit-overflow-scrolling: touch;
@@ -757,6 +789,7 @@
       display: grid;
       gap: 12px;
     }
+
     .modal-grid{
       display: grid;
       gap: 12px;
@@ -843,28 +876,34 @@
       transform: translateX(-50%) translateY(-2px);
     }
 
-    /* Footer */
+   /* Footer */
     footer{
-      padding: 28px 0 44px;
+      padding: 34px 0 46px;
       color: rgba(11,18,32,.88);
     }
+
     .footer-box{
       border-radius: var(--radius-xl);
-      border: 1px solid var(--stroke);
-      background: rgba(255,255,255,.78);
-      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(255,255,255,.10);
+      background:
+        radial-gradient(900px 380px at 10% 0%, rgba(0,168,107,.25), transparent 60%),
+        radial-gradient(900px 380px at 70% 0%, rgba(11,94,215,.25), transparent 60%),
+        linear-gradient(135deg, #0B1B33, #062048);
+      box-shadow: var(--shadow);
       padding: 18px;
+      color: rgba(255,255,255,.92);
     }
     .footer-box p{
       margin: 0;
-      color: var(--muted);
-      font-size: 16px;
-      line-height: 1.65;
+      font-size: 15.5px;
+      line-height: 1.7;
+      color: rgba(255,255,255,.86);
     }
     .footer-box .line{
-      margin-top: 10px;
+      margin-top: 8px;
       padding-top: 10px;
-      border-top: 1px dashed rgba(15,23,42,.18);
+      border-top: 1px dashed rgba(255,255,255,.22);
+      color: rgba(255,255,255,.82);
     }
 
     @media (prefers-reduced-motion: reduce){
@@ -1066,7 +1105,7 @@
           </div>
         </div>
 
-        <!-- Colonne droite : aperçu sélectionné -->
+        <!-- Colonne droite : aperçu sélectionné (desktop seulement) -->
         <aside class="preview" aria-label="Aperçu de l’actualité sélectionnée">
           <div class="preview-media">
             <img id="previewImg" src="logo.png" alt="Illustration de l’actualité" class="is-logo" />
@@ -1241,7 +1280,7 @@
        FEJEB — ACTUALITÉS (CSV -> UI + SEO + Partage)
        ========================= */
     (function(){
-      const CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQF_fvn6d07XjnISJ6j-_qqCuagDHHSUV4afibtXf6iRlSCZ9qvMEW89UKO5X9WlcIL7FjWxfQX8Yzz/pub?gid=0&single=true&output=csv";
+            const CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQF_fvn6d07XjnISJ6j-_qqCuagDHHSUV4afibtXf6iRlSCZ9qvMEW89UKO5X9WlcIL7FjWxfQX8Yzz/pub?gid=0&single=true&output=csv";
       const FALLBACK_IMG = "logo.png";
 
       const elList = document.getElementById("newsList");
@@ -1252,6 +1291,7 @@
       const elError = document.getElementById("errorBox");
       const elActiveFilter = document.getElementById("activeFilterLabel");
 
+      // Preview (desktop)
       const previewImg = document.getElementById("previewImg");
       const previewTitle = document.getElementById("previewTitle");
       const previewMeta = document.getElementById("previewMeta");
@@ -1263,6 +1303,7 @@
       const btnSupport = document.getElementById("btnSupport");
       const btnCopy = document.getElementById("btnCopy");
 
+      // Modal
       const modalBackdrop = document.getElementById("modalBackdrop");
       const modalDialog = document.getElementById("modalDialog");
       const modalClose = document.getElementById("modalClose");
@@ -1281,7 +1322,6 @@
       const toast = document.getElementById("toast");
 
       // Meta refs
-      const metaTitle = document.querySelector("title#metaTitle") || document.querySelector("title");
       const metaDesc = document.getElementById("metaDesc");
       const canonicalLink = document.getElementById("canonicalLink");
       const ogTitle = document.getElementById("ogTitle");
@@ -1302,8 +1342,9 @@
       const norm = (s) => String(s ?? "").trim();
       const safeText = (s) => norm(s).replace(/\s+/g, " ").trim();
       const stripHtml = (s) => safeText(String(s ?? "").replace(/<[^>]*>/g, " "));
+
       const toKey = (row) => {
-        // clé stable sans "slug": on combine titre + date + categorie
+        // clé stable sans "slug": titre + date + categorie
         const t = safeText(row.titre).toLowerCase();
         const d = safeText(row.date).toLowerCase();
         const c = safeText(row.categorie).toLowerCase();
@@ -1312,7 +1353,6 @@
 
       const parseDateFR = (s) => {
         const v = safeText(s);
-        // formats tolérés : dd/mm/yyyy, dd-mm-yyyy, yyyy-mm-dd
         if (!v) return null;
 
         // yyyy-mm-dd
@@ -1331,7 +1371,6 @@
           return Number.isNaN(dt.getTime()) ? null : dt;
         }
 
-        // fallback: Date.parse
         const dt = new Date(v);
         return Number.isNaN(dt.getTime()) ? null : dt;
       };
@@ -1343,48 +1382,34 @@
       };
 
       function csvParse(text){
-        // CSV robuste (gère guillemets et virgules)
+        // CSV robuste (gère guillemets/virgules)
         const rows = [];
         let i = 0, field = "", row = [], inQuotes = false;
 
         while (i < text.length) {
           const c = text[i];
 
-          if (c === '"' ) {
+          if (c === '"') {
             if (inQuotes && text[i+1] === '"') { field += '"'; i += 2; continue; }
-            inQuotes = !inQuotes;
-            i++;
-            continue;
+            inQuotes = !inQuotes; i++; continue;
           }
 
           if (!inQuotes && (c === "," || c === "\n" || c === "\r")) {
-            if (c === ",") {
-              row.push(field);
-              field = "";
-              i++;
-              continue;
-            }
-            // newline (support \r\n, \n, \r)
+            if (c === ",") { row.push(field); field = ""; i++; continue; }
             if (c === "\r" && text[i+1] === "\n") i++;
-            row.push(field);
-            field = "";
-            rows.push(row);
-            row = [];
-            i++;
-            continue;
+            row.push(field); field = "";
+            rows.push(row); row = [];
+            i++; continue;
           }
 
-          field += c;
-          i++;
+          field += c; i++;
         }
 
-        // last field
         if (field.length || row.length) {
           row.push(field);
           rows.push(row);
         }
 
-        // remove empty trailing rows
         return rows.filter(r => r.some(cell => safeText(cell).length));
       }
 
@@ -1395,12 +1420,14 @@
       };
 
       function showToast(msg){
+        if (!toast) return;
         toast.textContent = msg;
         toast.classList.add("show");
         setTimeout(() => toast.classList.remove("show"), 1200);
       }
 
       function setImg(imgEl, url){
+        if (!imgEl) return;
         const u = safeText(url);
         imgEl.classList.remove("is-logo");
         imgEl.src = u ? u : FALLBACK_IMG;
@@ -1416,7 +1443,6 @@
       function parseTags(s){
         const raw = safeText(s);
         if (!raw) return [];
-        // accepte séparateurs : virgule, point-virgule, espaces multiples
         return raw
           .split(/[;,]/g)
           .map(x => safeText(x))
@@ -1444,6 +1470,7 @@
       }
 
       function buildChips(categories){
+        if (!elChips) return;
         elChips.innerHTML = "";
 
         const mk = (label) => {
@@ -1454,8 +1481,12 @@
           b.setAttribute("aria-pressed", label === activeCategory ? "true" : "false");
           b.addEventListener("click", () => {
             activeCategory = label;
-            [...elChips.querySelectorAll(".chip")].forEach(x => x.setAttribute("aria-pressed", x.textContent === label ? "true" : "false"));
-            elActiveFilter.textContent = label === "Toutes" ? "Toutes les actualités" : ("Catégorie : " + label);
+            [...elChips.querySelectorAll(".chip")].forEach(x =>
+              x.setAttribute("aria-pressed", x.textContent === label ? "true" : "false")
+            );
+            if (elActiveFilter) {
+              elActiveFilter.textContent = label === "Toutes" ? "Toutes les actualités" : ("Catégorie : " + label);
+            }
             applyFilters();
           });
           return b;
@@ -1465,60 +1496,25 @@
         categories.forEach(cat => elChips.appendChild(mk(cat)));
       }
 
-      function applyFilters(){
-        const q = safeText(elSearch.value).toLowerCase();
-        const inCat = (row) => {
-          if (activeCategory === "Toutes") return true;
-          return safeText(row.categorie).toLowerCase() === activeCategory.toLowerCase();
-        };
-
-        filtered = sortByDateDesc(
-          all.filter(row => {
-            if (!inCat(row)) return false;
-            if (!q) return true;
-
-            const hay = [
-              safeText(row.titre),
-              safeText(row.categorie),
-              stripHtml(row.contenu),
-              parseTags(row.tags).join(" ")
-            ].join(" ").toLowerCase();
-
-            return hay.includes(q);
-          })
-        );
-
-        renderList();
-        if (!filtered.length) {
-          setPreviewEmpty("Aucune actualité trouvée", "Essaie de modifier la recherche ou change de catégorie.", true);
-          return;
-        }
-
-        // si sélection invalide, reprendre le 1er
-        const keep = filtered.find(x => x._id === selectedId);
-        if (!keep) select(filtered[0]._id, { scroll: false });
-        updateCount();
-      }
-
       function updateCount(){
-        elCount.textContent = filtered.length + " actualité(s) affichée(s).";
+        if (elCount) elCount.textContent = filtered.length + " actualité(s) affichée(s).";
       }
 
       function setPreviewEmpty(title, meta, disable){
-        previewTitle.textContent = title;
-        previewMeta.innerHTML = "<span>" + meta + "</span>";
-        previewExcerpt.textContent = "—";
-        previewTopline.innerHTML = '<span class="tag">Actualités</span>';
-        setImg(previewImg, FALLBACK_IMG);
-        previewImg.classList.add("is-logo");
+        if (previewTitle) previewTitle.textContent = title;
+        if (previewMeta) previewMeta.innerHTML = "<span>" + meta + "</span>";
+        if (previewExcerpt) previewExcerpt.textContent = "—";
+        if (previewTopline) previewTopline.innerHTML = '<span class="tag">Actualités</span>';
+        if (previewImg) { setImg(previewImg, FALLBACK_IMG); previewImg.classList.add("is-logo"); }
 
-        btnRead.disabled = disable;
-        btnShare.disabled = disable;
-        btnSupport.disabled = disable;
-        btnCopy.disabled = disable;
+        if (btnRead) btnRead.disabled = disable;
+        if (btnShare) btnShare.disabled = disable;
+        if (btnSupport) btnSupport.disabled = disable;
+        if (btnCopy) btnCopy.disabled = disable;
       }
 
       function renderList(){
+        if (!elList) return;
         elList.innerHTML = "";
 
         if (!filtered.length) {
@@ -1554,7 +1550,6 @@
           const tagCat = document.createElement("span");
           tagCat.className = "tag";
           tagCat.textContent = cat;
-
           top.appendChild(tagCat);
 
           if (isFeatured(row.featured)) {
@@ -1568,13 +1563,13 @@
           tTitle.className = "news-title";
           tTitle.textContent = safeText(row.titre) || "Sans titre";
 
-          const ex = document.createElement("p");
-          ex.className = "news-excerpt";
-          ex.textContent = excerptFrom(row.contenu);
-
           const meta = document.createElement("div");
           meta.className = "meta-line";
           meta.textContent = date;
+
+          const ex = document.createElement("p");
+          ex.className = "news-excerpt";
+          ex.textContent = excerptFrom(row.contenu);
 
           body.appendChild(top);
           body.appendChild(tTitle);
@@ -1584,7 +1579,11 @@
           card.appendChild(thumb);
           card.appendChild(body);
 
-          const open = () => select(row._id, { scroll: false });
+          const open = () => {
+            select(row._id, { scroll: false });
+            // MOBILE: ouvre directement la lecture (vu qu’il n’y a pas d’aperçu)
+            if (window.matchMedia("(max-width: 979px)").matches) openDetail(row);
+          };
 
           card.addEventListener("click", open);
           card.addEventListener("keydown", (e) => {
@@ -1601,9 +1600,7 @@
       }
 
       function buildShareUrl(row){
-        // lien partageable: actualites.html#actu=<id>
-        const base = "https://fejebong.org/actualites.html";
-        return base + "#actu=" + row._id;
+        return "https://fejebong.org/actualites.html#actu=" + row._id;
       }
 
       function setMetaForList(){
@@ -1625,14 +1622,12 @@
         if (twDesc) twDesc.setAttribute("content", "Suivez les activités et résultats de l’ONG FEJEB. Partage et soutien en un clic.");
         if (twImg) twImg.setAttribute("content", img);
 
-        // JSON-LD article vide
         if (ldArticle) ldArticle.textContent = "";
       }
 
       function setMetaForArticle(row){
         const t = safeText(row.titre) || "Actualité — ONG FEJEB";
         const c = safeText(row.categorie) || "Actualités";
-        const d = fmtDate(row.date);
         const desc = excerptFrom(row.contenu);
         const url = buildShareUrl(row);
         const imgUrl = safeText(row.image) ? safeText(row.image) : "https://fejebong.org/logo.png";
@@ -1650,9 +1645,8 @@
         if (twDesc) twDesc.setAttribute("content", desc);
         if (twImg) twImg.setAttribute("content", imgUrl);
 
-        // JSON-LD NewsArticle
         const published = parseDateFR(row.date);
-        const iso = published ? new Date(published.getTime() - (published.getTimezoneOffset()*60000)).toISOString().slice(0,10) : null;
+        const iso = published ? new Date(published.getTime() - (published.getTimezoneOffset()*60000)).toISOString().slice(0,10) : undefined;
 
         const articleLd = {
           "@context":"https://schema.org",
@@ -1660,79 +1654,104 @@
           "headline": t,
           "description": desc,
           "image": [ imgUrl ],
-          "datePublished": iso || undefined,
+          "datePublished": iso,
           "mainEntityOfPage": { "@type":"WebPage", "@id": url },
           "publisher": { "@id":"https://fejebong.org/#organization" },
           "about": [ c ],
           "inLanguage": "fr"
         };
 
-        // clean undefined
-        const clean = (obj) => JSON.parse(JSON.stringify(obj));
-        if (ldArticle) ldArticle.textContent = JSON.stringify(clean(articleLd));
+        if (ldArticle) ldArticle.textContent = JSON.stringify(JSON.parse(JSON.stringify(articleLd)));
       }
 
-      function select(id, opts){
+      function applyFilters(){
+        const q = safeText(elSearch?.value).toLowerCase();
+
+        const inCat = (row) => {
+          if (activeCategory === "Toutes") return true;
+          return safeText(row.categorie).toLowerCase() === activeCategory.toLowerCase();
+        };
+
+        filtered = sortByDateDesc(
+          all.filter(row => {
+            if (!inCat(row)) return false;
+            if (!q) return true;
+
+            const hay = [
+              safeText(row.titre),
+              safeText(row.categorie),
+              stripHtml(row.contenu),
+              parseTags(row.tags).join(" ")
+            ].join(" ").toLowerCase();
+
+            return hay.includes(q);
+          })
+        );
+
+        renderList();
+
+        if (!filtered.length) {
+          setPreviewEmpty("Aucune actualité trouvée", "Essaie de modifier la recherche ou change de catégorie.", true);
+          return;
+        }
+
+        const keep = filtered.find(x => x._id === selectedId);
+        if (!keep) select(filtered[0]._id, { scroll: false });
+        updateCount();
+      }
+
+      function select(id){
         const row = filtered.find(x => x._id === id) || all.find(x => x._id === id);
         if (!row) return;
 
         selectedId = id;
 
-        // update selection UI
-        [...elList.querySelectorAll(".news-card")].forEach(card => {
-          card.setAttribute("aria-selected", "false");
-        });
-
-        const idx = filtered.findIndex(x => x._id === id);
-        if (idx >= 0) {
-          const card = elList.children[idx];
+        // update aria-selected
+        if (elList) {
+          [...elList.querySelectorAll(".news-card")].forEach(card => card.setAttribute("aria-selected", "false"));
+          const idx = filtered.findIndex(x => x._id === id);
+          const card = idx >= 0 ? elList.children[idx] : null;
           if (card) card.setAttribute("aria-selected", "true");
         }
 
-        // preview top tags
         const cat = safeText(row.categorie) || "Actualités";
         const date = fmtDate(row.date);
 
-        previewTopline.innerHTML = "";
-        const tagCat = document.createElement("span");
-        tagCat.className = "tag";
-        tagCat.textContent = cat;
-        previewTopline.appendChild(tagCat);
+        if (previewTopline) {
+          previewTopline.innerHTML = "";
+          const tagCat = document.createElement("span");
+          tagCat.className = "tag";
+          tagCat.textContent = cat;
+          previewTopline.appendChild(tagCat);
 
-        if (isFeatured(row.featured)) {
-          const t = document.createElement("span");
-          t.className = "tag featured";
-          t.textContent = "À la une";
-          previewTopline.appendChild(t);
+          if (isFeatured(row.featured)) {
+            const t = document.createElement("span");
+            t.className = "tag featured";
+            t.textContent = "À la une";
+            previewTopline.appendChild(t);
+          }
         }
 
-        previewTitle.textContent = safeText(row.titre) || "Sans titre";
-        previewMeta.innerHTML = "<span>" + date + "</span><span>•</span><span>" + cat + "</span>";
-        previewExcerpt.textContent = excerptFrom(row.contenu);
+        if (previewTitle) previewTitle.textContent = safeText(row.titre) || "Sans titre";
+        if (previewMeta) previewMeta.innerHTML = "<span>" + date + "</span><span>•</span><span>" + cat + "</span>";
+        if (previewExcerpt) previewExcerpt.textContent = excerptFrom(row.contenu);
+        if (previewImg) setImg(previewImg, row.image);
 
-        setImg(previewImg, row.image);
-
-        btnRead.disabled = false;
-        btnShare.disabled = false;
-        btnSupport.disabled = false;
-        btnCopy.disabled = false;
-
-        btnRead.onclick = () => openDetail(row);
-        btnShare.onclick = () => shareRow(row);
-        btnCopy.onclick = () => copyLink(buildShareUrl(row));
-        btnSupport.onclick = () => supportRow(row);
-
-        if (opts && opts.scroll) {
-          document.querySelector(".preview")?.scrollIntoView({ behavior: "smooth", block:"start" });
+        if (btnRead) {
+          btnRead.disabled = false;
+          btnRead.onclick = () => openDetail(row);
         }
-      }
-
-      function copyLink(url){
-        const text = url;
-        if (navigator.clipboard && navigator.clipboard.writeText) {
-          navigator.clipboard.writeText(text).then(() => showToast("Lien copié ✅")).catch(() => fallbackCopy(text));
-        } else {
-          fallbackCopy(text);
+        if (btnShare) {
+          btnShare.disabled = false;
+          btnShare.onclick = () => shareRow(row);
+        }
+        if (btnCopy) {
+          btnCopy.disabled = false;
+          btnCopy.onclick = () => copyLink(buildShareUrl(row));
+        }
+        if (btnSupport) {
+          btnSupport.disabled = false;
+          btnSupport.onclick = () => supportRow(row);
         }
       }
 
@@ -1746,6 +1765,15 @@
         try { document.execCommand("copy"); showToast("Lien copié ✅"); }
         catch(e){ showToast("Copie impossible"); }
         document.body.removeChild(ta);
+      }
+
+      function copyLink(url){
+        const text = url;
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(() => showToast("Lien copié ✅")).catch(() => fallbackCopy(text));
+        } else {
+          fallbackCopy(text);
+        }
       }
 
       function shareRow(row){
@@ -1772,91 +1800,85 @@
           "Date : " + date + "\n\n" +
           "Merci de me préciser la meilleure manière de contribuer (don / partenariat / appui matériel).\n";
 
-        const url = "don.html?message=" + encodeURIComponent(msg);
-        window.location.href = url;
+        window.location.href = "don.html?message=" + encodeURIComponent(msg);
       }
 
       function openDetail(row){
         lastFocus = document.activeElement;
 
-        // URL hash
         const hash = "#actu=" + row._id;
         if (location.hash !== hash) history.pushState(null, "", hash);
 
-        // SEO dynamic
         setMetaForArticle(row);
 
-        // Fill modal
         const cat = safeText(row.categorie) || "Actualités";
         const date = fmtDate(row.date);
         const tags = parseTags(row.tags);
 
-        detailTopline.innerHTML = "";
-        const t1 = document.createElement("span");
-        t1.className = "tag";
-        t1.textContent = cat;
-        detailTopline.appendChild(t1);
+        if (detailTopline) {
+          detailTopline.innerHTML = "";
+          const t1 = document.createElement("span");
+          t1.className = "tag";
+          t1.textContent = cat;
+          detailTopline.appendChild(t1);
 
-        if (isFeatured(row.featured)) {
-          const t = document.createElement("span");
-          t.className = "tag featured";
-          t.textContent = "À la une";
-          detailTopline.appendChild(t);
+          if (isFeatured(row.featured)) {
+            const t = document.createElement("span");
+            t.className = "tag featured";
+            t.textContent = "À la une";
+            detailTopline.appendChild(t);
+          }
+
+          tags.slice(0, 6).forEach(tag => {
+            const tt = document.createElement("span");
+            tt.className = "tag";
+            tt.textContent = tag;
+            detailTopline.appendChild(tt);
+          });
         }
 
-        tags.slice(0, 6).forEach(tag => {
-          const tt = document.createElement("span");
-          tt.className = "tag";
-          tt.textContent = tag;
-          detailTopline.appendChild(tt);
-        });
+        if (detailTitle) detailTitle.textContent = safeText(row.titre) || "Sans titre";
+        if (detailMeta) detailMeta.innerHTML = "<span>" + date + "</span><span>•</span><span>" + cat + "</span>";
+        if (detailContent) detailContent.textContent = stripHtml(row.contenu) || "—";
+        if (detailImg) setImg(detailImg, row.image);
 
-        detailTitle.textContent = safeText(row.titre) || "Sans titre";
-        detailMeta.innerHTML = "<span>" + date + "</span><span>•</span><span>" + cat + "</span>";
-        detailContent.textContent = stripHtml(row.contenu) || "—";
-
-        setImg(detailImg, row.image);
-
-        // Share links
         const shareUrl = buildShareUrl(row);
         const shareText = "ONG FEJEB — " + (safeText(row.titre) || "Actualité");
-        detailWhatsApp.href = "https://wa.me/?text=" + encodeURIComponent(shareText + "\n" + shareUrl);
-        detailFacebook.href = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(shareUrl);
+        if (detailWhatsApp) detailWhatsApp.href = "https://wa.me/?text=" + encodeURIComponent(shareText + "\n" + shareUrl);
+        if (detailFacebook) detailFacebook.href = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(shareUrl);
 
-        // Support
         const msg =
           "Bonjour FEJEB,\n\n" +
           "Je souhaite soutenir cette action : " + (safeText(row.titre) || "Actualité FEJEB") + ".\n" +
           "Catégorie : " + cat + "\n" +
           "Date : " + date + "\n\n" +
           "Merci de me préciser la meilleure manière de contribuer (don / partenariat / appui matériel).\n";
+        if (detailSupport) detailSupport.href = "don.html?message=" + encodeURIComponent(msg);
 
-        detailSupport.href = "don.html?message=" + encodeURIComponent(msg);
+        if (detailCopy) detailCopy.onclick = () => copyLink(shareUrl);
+        if (detailShare) detailShare.onclick = () => shareRow(row);
 
-        // Buttons
-        detailCopy.onclick = () => copyLink(shareUrl);
-        detailShare.onclick = () => shareRow(row);
-
-        // Open modal
-        modalBackdrop.hidden = false;
-        modalBackdrop.style.display = "block";
-        modalBackdrop.setAttribute("aria-hidden", "false");
+        // Open modal (scroll OK)
+        if (modalBackdrop) {
+          modalBackdrop.hidden = false;
+          modalBackdrop.style.display = "block";
+          modalBackdrop.setAttribute("aria-hidden", "false");
+        }
         document.body.style.overflow = "hidden";
 
-        // Focus
-        setTimeout(() => modalDialog.focus(), 0);
+        setTimeout(() => { if (modalDialog) modalDialog.focus(); }, 0);
       }
 
       function closeDetail(){
-        modalBackdrop.hidden = true;
-        modalBackdrop.style.display = "none";
-        modalBackdrop.setAttribute("aria-hidden", "true");
+        if (modalBackdrop) {
+          modalBackdrop.hidden = true;
+          modalBackdrop.style.display = "none";
+          modalBackdrop.setAttribute("aria-hidden", "true");
+        }
         document.body.style.overflow = "";
 
-        // back to list SEO
         setMetaForList();
 
-        // remove hash without reloading
         if (location.hash.startsWith("#actu=")) {
           history.pushState(null, "", "actualites.html");
         }
@@ -1865,16 +1887,17 @@
       }
 
       // Modal events
-      modalClose.addEventListener("click", closeDetail);
-      modalBackdrop.addEventListener("click", (e) => {
+      if (modalClose) modalClose.addEventListener("click", closeDetail);
+      if (modalBackdrop) modalBackdrop.addEventListener("click", (e) => {
         if (e.target === modalBackdrop) closeDetail();
       });
+
       document.addEventListener("keydown", (e) => {
         if (!modalBackdrop || modalBackdrop.hidden) return;
         if (e.key === "Escape") closeDetail();
       });
 
-      // Focus trap modal (simple)
+      // Focus trap modal
       document.addEventListener("keydown", (e) => {
         if (!modalBackdrop || modalBackdrop.hidden) return;
         if (e.key !== "Tab") return;
@@ -1895,7 +1918,7 @@
       });
 
       // Search event
-      elSearch.addEventListener("input", () => applyFilters());
+      if (elSearch) elSearch.addEventListener("input", () => applyFilters());
 
       async function init(){
         try{
@@ -1911,7 +1934,6 @@
           const headers = rows[0].map(h => safeText(h).toLowerCase());
           const data = rows.slice(1).map(r => buildRow(headers, r));
 
-          // normalize keys expected
           all = data.map((r) => {
             const obj = {
               titre: r["titre"] ?? r["title"] ?? "",
@@ -1926,64 +1948,54 @@
             return obj;
           });
 
-          // remove invalid empty titles rows
           all = all.filter(x => safeText(x.titre).length || safeText(x.contenu).length);
 
-          // categories
           const cats = Array.from(new Set(all.map(x => safeText(x.categorie)).filter(Boolean)))
             .sort((a,b) => a.localeCompare(b, "fr", { sensitivity:"base" }));
 
           buildChips(cats);
 
-          // initial filter
           filtered = sortByDateDesc(all);
-          elLoading.hidden = true;
-          elLoading.style.display = "none";
-          elError.hidden = true;
 
-          // Render
+          if (elLoading) { elLoading.hidden = true; elLoading.style.display = "none"; }
+          if (elError) { elError.hidden = true; elError.style.display = "none"; }
+
           applyFilters();
 
-          // Select first by default (if exists)
           if (filtered.length) {
-            select(filtered[0]._id, { scroll: false });
+            select(filtered[0]._id);
           } else {
             setPreviewEmpty("Aucune actualité disponible", "Le registre est vide pour le moment.", true);
           }
 
-          // Open detail from hash if present
+          // Ouvrir une actu depuis l’URL
           if (location.hash.startsWith("#actu=")) {
-            const id = decodeURIComponent(location.hash.replace("#actu=", ""));
-            // id already encoded; we stored _id encoded, so we compare raw string
-            const row = all.find(x => x._id === encodeURIComponent(id)) || all.find(x => x._id === (location.hash.replace("#actu=","")));
-            const target = row || all.find(x => x._id === (location.hash.replace("#actu=","")));
+            const id = location.hash.replace("#actu=", "");
+            const target = all.find(x => x._id === id);
             if (target) {
-              // ensure it appears in filtered
               selectedId = target._id;
               applyFilters();
-              select(target._id, { scroll: false });
+              select(target._id);
               openDetail(target);
             } else {
-              // hash invalid
               history.pushState(null, "", "actualites.html");
               setMetaForList();
             }
           }
 
         }catch(err){
-          elLoading.hidden = true;
-          elLoading.style.display = "none";
-          elError.hidden = false;
+          if (elLoading) { elLoading.hidden = true; elLoading.style.display = "none"; }
+          if (elError) { elError.hidden = false; elError.style.display = ""; }
           console.error(err);
           setPreviewEmpty("Erreur de chargement", "Impossible de récupérer les actualités.", true);
         }
       }
 
       // Buttons safety
-      btnRead.disabled = true;
-      btnShare.disabled = true;
-      btnSupport.disabled = true;
-      btnCopy.disabled = true;
+      if (btnRead) btnRead.disabled = true;
+      if (btnShare) btnShare.disabled = true;
+      if (btnSupport) btnSupport.disabled = true;
+      if (btnCopy) btnCopy.disabled = true;
 
       init();
     })();
