@@ -1,0 +1,1763 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="format-detection" content="telephone=no" />
+
+  <title>Contact — ONG FEJEB | WhatsApp prioritaire, email officiel & message avec aperçu</title>
+  <meta name="description" content="Contactez l’ONG FEJEB (Femmes, Enfants et Jeunes Épanouis du Bénin) : WhatsApp (prioritaire) ou email. Composez un message institutionnel avec aperçu, puis envoyez-le en un clic." />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="theme-color" content="#0B5ED7" />
+  <meta name="color-scheme" content="light" />
+
+  <link rel="canonical" href="https://fejebong.org/contact.html" />
+  <link rel="alternate" hreflang="fr" href="https://fejebong.org/contact.html" />
+  <link rel="alternate" hreflang="x-default" href="https://fejebong.org/contact.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="ONG FEJEB" />
+  <meta property="og:title" content="Contact — ONG FEJEB" />
+  <meta property="og:description" content="WhatsApp prioritaire, email officiel et message institutionnel avec aperçu. Contact rapide, traçable et clair." />
+  <meta property="og:url" content="https://fejebong.org/contact.html" />
+  <meta property="og:image" content="https://fejebong.org/fond.jpg" />
+  <meta property="og:image:secure_url" content="https://fejebong.org/fond.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="fr_FR" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Contact — ONG FEJEB" />
+  <meta name="twitter:description" content="Composez un message officiel (aperçu en direct), puis envoyez-le via WhatsApp ou email." />
+  <meta name="twitter:image" content="https://fejebong.org/fond.jpg" />
+
+  <!-- Favicon (TES FICHIERS) -->
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="apple-touch-icon" href="favicon.png" />
+
+  <style>
+    /* =========================
+       FEJEB — CONTACT
+       Base FEJEB (même design que l'accueil)
+       ========================= */
+
+    :root{
+      --ink: #0b1220;
+      --muted: #42526b;
+      --card: rgba(255,255,255,.92);
+      --card-strong: rgba(255,255,255,.96);
+      --stroke: rgba(15, 23, 42, .12);
+
+      --brand-blue: #0B5ED7;
+      --brand-green: #00A86B;
+      --brand-cyan: #00B3C8;
+
+      --shadow: 0 18px 55px rgba(2, 8, 23, .14);
+      --shadow-soft: 0 10px 28px rgba(2, 8, 23, .10);
+
+      --radius-xl: 22px;
+      --radius-lg: 16px;
+      --radius-md: 12px;
+
+      --container: 1160px;
+
+      --fs-base: 18px;
+      --lh-base: 1.65;
+      --fs-sm: 16px;
+      --fs-lg: 20px;
+      --fs-xl: 40px;
+      --fs-h2: 28px;
+      --fs-h3: 20px;
+
+      --gap: 18px;
+    }
+
+    *{ box-sizing: border-box; }
+    html{ scroll-behavior: smooth; }
+    body{
+      margin: 0;
+      color: var(--ink);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      font-size: var(--fs-base);
+      line-height: var(--lh-base);
+
+      background:
+        radial-gradient(1200px 900px at 10% 10%, rgba(0,168,107,.18), transparent 60%),
+        radial-gradient(900px 700px at 85% 15%, rgba(11,94,215,.18), transparent 55%),
+        radial-gradient(900px 700px at 20% 85%, rgba(255,107,107,.12), transparent 55%),
+        radial-gradient(900px 700px at 85% 85%, rgba(255,193,7,.12), transparent 55%),
+        linear-gradient(135deg,
+          rgba(255, 0, 150, .10),
+          rgba(0, 204, 255, .10),
+          rgba(0, 200, 83, .10),
+          rgba(255, 193, 7, .10),
+          rgba(156, 39, 176, .10)
+        );
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    body::before{
+      content:"";
+      position: fixed;
+      inset: 0;
+      pointer-events:none;
+      background: linear-gradient(180deg, rgba(255,255,255,.42), rgba(255,255,255,.22));
+      z-index: -1;
+    }
+
+    a{ color: inherit; }
+    img{ max-width: 100%; height: auto; }
+    .sr-only{
+      position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0;
+    }
+
+    .skip-link{
+      position: absolute;
+      top: 10px; left: 10px;
+      padding: 10px 12px;
+      background: var(--card-strong);
+      border: 1px solid var(--stroke);
+      border-radius: 12px;
+      box-shadow: var(--shadow-soft);
+      transform: translateY(-140%);
+      transition: transform .2s ease;
+      z-index: 9999;
+    }
+    .skip-link:focus{ transform: translateY(0); outline: 3px solid rgba(11,94,215,.25); }
+
+    .container{
+      width: min(var(--container), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    /* =========================
+       Header / Nav
+       ========================= */
+    .site-header{
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      background: rgba(255,255,255,.70);
+      border-bottom: 1px solid var(--stroke);
+    }
+
+    .header-inner{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 0;
+      gap: 12px;
+    }
+
+    .brand{
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      min-width: 220px;
+    }
+
+    .logo{
+      width: 44px; height: 44px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: rgba(255,255,255,.82);
+      box-shadow: 0 10px 24px rgba(2,8,23,.08);
+      border: 1px solid rgba(15,23,42,.12);
+      overflow: hidden;
+      flex: 0 0 auto;
+    }
+    .logo img{
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 6px;
+      display: block;
+    }
+
+    .brand-title{
+      display: flex;
+      flex-direction: column;
+      line-height: 1.15;
+    }
+    .brand-title strong{
+      font-size: 16px;
+      letter-spacing: .2px;
+    }
+    .brand-title span{
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .nav{
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-links{
+      display: none;
+      align-items: center;
+      gap: 6px;
+      padding: 6px;
+      border-radius: 999px;
+      border: 1px solid var(--stroke);
+      background: rgba(255,255,255,.72);
+    }
+
+    .nav-links a{
+      text-decoration: none;
+      font-size: 15px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      color: rgba(11,18,32,.92);
+      transition: background .18s ease, transform .18s ease;
+      white-space: nowrap;
+    }
+    .nav-links a:hover{
+      background: rgba(11,94,215,.08);
+      transform: translateY(-1px);
+    }
+
+    .btn{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 12px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--stroke);
+      background: rgba(255,255,255,.78);
+      box-shadow: 0 10px 24px rgba(2,8,23,.06);
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+      cursor: pointer;
+      user-select: none;
+      font-size: 16px;
+    }
+    .btn:hover{ transform: translateY(-1px); box-shadow: 0 16px 34px rgba(2,8,23,.10); }
+    .btn:active{ transform: translateY(0px); }
+
+    .btn-primary{
+      border-color: rgba(11,94,215,.28);
+      background: linear-gradient(135deg, rgba(11,94,215,.98), rgba(0,168,107,.90));
+      color: #fff;
+    }
+    .btn-primary:hover{
+      background: linear-gradient(135deg, rgba(11,94,215,1), rgba(0,168,107,.98));
+    }
+
+    .btn-ghost{
+      background: rgba(255,255,255,.65);
+    }
+
+    .menu-btn{
+      width: 46px; height: 46px;
+      border-radius: 16px;
+      border: 1px solid var(--stroke);
+      background: rgba(255,255,255,.76);
+      display: grid;
+      place-items: center;
+      box-shadow: 0 10px 24px rgba(2,8,23,.06);
+      cursor: pointer;
+    }
+    .menu-btn svg{ width: 22px; height: 22px; }
+
+    @media (min-width: 1020px){
+      .nav-links{ display: flex; }
+      .menu-btn{ display: none; }
+    }
+
+    /* =========================
+       Mobile Drawer (scrollable)
+       ========================= */
+    .drawer-backdrop{
+      position: fixed;
+      inset: 0;
+      background: rgba(2,8,23,.36);
+      display: none;
+      z-index: 1200;
+    }
+    .drawer{
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      left: 10px;
+      max-width: 560px;
+      margin-left: auto;
+      background: rgba(255,255,255,.92);
+      border: 1px solid var(--stroke);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+      display: none;
+      z-index: 1300;
+      overflow: hidden;
+    }
+    .drawer-head{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 14px 10px 14px;
+      border-bottom: 1px solid var(--stroke);
+      background: rgba(255,255,255,.86);
+    }
+    .drawer-title{
+      font-weight: 900;
+      letter-spacing: .2px;
+      font-size: 16px;
+    }
+    .drawer-close{
+      width: 42px; height: 42px;
+      border-radius: 14px;
+      border: 1px solid var(--stroke);
+      background: rgba(255,255,255,.8);
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+    }
+    .drawer-body{
+      max-height: min(70vh, 520px);
+      overflow: auto;
+      -webkit-overflow-scrolling: touch;
+      padding: 10px 14px 14px 14px;
+    }
+    .drawer-nav{
+      display: grid;
+      gap: 10px;
+    }
+    .drawer-nav a{
+      text-decoration: none;
+      padding: 12px 12px;
+      border-radius: 16px;
+      border: 1px solid rgba(15,23,42,.10);
+      background: rgba(255,255,255,.78);
+      font-weight: 700;
+      font-size: 16px;
+    }
+    .drawer-actions{
+      display: grid;
+      gap: 10px;
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px dashed rgba(15,23,42,.18);
+    }
+
+    .is-open .drawer-backdrop{ display: block; }
+    .is-open .drawer{ display: block; }
+
+    /* =========================
+       Sections
+       ========================= */
+    main{ padding: 26px 0 56px; }
+
+    /* HERO (même base FEJEB) */
+    .hero{
+      margin-top: 14px;
+      border-radius: calc(var(--radius-xl) + 6px);
+      border: 1px solid var(--stroke);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+
+      background:
+        linear-gradient(90deg, rgba(2,8,23,.78) 0%, rgba(2,8,23,.52) 42%, rgba(2,8,23,.22) 100%),
+        radial-gradient(900px 480px at 20% 0%, rgba(0,168,107,.22), transparent 60%),
+        radial-gradient(900px 480px at 65% 0%, rgba(11,94,215,.22), transparent 60%),
+        url("fond.jpg");
+      background-size: cover;
+      background-position: center;
+    }
+    .hero-inner{
+      padding: 38px 18px;
+      display: grid;
+      gap: 16px;
+    }
+    @media (min-width: 920px){
+      .hero-inner{
+        grid-template-columns: 1.15fr .85fr;
+        align-items: center;
+        padding: 52px 40px;
+      }
+    }
+
+    .badge{
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.22);
+      background: rgba(255,255,255,.12);
+      color: rgba(255,255,255,.92);
+      font-weight: 800;
+      width: fit-content;
+      font-size: 14px;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      text-shadow: 0 10px 20px rgba(0,0,0,.28);
+    }
+    .badge i{
+      width: 10px; height: 10px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--brand-blue), var(--brand-green));
+      display: inline-block;
+    }
+
+    h1{
+      margin: 10px 0 10px;
+      font-size: clamp(30px, 4vw, var(--fs-xl));
+      line-height: 1.12;
+      letter-spacing: -0.4px;
+      color: #fff;
+      text-shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+    .lead{
+      margin: 0;
+      color: rgba(255,255,255,.92);
+      font-size: 19px;
+      max-width: 70ch;
+      text-shadow: 0 10px 26px rgba(0,0,0,.28);
+    }
+
+    .pills{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .pill{
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.14);
+      border: 1px solid rgba(255,255,255,.22);
+      color: rgba(255,255,255,.92);
+      font-weight: 800;
+      font-size: 14px;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      text-shadow: 0 10px 20px rgba(0,0,0,.28);
+    }
+    .pill i{
+      width: 10px; height: 10px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--brand-blue), var(--brand-green));
+      display: inline-block;
+    }
+
+    .hero-panel{
+      padding: 16px;
+      border-radius: var(--radius-xl);
+      background: rgba(255,255,255,.14);
+      border: 1px solid rgba(255,255,255,.22);
+      box-shadow: 0 18px 55px rgba(0,0,0,.22);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+    .hero-panel h3{
+      margin: 0 0 8px;
+      font-size: 18px;
+      letter-spacing: .2px;
+      color: #fff;
+      text-shadow: 0 10px 20px rgba(0,0,0,.28);
+    }
+    .hero-panel p{
+      margin: 0;
+      color: rgba(255,255,255,.90);
+      font-size: 16px;
+      line-height: 1.6;
+      text-shadow: 0 10px 20px rgba(0,0,0,.22);
+    }
+
+    .section{
+      margin-top: 22px;
+      padding: 18px;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--stroke);
+      background: var(--card);
+      box-shadow: var(--shadow-soft);
+    }
+    @media (min-width: 900px){
+      .section{ padding: 24px; }
+    }
+
+    .section-head{
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+    .section-head h2{
+      margin: 0;
+      font-size: clamp(22px, 2.6vw, var(--fs-h2));
+      line-height: 1.2;
+      letter-spacing: -0.2px;
+    }
+    .section-head p{
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+      max-width: 78ch;
+    }
+
+    .grid{
+      display: grid;
+      gap: var(--gap);
+    }
+    @media (min-width: 780px){
+      .grid.cols-3{ grid-template-columns: repeat(3, 1fr); }
+      .grid.cols-4{ grid-template-columns: repeat(4, 1fr); }
+      .grid.cols-2{ grid-template-columns: repeat(2, 1fr); }
+    }
+
+    .card{
+      padding: 16px;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(15,23,42,.10);
+      background: rgba(255,255,255,.86);
+      box-shadow: 0 14px 30px rgba(2,8,23,.06);
+      position: relative;
+      overflow: hidden;
+    }
+    .card::before{
+      content:"";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(135deg, rgba(11,94,215,.10), transparent 42%),
+        linear-gradient(225deg, rgba(0,168,107,.10), transparent 42%);
+      opacity: .75;
+    }
+    .card > *{ position: relative; z-index: 1; }
+    .card h3{
+      margin: 0 0 8px;
+      font-size: var(--fs-h3);
+      line-height: 1.25;
+    }
+    .card p{
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .mini-row{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+      align-items: center;
+    }
+    .pill-mini{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(15,23,42,.10);
+      background: rgba(255,255,255,.86);
+      font-weight: 900;
+      font-size: 12.5px;
+      color: rgba(11,18,32,.88);
+      cursor: default;
+      user-select: none;
+    }
+    .pill-mini i{
+      width: 8px; height: 8px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--brand-blue), var(--brand-green));
+      display:inline-block;
+    }
+
+    /* =========================
+       CONTACT — UI
+       ========================= */
+    .contact-layout{
+      display:grid;
+      gap: var(--gap);
+    }
+    @media (min-width: 980px){
+      .contact-layout{
+        grid-template-columns: 1.05fr .95fr;
+        align-items: start;
+      }
+    }
+
+    .panel{
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(15,23,42,.10);
+      background: rgba(255,255,255,.88);
+      box-shadow: 0 14px 30px rgba(2,8,23,.06);
+      overflow: hidden;
+    }
+    .panel-head{
+      padding: 14px 16px;
+      border-bottom: 1px solid rgba(15,23,42,.10);
+      background: rgba(255,255,255,.86);
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .panel-head strong{
+      display:inline-flex;
+      align-items:center;
+      gap: 10px;
+      font-weight: 900;
+      letter-spacing: .2px;
+      font-size: 16px;
+    }
+    .panel-head strong i{
+      width: 10px; height: 10px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--brand-blue), var(--brand-green));
+      display:inline-block;
+    }
+    .panel-body{ padding: 16px; }
+
+    .hint{
+      margin: 0;
+      color: var(--muted);
+      font-size: 15.5px;
+      line-height: 1.65;
+    }
+
+    .fieldset{
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px dashed rgba(15,23,42,.16);
+    }
+    .fieldset:first-of-type{
+      margin-top: 0;
+      padding-top: 0;
+      border-top: 0;
+    }
+    .fieldset h3{
+      margin: 0 0 10px;
+      font-size: 16.5px;
+      letter-spacing: .1px;
+    }
+
+    .field{
+      display:grid;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .field label{
+      font-weight: 900;
+      font-size: 14.5px;
+      color: rgba(11,18,32,.92);
+    }
+    .input, .textarea, .select{
+      width: 100%;
+      padding: 12px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(15,23,42,.12);
+      background: rgba(255,255,255,.92);
+      font-size: 16px;
+      outline: none;
+    }
+    .textarea{ min-height: 120px; resize: vertical; }
+
+    .channel-row{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin-top: 10px;
+    }
+    .toggle{
+      display:inline-flex;
+      align-items:center;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(15,23,42,.10);
+      background: rgba(255,255,255,.86);
+      font-weight: 1000;
+      cursor: pointer;
+      user-select: none;
+      transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease, background .15s ease;
+    }
+    .toggle:hover{ transform: translateY(-1px); box-shadow: 0 14px 30px rgba(2,8,23,.10); }
+    .toggle[aria-pressed="true"]{
+      border-color: rgba(11,94,215,.28);
+      background: linear-gradient(135deg, rgba(11,94,215,.12), rgba(0,168,107,.10));
+    }
+    .toggle .dot{
+      width: 10px; height: 10px;
+      border-radius: 999px;
+      background: rgba(15,23,42,.18);
+    }
+    .toggle[aria-pressed="true"] .dot{
+      background: linear-gradient(135deg, var(--brand-blue), var(--brand-green));
+    }
+
+    .checks{
+      display:grid;
+      gap: 10px;
+    }
+    @media (min-width: 720px){
+      .checks.cols-2{ grid-template-columns: repeat(2, 1fr); }
+    }
+    .check{
+      display:flex;
+      gap: 10px;
+      align-items:flex-start;
+      padding: 12px;
+      border-radius: 16px;
+      border: 1px solid rgba(15,23,42,.10);
+      background: rgba(255,255,255,.86);
+      box-shadow: 0 14px 30px rgba(2,8,23,.06);
+    }
+    .check input{ margin-top: 4px; }
+    .check b{
+      display:block;
+      font-weight: 1000;
+      font-size: 15px;
+      line-height: 1.25;
+    }
+    .check small{
+      display:block;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.5;
+      margin-top: 2px;
+    }
+
+    .preview{
+      background: rgba(10, 16, 28, .92);
+      color: rgba(255,255,255,.92);
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(255,255,255,.10);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .preview-head{
+      padding: 12px 14px;
+      border-bottom: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .preview-head strong{
+      display:inline-flex;
+      align-items:center;
+      gap: 10px;
+      font-weight: 1000;
+      letter-spacing: .2px;
+      font-size: 14.5px;
+    }
+    .preview-head strong i{
+      width: 10px; height: 10px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--brand-blue), var(--brand-green));
+      display:inline-block;
+    }
+    .preview-meta{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: flex-end;
+    }
+    .meta-pill{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      font-weight: 900;
+      font-size: 12.5px;
+    }
+
+    .preview-body{ padding: 14px; }
+    .preview-box{
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      padding: 12px;
+      max-height: 360px;
+      overflow: auto;
+      -webkit-overflow-scrolling: touch;
+      white-space: pre-wrap;
+      font-size: 15.5px;
+      line-height: 1.7;
+    }
+
+    .preview-actions{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .preview-actions .btn{
+      border-color: rgba(255,255,255,.12);
+      background: rgba(255,255,255,.08);
+      color: rgba(255,255,255,.92);
+      box-shadow: none;
+    }
+    .preview-actions .btn:hover{
+      background: rgba(255,255,255,.12);
+      box-shadow: 0 16px 34px rgba(0,0,0,.25);
+    }
+    .preview-actions .btn-primary{
+      background: linear-gradient(135deg, rgba(11,94,215,.98), rgba(0,168,107,.90));
+      border-color: rgba(255,255,255,.10);
+    }
+
+    .note{
+      margin-top: 10px;
+      padding: 10px 12px;
+      border-radius: 16px;
+      border: 1px solid rgba(0,168,107,.18);
+      background:
+        radial-gradient(700px 260px at 10% 10%, rgba(0,168,107,.12), transparent 60%),
+        radial-gradient(700px 260px at 90% 10%, rgba(11,94,215,.10), transparent 60%),
+        rgba(255,255,255,.06);
+      color: rgba(255,255,255,.88);
+      font-size: 14.5px;
+      line-height: 1.6;
+    }
+    .note b{ color: #fff; }
+
+    .mini-actions{
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+      align-items: center;
+    }
+    .mini-link{
+      font-size: 14.5px;
+      color: rgba(255,255,255,.86);
+      text-decoration: underline;
+      cursor: pointer;
+      background: none;
+      border: 0;
+      padding: 0;
+    }
+
+    /* Accordéon FAQ */
+    .faq{ display: grid; gap: 10px; }
+    .faq-item{
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(15,23,42,.10);
+      background: rgba(255,255,255,.86);
+      overflow: hidden;
+    }
+    .faq-q{
+      width: 100%;
+      text-align: left;
+      padding: 14px 14px;
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+      display:flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      font-weight: 1000;
+      font-size: 15.5px;
+    }
+    .faq-q span{
+      display:inline-flex;
+      align-items:center;
+      gap: 10px;
+    }
+    .faq-q span b{
+      width: 28px; height: 28px;
+      border-radius: 12px;
+      display:grid;
+      place-items:center;
+      border: 1px solid rgba(15,23,42,.10);
+      background: rgba(255,255,255,.9);
+      font-size: 13px;
+      flex: 0 0 auto;
+    }
+    .faq-q em{
+      font-style: normal;
+      opacity: .75;
+      font-size: 18px;
+      line-height: 1;
+    }
+    .faq-a{
+      padding: 0 14px 14px;
+      color: var(--muted);
+      font-size: 15.5px;
+      line-height: 1.7;
+      display: none;
+    }
+    .faq-item[data-open="true"] .faq-a{ display:block; }
+    .faq-item[data-open="true"] .faq-q em{ transform: rotate(45deg); }
+    .faq-q em{ transition: transform .15s ease; }
+
+    /* Footer (identique accueil) */
+    footer{
+      padding: 34px 0 46px;
+      color: rgba(11,18,32,.88);
+    }
+    .footer-box{
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(255,255,255,.10);
+      background:
+        radial-gradient(900px 380px at 10% 0%, rgba(0,168,107,.25), transparent 60%),
+        radial-gradient(900px 380px at 70% 0%, rgba(11,94,215,.25), transparent 60%),
+        linear-gradient(135deg, #0B1B33, #062048);
+      box-shadow: var(--shadow);
+      padding: 18px;
+      color: rgba(255,255,255,.92);
+    }
+    .footer-box p{
+      margin: 0;
+      font-size: 15.5px;
+      line-height: 1.7;
+      color: rgba(255,255,255,.86);
+    }
+    .footer-box .line{
+      margin-top: 8px;
+      padding-top: 10px;
+      border-top: 1px dashed rgba(255,255,255,.22);
+      color: rgba(255,255,255,.82);
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      html{ scroll-behavior: auto; }
+      .btn, .nav-links a, .toggle{ transition: none; }
+    }
+
+    :focus-visible{
+      outline: 3px solid rgba(11,94,215,.24);
+      outline-offset: 2px;
+      border-radius: 10px;
+    }
+  </style>
+
+  <!-- Schema.org (Organisation + ContactPage) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":"Organization",
+        "@id":"https://fejebong.org/#organization",
+        "name":"ONG FEJEB",
+        "legalName":"FEJEB (Femmes, Enfants et Jeunes Épanouis du Bénin)",
+        "description":"Organisation Non Gouvernementale à but non lucratif, apolitique et laïque. FEJEB œuvre pour l’épanouissement des femmes, enfants et jeunes au Bénin : éducation, santé, protection sociale, autonomisation et développement durable.",
+        "url":"https://fejebong.org/",
+        "logo":"https://fejebong.org/logo.png",
+        "image":"https://fejebong.org/fond.jpg",
+        "email":"fejeb.ong@gmail.com",
+        "telephone":[ "+2290148484048", "+2290155268484" ],
+        "areaServed":"BJ",
+        "sameAs":[ "https://www.facebook.com/profile.php?id=61574007833322" ]
+      },
+      {
+        "@type":"WebSite",
+        "@id":"https://fejebong.org/#website",
+        "url":"https://fejebong.org/",
+        "name":"ONG FEJEB",
+        "publisher":{"@id":"https://fejebong.org/#organization"},
+        "inLanguage":"fr"
+      },
+      {
+        "@type":"ContactPage",
+        "@id":"https://fejebong.org/contact.html#webpage",
+        "url":"https://fejebong.org/contact.html",
+        "name":"Contact — ONG FEJEB",
+        "isPartOf":{"@id":"https://fejebong.org/#website"},
+        "about":{"@id":"https://fejebong.org/#organization"},
+        "inLanguage":"fr"
+      },
+      {
+        "@type":"BreadcrumbList",
+        "@id":"https://fejebong.org/contact.html#breadcrumbs",
+        "itemListElement":[
+          { "@type":"ListItem","position":1,"name":"Accueil","item":"https://fejebong.org/" },
+          { "@type":"ListItem","position":2,"name":"Contact","item":"https://fejebong.org/contact.html" }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu principal</a>
+
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="container">
+      <div class="header-inner">
+        <a class="brand" href="index.html" aria-label="ONG FEJEB — Accueil">
+          <div class="logo" aria-hidden="true">
+            <img src="logo.png" alt="" />
+          </div>
+          <div class="brand-title">
+            <strong>ONG FEJEB</strong>
+            <span>Femmes • Enfants • Jeunes — Bénin</span>
+          </div>
+        </a>
+
+        <nav class="nav" aria-label="Navigation principale">
+          <div class="nav-links" aria-label="Liens de navigation (bureau)">
+            <a href="index.html">Accueil</a>
+            <a href="apropos.html">À propos</a>
+            <a href="actions.html">Actions</a>
+            <a href="fiche-signalétique.html">Fiche signalétique</a>
+            <a href="equipe.html">Équipe</a>
+            <a href="actualites.html">Actualités</a>
+            <a href="don.html">Don</a>
+            <a href="contact.html" aria-current="page">Contact</a>
+          </div>
+
+          <a class="btn btn-primary" href="#composer" aria-label="Aller à la section Composer un message">Composer un message</a>
+
+          <button class="menu-btn" id="openMenu" type="button" aria-label="Ouvrir le menu" aria-controls="mobileDrawer" aria-expanded="false">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 7h16" stroke="#0b1220" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M4 12h16" stroke="#0b1220" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M4 17h16" stroke="#0b1220" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </button>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="drawer-backdrop" id="drawerBackdrop" hidden></div>
+  <aside class="drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-label="Menu mobile" hidden>
+    <div class="drawer-head">
+      <div class="drawer-title">Menu</div>
+      <button class="drawer-close" id="closeMenu" type="button" aria-label="Fermer le menu">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M7 7l10 10" stroke="#0b1220" stroke-width="1.8" stroke-linecap="round"/>
+          <path d="M17 7L7 17" stroke="#0b1220" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+    <div class="drawer-body">
+      <nav class="drawer-nav" aria-label="Navigation mobile (scrollable)">
+        <a href="index.html">Accueil</a>
+        <a href="apropos.html">À propos</a>
+        <a href="actions.html">Actions</a>
+        <a href="fiche-signalétique.html">Fiche signalétique</a>
+        <a href="equipe.html">Équipe</a>
+        <a href="actualites.html">Actualités</a>
+        <a href="don.html">Don</a>
+        <a href="contact.html" aria-current="page">Contact</a>
+      </nav>
+
+      <div class="drawer-actions">
+        <a class="btn btn-primary" href="#composer">Composer un message</a>
+        <a class="btn btn-ghost" href="don.html">Faire un don</a>
+      </div>
+    </div>
+  </aside>
+
+  <main id="contenu" class="container" role="main">
+    <!-- HERO -->
+    <section class="hero" aria-label="Contact officiel FEJEB">
+      <div class="hero-inner">
+        <div>
+          <div class="badge"><i></i> Canaux officiels • Réponse claire • Traçabilité</div>
+          <h1>Contact & engagement</h1>
+          <p class="lead">
+            Pour une réponse plus rapide, privilégiez <b>WhatsApp</b>. Pour dossiers officiels et partenariats,
+            utilisez l’<b>email institutionnel</b>. Vous pouvez aussi <b>composer un message</b> avec aperçu, puis l’envoyer en un clic.
+          </p>
+
+          <div class="pills" aria-label="Repères">
+            <span class="pill"><i></i> WhatsApp prioritaire</span>
+            <span class="pill"><i></i> Email officiel</span>
+            <span class="pill"><i></i> Message institutionnel</span>
+          </div>
+        </div>
+
+        <div class="hero-panel" aria-label="Repères Contact">
+          <h3>Engagement de réponse</h3>
+          <p>
+            <b>Canal recommandé :</b> WhatsApp.<br/>
+            <b>Confidentialité :</b> aucun stockage sur le site.<br/>
+            <b>Email :</b> fejeb.ong@gmail.com
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CANAUX OFFICIELS -->
+    <section class="section" aria-label="Canaux officiels">
+      <div class="section-head">
+        <div>
+          <h2>Canaux officiels FEJEB</h2>
+          <p>Utilisez les canaux ci-dessous pour une communication claire, traçable et institutionnelle.</p>
+        </div>
+      </div>
+
+      <div class="grid cols-2" role="list">
+        <article class="card" role="listitem" aria-label="WhatsApp prioritaire">
+          <h3>WhatsApp (prioritaire)</h3>
+          <p>Échanges rapides, demandes terrain, suivi et orientation. Recommandé pour accélérer la prise en charge.</p>
+          <div class="mini-row" aria-label="Actions WhatsApp">
+            <span class="pill-mini"><i></i> Réponse rapide</span>
+            <button class="btn btn-primary" type="button" id="btnOpenWAFromCard">Ouvrir WhatsApp</button>
+            <button class="btn" type="button" id="btnCopyWAFromCard">Copier le numéro</button>
+          </div>
+          <p class="hint" style="margin-top:10px;">
+            Numéro principal : <b id="waDisplay">+229 01 48 48 40 48</b>
+          </p>
+        </article>
+
+        <article class="card" role="listitem" aria-label="Email institutionnel">
+          <h3>Email institutionnel</h3>
+          <p>Partenariats, demandes officielles, documents et correspondances. Canal adapté aux échanges formels.</p>
+          <div class="mini-row" aria-label="Actions Email">
+            <span class="pill-mini"><i></i> Dossier officiel</span>
+            <a class="btn btn-primary" id="btnMailFromCard" href="mailto:fejeb.ong@gmail.com?subject=Contact%20—%20ONG%20FEJEB">Envoyer un email</a>
+            <button class="btn" type="button" id="btnCopyMailFromCard">Copier l’email</button>
+          </div>
+          <p class="hint" style="margin-top:10px;">
+            Adresse : <b>fejeb.ong@gmail.com</b>
+          </p>
+        </article>
+
+        <article class="card" role="listitem" aria-label="Disponibilité">
+          <h3>Disponibilité</h3>
+          <p>Nous recevons les messages et orientons votre demande selon la nature (information, partenariat, engagement, don…).</p>
+          <div class="mini-row">
+            <span class="pill-mini"><i></i> Accusé de réception</span>
+            <span class="pill-mini"><i></i> Orientation</span>
+            <span class="pill-mini"><i></i> Suivi</span>
+          </div>
+          <p class="hint" style="margin-top:10px;">
+            Astuce : renseignez un <b>contact</b> (téléphone/email) si vous souhaitez être recontacté.
+          </p>
+        </article>
+
+        <article class="card" role="listitem" aria-label="Localisation">
+          <h3>Localisation</h3>
+          <p>Pour itinéraire et localisation exacte, demandez directement via WhatsApp. Nous vous guiderons selon votre besoin.</p>
+          <div class="mini-row">
+            <span class="pill-mini"><i></i> Bénin</span>
+            <button class="btn btn-primary" type="button" id="btnAskLocation">Demander l’itinéraire</button>
+          </div>
+          <p class="hint" style="margin-top:10px;">
+            Indiquez votre ville / point de repère dans le message pour faciliter l’orientation.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- COMPOSER UN MESSAGE -->
+    <section class="section" id="composer" aria-label="Composer un message">
+      <div class="section-head">
+        <div>
+          <h2>Composer un message (avec aperçu)</h2>
+          <p>Rédigez votre demande. Le message est structuré automatiquement (format institutionnel), puis prêt à envoyer.</p>
+        </div>
+      </div>
+
+      <div class="contact-layout">
+        <!-- Form -->
+        <div class="panel" aria-label="Formulaire de contact">
+          <div class="panel-head">
+            <strong><i></i> Formulaire</strong>
+            <span class="hint" id="formHint">Canal conseillé : WhatsApp (prioritaire).</span>
+          </div>
+          <div class="panel-body">
+            <div class="fieldset" aria-label="Identité">
+              <h3>1) Identité (optionnel)</h3>
+
+              <div class="field">
+                <label for="fullName">Nom & Prénom</label>
+                <input class="input" id="fullName" autocomplete="name" placeholder="Ex : Marie Kouassi" />
+              </div>
+
+              <div class="field">
+                <label for="contactInfo">Téléphone ou email (si vous souhaitez être recontacté)</label>
+                <input class="input" id="contactInfo" autocomplete="email" placeholder="Ex : +229 XX XX XX XX / nom@email.com" />
+              </div>
+            </div>
+
+            <div class="fieldset" aria-label="Canal d'envoi">
+              <h3>2) Canal d’envoi</h3>
+              <p class="hint">Le bouton “Envoyer” s’adapte automatiquement au canal choisi.</p>
+
+              <div class="channel-row" role="group" aria-label="Choix du canal">
+                <button class="toggle" type="button" id="chWhatsApp" aria-pressed="true">
+                  <span class="dot" aria-hidden="true"></span> WhatsApp
+                </button>
+                <button class="toggle" type="button" id="chEmail" aria-pressed="false">
+                  <span class="dot" aria-hidden="true"></span> Email
+                </button>
+              </div>
+
+              <p class="hint" style="margin-top:10px;">
+                Pour dossiers officiels et partenariats, privilégiez l’email : <b>fejeb.ong@gmail.com</b>
+              </p>
+            </div>
+
+            <div class="fieldset" aria-label="Objet">
+              <h3>3) Objet</h3>
+              <div class="field">
+                <label for="topic">Objet de la demande</label>
+                <select class="select" id="topic">
+                  <option value="">Choisir…</option>
+                  <option value="Demande d’information">Demande d’information</option>
+                  <option value="Partenariat / Appui">Partenariat / Appui</option>
+                  <option value="Engagement (bénévolat / adhésion)">Engagement (bénévolat / adhésion)</option>
+                  <option value="Don / contribution">Don / contribution</option>
+                  <option value="Proposition de projet">Proposition de projet</option>
+                  <option value="Autre">Autre</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="fieldset" aria-label="Axes concernés">
+              <h3>4) Axe(s) concerné(s) (optionnel)</h3>
+              <p class="hint">Sélection multiple possible. L’objectif est de mieux orienter votre demande.</p>
+
+              <div class="checks cols-2" aria-label="Axes FEJEB">
+                <label class="check">
+                  <input type="checkbox" value="Éducation" class="axis" />
+                  <span>
+                    <b>Éducation</b>
+                    <small>Soutien éducatif, sensibilisation, accompagnement.</small>
+                  </span>
+                </label>
+
+                <label class="check">
+                  <input type="checkbox" value="Santé" class="axis" />
+                  <span>
+                    <b>Santé</b>
+                    <small>Prévention, sensibilisation, bien-être.</small>
+                  </span>
+                </label>
+
+                <label class="check">
+                  <input type="checkbox" value="Protection sociale" class="axis" />
+                  <span>
+                    <b>Protection sociale</b>
+                    <small>Protection, appuis, accompagnement social.</small>
+                  </span>
+                </label>
+
+                <label class="check">
+                  <input type="checkbox" value="Autonomisation" class="axis" />
+                  <span>
+                    <b>Autonomisation</b>
+                    <small>Renforcement des capacités, initiatives et appuis.</small>
+                  </span>
+                </label>
+
+                <label class="check">
+                  <input type="checkbox" value="Développement durable" class="axis" />
+                  <span>
+                    <b>Développement durable</b>
+                    <small>Actions durables, initiatives communautaires.</small>
+                  </span>
+                </label>
+
+                <label class="check">
+                  <input type="checkbox" value="Autre axe" class="axis" />
+                  <span>
+                    <b>Autre axe</b>
+                    <small>À préciser dans le message.</small>
+                  </span>
+                </label>
+              </div>
+            </div>
+
+            <div class="fieldset" aria-label="Message">
+              <h3>5) Message</h3>
+              <div class="field">
+                <label for="message">Décrivez votre demande (contexte, besoin, délai, contact…)</label>
+                <textarea class="textarea" id="message" placeholder="Ex : Bonjour, je souhaite… (précisez votre besoin, votre contexte et vos coordonnées si nécessaire)."></textarea>
+              </div>
+
+              <p class="hint" style="margin-top:10px;">
+                Important : le formulaire ne stocke pas vos données. Il prépare simplement le message et l’ouvre dans le canal choisi.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Preview -->
+        <div class="preview" aria-label="Aperçu du message">
+          <div class="preview-head">
+            <strong><i></i> Aperçu du message</strong>
+            <div class="preview-meta" aria-label="Résumé">
+              <span class="meta-pill" id="metaChannel">Canal : WhatsApp</span>
+              <span class="meta-pill" id="metaTopic">Objet : —</span>
+            </div>
+          </div>
+
+          <div class="preview-body">
+            <div class="preview-box" id="previewBox" aria-label="Contenu du message">
+Bonjour,
+
+Je vous contacte via le site officiel de l’ONG FEJEB (fejebong.org).
+
+— INFORMATIONS —
+Nom & Prénom : Non renseigné
+Contact : Non renseigné
+Objet : À préciser
+Date/Heure : —
+
+— AXE(S) CONCERNÉ(S) —
+À préciser
+
+— MESSAGE —
+Merci de préciser votre demande.
+
+Cordialement.
+            </div>
+
+            <div class="preview-actions" aria-label="Actions">
+              <a class="btn btn-primary" id="btnSend" href="#" target="_blank" rel="noopener">Ouvrir WhatsApp</a>
+              <button class="btn" type="button" id="btnCopy">Copier</button>
+              <button class="btn" type="button" id="btnReset">Réinitialiser</button>
+            </div>
+
+            <div class="note" id="statusNote" role="status" aria-live="polite">
+              <b>Info :</b> L’aperçu se met à jour en temps réel. Choisissez le canal (WhatsApp ou email), puis cliquez sur “Envoyer”.
+            </div>
+
+            <div class="mini-actions" aria-label="Options">
+              <button class="mini-link" type="button" id="btnSetNow">Mettre la date/heure maintenant</button>
+              <a class="mini-link" href="don.html">Faire un don</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ENGAGEMENT -->
+    <section class="section" aria-label="Engagement de réponse">
+      <div class="section-head">
+        <div>
+          <h2>Engagement de réponse & confidentialité</h2>
+          <p>Un contact institutionnel clair, respectueux et orienté solution.</p>
+        </div>
+      </div>
+
+      <div class="grid cols-3" role="list">
+        <article class="card" role="listitem">
+          <h3>Réponse structurée</h3>
+          <p>Votre demande est orientée par objet et axe pour faciliter un traitement clair et efficace.</p>
+        </article>
+        <article class="card" role="listitem">
+          <h3>Confidentialité</h3>
+          <p>Le site ne stocke pas vos informations. Il prépare un message que vous envoyez vous-même via WhatsApp ou email.</p>
+        </article>
+        <article class="card" role="listitem">
+          <h3>Canal adapté</h3>
+          <p>WhatsApp est prioritaire pour les échanges rapides. L’email est recommandé pour partenariats et documents officiels.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" aria-label="FAQ Contact">
+      <div class="section-head">
+        <div>
+          <h2>FAQ — Questions fréquentes</h2>
+          <p>Des réponses rapides, claires et institutionnelles.</p>
+        </div>
+      </div>
+
+      <div class="faq" id="faq">
+        <div class="faq-item" data-open="false">
+          <button class="faq-q" type="button" aria-expanded="false">
+            <span><b>1</b> Quel canal choisir pour une réponse rapide ?</span>
+            <em>+</em>
+          </button>
+          <div class="faq-a">
+            WhatsApp est le canal prioritaire pour accélérer la prise en charge. Pour dossiers officiels, partenariats et documents, utilisez l’email institutionnel.
+          </div>
+        </div>
+
+        <div class="faq-item" data-open="false">
+          <button class="faq-q" type="button" aria-expanded="false">
+            <span><b>2</b> Le site enregistre-t-il mes informations ?</span>
+            <em>+</em>
+          </button>
+          <div class="faq-a">
+            Non. Le formulaire prépare un message structuré et l’ouvre dans le canal choisi (WhatsApp ou email). L’envoi est effectué par vous.
+          </div>
+        </div>
+
+        <div class="faq-item" data-open="false">
+          <button class="faq-q" type="button" aria-expanded="false">
+            <span><b>3</b> Comment faciliter le traitement de ma demande ?</span>
+            <em>+</em>
+          </button>
+          <div class="faq-a">
+            Indiquez un objet précis, un axe concerné (si possible), votre contexte, un délai souhaité et un contact (téléphone/email) si vous souhaitez être recontacté.
+          </div>
+        </div>
+
+        <div class="faq-item" data-open="false">
+          <button class="faq-q" type="button" aria-expanded="false">
+            <span><b>4</b> Comment demander un itinéraire ou une localisation exacte ?</span>
+            <em>+</em>
+          </button>
+          <div class="faq-a">
+            Utilisez WhatsApp et indiquez votre ville/point de repère. FEJEB vous orientera selon votre besoin.
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-box">
+        <p>
+          <b>ONG FEJEB</b> — Femmes, Enfants et Jeunes Épanouis du Bénin.<br/>
+          Email : <b>fejeb.ong@gmail.com</b>
+        </p>
+        <p class="line">
+          © <span id="year"></span> ONG FEJEB — Tous droits réservés. • Site réalisé par <b>DineTech</b>.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    /* ===============================
+       FEJEB — CONTACT (JS)
+       - Menu mobile (drawer)
+       - FAQ
+       - Générateur message (aperçu, WhatsApp/Email, copy)
+       =============================== */
+
+    (function () {
+      const root = document.documentElement;
+
+      // Footer year
+      const y = document.getElementById("year");
+      if (y) y.textContent = String(new Date().getFullYear());
+
+      // ===== Mobile Drawer
+      const openBtn = document.getElementById("openMenu");
+      const closeBtn = document.getElementById("closeMenu");
+      const backdrop = document.getElementById("drawerBackdrop");
+      const drawer = document.getElementById("mobileDrawer");
+
+      function setDrawer(open) {
+        if (!drawer || !backdrop || !openBtn) return;
+        root.classList.toggle("is-open", open);
+        drawer.hidden = !open;
+        backdrop.hidden = !open;
+        openBtn.setAttribute("aria-expanded", open ? "true" : "false");
+        if (open) {
+          const firstLink = drawer.querySelector("a, button");
+          if (firstLink) firstLink.focus();
+        } else {
+          openBtn.focus();
+        }
+      }
+
+      if (openBtn) openBtn.addEventListener("click", () => setDrawer(true));
+      if (closeBtn) closeBtn.addEventListener("click", () => setDrawer(false));
+      if (backdrop) backdrop.addEventListener("click", () => setDrawer(false));
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && root.classList.contains("is-open")) setDrawer(false);
+      });
+
+      // Trap focus (simple)
+      document.addEventListener("keydown", (e) => {
+        if (!root.classList.contains("is-open")) return;
+        if (e.key !== "Tab") return;
+        if (!drawer) return;
+        const focusables = Array.from(drawer.querySelectorAll('a, button, [tabindex]:not([tabindex="-1"])'))
+          .filter(el => !el.hasAttribute("disabled"));
+        if (!focusables.length) return;
+        const first = focusables[0];
+        const last = focusables[focusables.length - 1];
+
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault(); last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault(); first.focus();
+        }
+      });
+
+      // ===== FAQ
+      const faq = document.getElementById("faq");
+      if (faq) {
+        faq.addEventListener("click", (e) => {
+          const btn = e.target.closest(".faq-q");
+          if (!btn) return;
+          const item = btn.closest(".faq-item");
+          if (!item) return;
+
+          const isOpen = item.getAttribute("data-open") === "true";
+          item.setAttribute("data-open", isOpen ? "false" : "true");
+          btn.setAttribute("aria-expanded", isOpen ? "false" : "true");
+        });
+      }
+
+      // ===== Contact generator
+      const ORG_NAME = "ONG FEJEB";
+      const SITE_DOMAIN = "fejebong.org";
+      const SITE_SOURCE = "Site officiel — " + SITE_DOMAIN;
+      const OFFICIAL_EMAIL = "fejeb.ong@gmail.com";
+
+      // Téléphones fournis dans ton schema (don.html). Ici on fixe un numéro principal WhatsApp (modifiable si tu veux).
+      const WHATSAPP_PRIMARY = "2290148484048"; // sans "+"
+      const WHATSAPP_DISPLAY = "+229 01 48 48 40 48";
+      const WHATSAPP_SECONDARY = "2290155268484"; // optionnel (si tu veux l’afficher plus tard)
+
+      const waDisplay = document.getElementById("waDisplay");
+      if (waDisplay) waDisplay.textContent = WHATSAPP_DISPLAY;
+
+      const fullName = document.getElementById("fullName");
+      const contactInfo = document.getElementById("contactInfo");
+      const topic = document.getElementById("topic");
+      const message = document.getElementById("message");
+      const axisChecks = Array.from(document.querySelectorAll(".axis"));
+
+      const chWhatsApp = document.getElementById("chWhatsApp");
+      const chEmail = document.getElementById("chEmail");
+
+      const metaChannel = document.getElementById("metaChannel");
+      const metaTopic = document.getElementById("metaTopic");
+      const previewBox = document.getElementById("previewBox");
+      const btnSend = document.getElementById("btnSend");
+      const btnCopy = document.getElementById("btnCopy");
+      const btnReset = document.getElementById("btnReset");
+      const statusNote = document.getElementById("statusNote");
+      const formHint = document.getElementById("formHint");
+      const btnSetNow = document.getElementById("btnSetNow");
+
+      let channel = "whatsapp"; // whatsapp | email
+      let manualDate = ""; // optional override
+
+      function nowFr() {
+        return new Intl.DateTimeFormat("fr-FR", {
+          dateStyle: "short",
+          timeStyle: "short"
+        }).format(new Date());
+      }
+
+      function getAxes() {
+        const selected = axisChecks
+          .filter(x => x && x.checked)
+          .map(x => x.value)
+          .filter(Boolean);
+        return selected;
+      }
+
+      function safeVal(el) {
+        return (el && typeof el.value === "string") ? el.value.trim() : "";
+      }
+
+      function buildMessage() {
+        const name = safeVal(fullName) || "Non renseigné";
+        const contact = safeVal(contactInfo) || "Non renseigné";
+        const obj = safeVal(topic) || "À préciser";
+        const axes = getAxes();
+        const axesLine = axes.length ? axes.join(", ") : "À préciser";
+        const msg = safeVal(message) || "Merci de préciser votre demande.";
+        const dt = manualDate || nowFr();
+
+        return [
+          "Bonjour,",
+          "",
+          `Je vous contacte via le site officiel de l’${ORG_NAME} (${SITE_DOMAIN}).`,
+          "",
+          "— INFORMATIONS —",
+          `Nom & Prénom : ${name}`,
+          `Contact : ${contact}`,
+          `Objet : ${obj}`,
+          `Date/Heure : ${dt}`,
+          "",
+          "— AXE(S) CONCERNÉ(S) —",
+          axesLine,
+          "",
+          "— MESSAGE —",
+          msg,
+          "",
+          "Cordialement.",
+          "",
+          `Source : ${SITE_SOURCE}`
+        ].join("\n");
+      }
+
+      function setStatus(text, tone) {
+        if (!statusNote) return;
+        const prefix = (tone === "ok") ? "<b>✔</b> " : (tone === "warn") ? "<b>⚠</b> " : "<b>Info :</b> ";
+        statusNote.innerHTML = prefix + text;
+      }
+
+      function updateUI() {
+        const obj = safeVal(topic);
+        if (metaTopic) metaTopic.textContent = "Objet : " + (obj || "—");
+
+        const labelChannel = (channel === "email") ? "Email" : "WhatsApp";
+        if (metaChannel) metaChannel.textContent = "Canal : " + labelChannel;
+
+        const msgText = buildMessage();
+        if (previewBox) previewBox.textContent = msgText;
+
+        // CTA
+        if (btnSend) {
+          if (channel === "email") {
+            btnSend.textContent = "Ouvrir l’email";
+            btnSend.classList.add("btn-primary");
+            const subject = encodeURIComponent(`Contact — ${ORG_NAME}${obj ? " — " + obj : ""}`);
+            const body = encodeURIComponent(msgText);
+            btnSend.href = `mailto:${OFFICIAL_EMAIL}?subject=${subject}&body=${body}`;
+            btnSend.removeAttribute("target");
+            btnSend.removeAttribute("rel");
+          } else {
+            btnSend.textContent = "Ouvrir WhatsApp";
+            btnSend.classList.add("btn-primary");
+            const text = encodeURIComponent(msgText);
+            btnSend.href = `https://wa.me/${WHATSAPP_PRIMARY}?text=${text}`;
+            btnSend.setAttribute("target", "_blank");
+            btnSend.setAttribute("rel", "noopener");
+          }
+        }
+
+        if (formHint) {
+          formHint.textContent = (channel === "email")
+            ? "Canal sélectionné : Email (recommandé pour dossiers officiels)."
+            : "Canal sélectionné : WhatsApp (prioritaire).";
+        }
+      }
+
+      function setChannel(next) {
+        channel = next;
+        if (chWhatsApp) chWhatsApp.setAttribute("aria-pressed", channel === "whatsapp" ? "true" : "false");
+        if (chEmail) chEmail.setAttribute("aria-pressed", channel === "email" ? "true" : "false");
+        updateUI();
+      }
+
+      // Channel toggles
+      if (chWhatsApp) chWhatsApp.addEventListener("click", () => setChannel("whatsapp"));
+      if (chEmail) chEmail.addEventListener("click", () => setChannel("email"));
+
+      // Inputs
+      [fullName, contactInfo, topic, message].forEach(el => {
+        if (!el) return;
+        el.addEventListener("input", updateUI);
+        el.addEventListener("change", updateUI);
+      });
+      axisChecks.forEach(cb => cb.addEventListener("change", updateUI));
+
+      // Copy
+      if (btnCopy) {
+        btnCopy.addEventListener("click", async () => {
+          try {
+            const text = buildMessage();
+            await navigator.clipboard.writeText(text);
+            setStatus("Message copié. Vous pouvez le coller dans votre canal.", "ok");
+          } catch (err) {
+            setStatus("Impossible de copier automatiquement. Sélectionnez le texte dans l’aperçu puis copiez.", "warn");
+          }
+        });
+      }
+
+      // Reset
+      if (btnReset) {
+        btnReset.addEventListener("click", () => {
+          if (fullName) fullName.value = "";
+          if (contactInfo) contactInfo.value = "";
+          if (topic) topic.value = "";
+          if (message) message.value = "";
+          axisChecks.forEach(cb => cb.checked = false);
+          manualDate = "";
+          setChannel("whatsapp");
+          setStatus("Formulaire réinitialisé. Vous pouvez rédiger une nouvelle demande.", "ok");
+        });
+      }
+
+      // Date/Heure
+      if (btnSetNow) {
+        btnSetNow.addEventListener("click", () => {
+          manualDate = nowFr();
+          updateUI();
+          setStatus("Date/heure mise à jour.", "ok");
+        });
+      }
+
+      // Guard before send
+      if (btnSend) {
+        btnSend.addEventListener("click", (e) => {
+          const msg = safeVal(message);
+          if (!msg) {
+            e.preventDefault();
+            setStatus("Veuillez écrire un message (même bref) avant l’envoi.", "warn");
+            if (message) message.focus();
+            return;
+          }
+          setStatus("Message prêt. Vous allez être redirigé vers le canal choisi.", "ok");
+        });
+      }
+
+      // Cards actions (WhatsApp / Email / Location)
+      const btnOpenWAFromCard = document.getElementById("btnOpenWAFromCard");
+      const btnCopyWAFromCard = document.getElementById("btnCopyWAFromCard");
+      const btnCopyMailFromCard = document.getElementById("btnCopyMailFromCard");
+      const btnAskLocation = document.getElementById("btnAskLocation");
+
+      if (btnOpenWAFromCard) {
+        btnOpenWAFromCard.addEventListener("click", () => {
+          const text = encodeURIComponent(`Bonjour, je vous contacte via le site officiel de l’${ORG_NAME} (${SITE_DOMAIN}). Je souhaite obtenir une réponse rapide. Merci.`);
+          window.open(`https://wa.me/${WHATSAPP_PRIMARY}?text=${text}`, "_blank", "noopener");
+        });
+      }
+      if (btnCopyWAFromCard) {
+        btnCopyWAFromCard.addEventListener("click", async () => {
+          try {
+            await navigator.clipboard.writeText("+" + WHATSAPP_PRIMARY);
+            setStatus("Numéro WhatsApp copié.", "ok");
+          } catch {
+            setStatus("Impossible de copier automatiquement. Copiez manuellement le numéro affiché.", "warn");
+          }
+        });
+      }
+      if (btnCopyMailFromCard) {
+        btnCopyMailFromCard.addEventListener("click", async () => {
+          try {
+            await navigator.clipboard.writeText(OFFICIAL_EMAIL);
+            setStatus("Email copié.", "ok");
+          } catch {
+            setStatus("Impossible de copier automatiquement. Copiez manuellement l’email affiché.", "warn");
+          }
+        });
+      }
+      if (btnAskLocation) {
+        btnAskLocation.addEventListener("click", () => {
+          const text = encodeURIComponent(`Bonjour, je vous contacte via le site officiel de l’${ORG_NAME} (${SITE_DOMAIN}). Je souhaite obtenir un itinéraire/localisation exacte. Je suis à : (ville/repère). Merci.`);
+          window.open(`https://wa.me/${WHATSAPP_PRIMARY}?text=${text}`, "_blank", "noopener");
+        });
+      }
+
+      // First paint
+      updateUI();
+    })();
+  </script>
+</body>
+</html>
