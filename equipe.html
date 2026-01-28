@@ -1,0 +1,2123 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="format-detection" content="telephone=no" />
+
+  <title>Équipe — ONG FEJEB | Membres, direction & profils</title>
+  <meta name="description" content="Découvrez l’équipe de l’ONG FEJEB : direction et membres actifs. Profils consultables et partageables, avec contact direct (téléphone, email, WhatsApp)." />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="theme-color" content="#0B5ED7" />
+  <meta name="color-scheme" content="light" />
+
+  <link rel="canonical" href="https://fejebong.org/equipe.html" />
+  <link rel="alternate" hreflang="fr" href="https://fejebong.org/equipe.html" />
+  <link rel="alternate" hreflang="x-default" href="https://fejebong.org/equipe.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="ONG FEJEB" />
+  <meta property="og:title" content="Équipe — ONG FEJEB" />
+  <meta property="og:description" content="Découvrez l’équipe de l’ONG FEJEB : direction et membres actifs. Profils consultables et partageables." />
+  <meta property="og:url" content="https://fejebong.org/equipe.html" />
+  <meta property="og:image" content="https://fejebong.org/fond.jpg" />
+  <meta property="og:image:secure_url" content="https://fejebong.org/fond.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="fr_FR" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Équipe — ONG FEJEB" />
+  <meta name="twitter:description" content="Direction et membres actifs de l’ONG FEJEB. Profils consultables et partageables." />
+  <meta name="twitter:image" content="https://fejebong.org/fond.jpg" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="apple-touch-icon" href="favicon.png" />
+
+  <style>
+    /* =========================
+       FEJEB — ÉQUIPE (Institutionnel)
+       CSS intégré (1 seul fichier : equipe.html)
+       ========================= */
+
+    :root{
+      --ink: #0b1220;
+      --muted: #42526b;
+      --card: rgba(255,255,255,.92);
+      --card-strong: rgba(255,255,255,.96);
+      --stroke: rgba(15, 23, 42, .12);
+
+      --brand-blue: #0B5ED7;
+      --brand-green: #00A86B;
+      --brand-cyan: #00B3C8;
+
+      --shadow: 0 18px 55px rgba(2, 8, 23, .14);
+      --shadow-soft: 0 10px 28px rgba(2, 8, 23, .10);
+
+      --radius-xl: 22px;
+      --radius-lg: 16px;
+      --radius-md: 12px;
+
+      --container: 1160px;
+
+      --fs-base: 18px;
+      --lh-base: 1.65;
+      --fs-sm: 16px;
+      --fs-lg: 20px;
+      --fs-xl: 40px;
+      --fs-h2: 28px;
+      --fs-h3: 20px;
+
+      --gap: 18px;
+    }
+
+    *{ box-sizing: border-box; }
+    html{ scroll-behavior: smooth; }
+    body{
+      margin: 0;
+      color: var(--ink);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      font-size: var(--fs-base);
+      line-height: var(--lh-base);
+
+      background:
+        radial-gradient(1200px 900px at 10% 10%, rgba(0,168,107,.18), transparent 60%),
+        radial-gradient(900px 700px at 85% 15%, rgba(11,94,215,.18), transparent 55%),
+        radial-gradient(900px 700px at 20% 85%, rgba(255,107,107,.12), transparent 55%),
+        radial-gradient(900px 700px at 85% 85%, rgba(255,193,7,.12), transparent 55%),
+        linear-gradient(135deg,
+          rgba(255, 0, 150, .10),
+          rgba(0, 204, 255, .10),
+          rgba(0, 200, 83, .10),
+          rgba(255, 193, 7, .10),
+          rgba(156, 39, 176, .10)
+        );
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    body::before{
+      content:"";
+      position: fixed;
+      inset: 0;
+      pointer-events:none;
+      background: linear-gradient(180deg, rgba(255,255,255,.42), rgba(255,255,255,.22));
+      z-index: -1;
+    }
+
+    a{ color: inherit; }
+    img{ max-width: 100%; height: auto; }
+
+    .sr-only{
+      position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0;
+    }
+
+    .skip-link{
+      position: absolute;
+      top: 10px; left: 10px;
+      padding: 10px 12px;
+      background: var(--card-strong);
+      border: 1px solid var(--stroke);
+      border-radius: 12px;
+      box-shadow: var(--shadow-soft);
+      transform: translateY(-140%);
+      transition: transform .2s ease;
+      z-index: 9999;
+    }
+    .skip-link:focus{ transform: translateY(0); outline: 3px solid rgba(11,94,215,.25); }
+
+    .container{
+      width: min(var(--container), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    /* =========================
+       Header / Nav (même base)
+       ========================= */
+    .site-header{
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      background: rgba(255,255,255,.70);
+      border-bottom: 1px solid var(--stroke);
+    }
+
+    .header-inner{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 0;
+      gap: 12px;
+    }
+
+    .brand{
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      min-width: 220px;
+    }
+
+    .logo{
+      width: 44px; height: 44px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: rgba(255,255,255,.82);
+      box-shadow: 0 10px 24px rgba(2,8,23,.08);
+      border: 1px solid rgba(15,23,42,.12);
+      overflow: hidden;
+      flex: 0 0 auto;
+    }
+    .logo img{
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 6px;
+      display: block;
+    }
+
+    .brand-title{
+      display: flex;
+      flex-direction: column;
+      line-height: 1.15;
+    }
+    .brand-title strong{
+      font-size: 16px;
+      letter-spacing: .2px;
+    }
+    .brand-title span{
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .nav{
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-links{
+      display: none;
+      align-items: center;
+      gap: 6px;
+      padding: 6px;
+      border-radius: 999px;
+      border: 1px solid var(--stroke);
+      background: rgba(255,255,255,.72);
+    }
+
+    .nav-links a{
+      text-decoration: none;
+      font-size: 15px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      color: rgba(11,18,32,.92);
+      transition: background .18s ease, transform .18s ease;
+      white-space: nowrap;
+    }
+    .nav-links a:hover{
+      background: rgba(11,94,215,.08);
+      transform: translateY(-1px);
+    }
+
+    .btn{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 12px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--stroke);
+      background: rgba(255,255,255,.78);
+      box-shadow: 0 10px 24px rgba(2,8,23,.06);
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+      cursor: pointer;
+      user-select: none;
+      font-size: 16px;
+      white-space: nowrap;
+    }
+    .btn:hover{ transform: translateY(-1px); box-shadow: 0 16px 34px rgba(2,8,23,.10); }
+    .btn:active{ transform: translateY(0px); }
+
+    .btn-primary{
+      border-color: rgba(11,94,215,.28);
+      background: linear-gradient(135deg, rgba(11,94,215,.98), rgba(0,168,107,.90));
+      color: #fff;
+    }
+    .btn-primary:hover{
+      background: linear-gradient(135deg, rgba(11,94,215,1), rgba(0,168,107,.98));
+    }
+
+    .btn-ghost{
+      background: rgba(255,255,255,.65);
+    }
+
+    .btn-dark{
+      border-color: rgba(255,255,255,.18);
+      background: rgba(10, 16, 28, .62);
+      color: rgba(255,255,255,.92);
+      box-shadow: 0 14px 34px rgba(2,8,23,.16);
+    }
+    .btn-dark:hover{ background: rgba(10, 16, 28, .72); }
+
+    .menu-btn{
+      width: 46px; height: 46px;
+      border-radius: 16px;
+      border: 1px solid var(--stroke);
+      background: rgba(255,255,255,.76);
+      display: grid;
+      place-items: center;
+      box-shadow: 0 10px 24px rgba(2,8,23,.06);
+      cursor: pointer;
+    }
+    .menu-btn svg{ width: 22px; height: 22px; }
+
+    @media (min-width: 1020px){
+      .nav-links{ display: flex; }
+      .menu-btn{ display: none; }
+    }
+
+    /* Mobile Drawer (scrollable) */
+    .drawer-backdrop{
+      position: fixed;
+      inset: 0;
+      background: rgba(2,8,23,.36);
+      display: none;
+      z-index: 1200;
+    }
+    .drawer{
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      left: 10px;
+      max-width: 560px;
+      margin-left: auto;
+      background: rgba(255,255,255,.92);
+      border: 1px solid var(--stroke);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+      display: none;
+      z-index: 1300;
+      overflow: hidden;
+    }
+    .drawer-head{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 14px 10px 14px;
+      border-bottom: 1px solid var(--stroke);
+      background: rgba(255,255,255,.86);
+    }
+    .drawer-title{
+      font-weight: 900;
+      letter-spacing: .2px;
+      font-size: 16px;
+    }
+    .drawer-close{
+      width: 42px; height: 42px;
+      border-radius: 14px;
+      border: 1px solid var(--stroke);
+      background: rgba(255,255,255,.8);
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+    }
+    .drawer-body{
+      max-height: min(70vh, 520px);
+      overflow: auto;
+      -webkit-overflow-scrolling: touch;
+      padding: 10px 14px 14px 14px;
+    }
+    .drawer-nav{
+      display: grid;
+      gap: 10px;
+    }
+    .drawer-nav a{
+      text-decoration: none;
+      padding: 12px 12px;
+      border-radius: 16px;
+      border: 1px solid rgba(15,23,42,.10);
+      background: rgba(255,255,255,.78);
+      font-weight: 700;
+      font-size: 16px;
+    }
+    .drawer-actions{
+      display: grid;
+      gap: 10px;
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px dashed rgba(15,23,42,.18);
+    }
+
+    .is-open .drawer-backdrop{ display: block; }
+    .is-open .drawer{ display: block; }
+
+    /* =========================
+       Page
+       ========================= */
+    main{ padding: 26px 0 56px; }
+
+    .hero{
+      margin-top: 14px;
+      border-radius: calc(var(--radius-xl) + 6px);
+      border: 1px solid var(--stroke);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+      background:
+        linear-gradient(90deg, rgba(2,8,23,.78) 0%, rgba(2,8,23,.52) 42%, rgba(2,8,23,.20) 100%),
+        radial-gradient(900px 480px at 20% 0%, rgba(0,168,107,.22), transparent 60%),
+        radial-gradient(900px 480px at 65% 0%, rgba(11,94,215,.22), transparent 60%),
+        url("fond.jpg");
+      background-size: cover;
+      background-position: center;
+    }
+    .hero-inner{
+      padding: 38px 18px;
+      display: grid;
+      gap: 16px;
+    }
+    @media (min-width: 920px){
+      .hero-inner{
+        grid-template-columns: 1.15fr .85fr;
+        align-items: center;
+        padding: 52px 40px;
+      }
+    }
+
+    .badge{
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.22);
+      background: rgba(255,255,255,.12);
+      color: rgba(255,255,255,.92);
+      font-weight: 800;
+      width: fit-content;
+      font-size: 14px;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      text-shadow: 0 10px 20px rgba(0,0,0,.28);
+    }
+    .badge i{
+      width: 10px; height: 10px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--brand-blue), var(--brand-green));
+      display: inline-block;
+    }
+
+    h1{
+      margin: 10px 0 10px;
+      font-size: clamp(30px, 4vw, var(--fs-xl));
+      line-height: 1.12;
+      letter-spacing: -0.4px;
+      color: #fff;
+      text-shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+    .lead{
+      margin: 0;
+      color: rgba(255,255,255,.92);
+      font-size: 19px;
+      max-width: 72ch;
+      text-shadow: 0 10px 26px rgba(0,0,0,.28);
+    }
+
+    .hero-panel{
+      padding: 16px;
+      border-radius: var(--radius-xl);
+      background: rgba(255,255,255,.14);
+      border: 1px solid rgba(255,255,255,.22);
+      box-shadow: 0 18px 55px rgba(0,0,0,.22);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+    .hero-panel h3{
+      margin: 0 0 8px;
+      font-size: 18px;
+      letter-spacing: .2px;
+      color: #fff;
+      text-shadow: 0 10px 20px rgba(0,0,0,.28);
+    }
+    .hero-panel p{
+      margin: 0;
+      color: rgba(255,255,255,.90);
+      font-size: 16px;
+      line-height: 1.6;
+      text-shadow: 0 10px 20px rgba(0,0,0,.22);
+    }
+
+    .section{
+      margin-top: 22px;
+      padding: 18px;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--stroke);
+      background: var(--card);
+      box-shadow: var(--shadow-soft);
+    }
+    @media (min-width: 900px){
+      .section{ padding: 24px; }
+    }
+
+    .section-head{
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+    .section-head h2{
+      margin: 0;
+      font-size: clamp(22px, 2.6vw, var(--fs-h2));
+      line-height: 1.2;
+      letter-spacing: -0.2px;
+    }
+    .section-head p{
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+      max-width: 86ch;
+    }
+
+    /* Outils (recherche / filtre / tri) */
+    .tools{
+      display: grid;
+      gap: 12px;
+      align-items: end;
+    }
+    @media (min-width: 860px){
+      .tools{
+        grid-template-columns: 1.4fr .8fr .8fr .6fr;
+        gap: 12px;
+      }
+    }
+
+    .field{
+      display: grid;
+      gap: 6px;
+    }
+    .field label{
+      font-size: 14px;
+      color: var(--muted);
+      font-weight: 800;
+      letter-spacing: .15px;
+    }
+    .input, .select{
+      width: 100%;
+      padding: 12px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(15,23,42,.12);
+      background: rgba(255,255,255,.86);
+      box-shadow: 0 14px 30px rgba(2,8,23,.05);
+      font-size: 16px;
+      outline: none;
+    }
+    .input:focus, .select:focus{
+      outline: 3px solid rgba(11,94,215,.18);
+      outline-offset: 2px;
+    }
+
+    .count-pill{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(15,23,42,.12);
+      background: rgba(255,255,255,.86);
+      font-weight: 900;
+      color: rgba(11,18,32,.92);
+      box-shadow: 0 14px 30px rgba(2,8,23,.05);
+      width: fit-content;
+      min-height: 46px;
+    }
+
+    /* Grid membres */
+    .grid{
+      display: grid;
+      gap: var(--gap);
+    }
+    @media (min-width: 780px){
+      .grid.cols-3{ grid-template-columns: repeat(3, 1fr); }
+      .grid.cols-2{ grid-template-columns: repeat(2, 1fr); }
+    }
+
+    .member-card{
+      padding: 16px;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(15,23,42,.10);
+      background: rgba(255,255,255,.86);
+      box-shadow: 0 14px 30px rgba(2,8,23,.06);
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      gap: 12px;
+    }
+    .member-card::before{
+      content:"";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(135deg, rgba(11,94,215,.10), transparent 42%),
+        linear-gradient(225deg, rgba(0,168,107,.10), transparent 42%);
+      opacity: .75;
+    }
+    .member-card > *{ position: relative; z-index: 1; }
+
+    .mc-top{
+      display: grid;
+      grid-template-columns: 64px 1fr;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .avatar{
+      width: 64px;
+      height: 64px;
+      border-radius: 18px;
+      border: 1px solid rgba(15,23,42,.12);
+      background:
+        radial-gradient(120px 80px at 30% 20%, rgba(0,168,107,.20), transparent 60%),
+        radial-gradient(120px 80px at 70% 30%, rgba(11,94,215,.20), transparent 60%),
+        rgba(255,255,255,.92);
+      box-shadow: 0 14px 30px rgba(2,8,23,.08);
+      overflow: hidden;
+      display: grid;
+      place-items: center;
+      font-weight: 1000;
+      color: rgba(11,18,32,.90);
+      letter-spacing: .6px;
+      text-transform: uppercase;
+    }
+    .avatar img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .mc-name{
+      display: grid;
+      gap: 2px;
+    }
+    .mc-name strong{
+      font-size: 18px;
+      letter-spacing: .2px;
+      line-height: 1.2;
+    }
+    .mc-name span{
+      color: var(--muted);
+      font-size: 14.5px;
+      line-height: 1.4;
+    }
+
+    .chips{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .chip{
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(15,23,42,.12);
+      background: rgba(255,255,255,.80);
+      font-weight: 900;
+      font-size: 13px;
+      color: rgba(11,18,32,.86);
+      width: fit-content;
+    }
+    .chip i{
+      width: 9px; height: 9px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--brand-blue), var(--brand-green));
+      display: inline-block;
+    }
+    .chip.president{
+      border-color: rgba(255, 193, 7, .35);
+      background: rgba(255, 193, 7, .14);
+    }
+    .chip.president i{
+      background: linear-gradient(135deg, rgba(255,193,7,1), rgba(0,168,107,1));
+    }
+
+    .mc-bio{
+      color: var(--muted);
+      font-size: 15.5px;
+      line-height: 1.7;
+      margin: 0;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      min-height: calc(1.7em * 2);
+    }
+
+    .mc-actions{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 2px;
+    }
+    .btn-sm{
+      padding: 10px 12px;
+      font-size: 15px;
+      border-radius: 14px;
+    }
+    .btn-outline{
+      background: rgba(255,255,255,.75);
+      border-color: rgba(11,94,215,.20);
+    }
+    .btn-outline:hover{ background: rgba(11,94,215,.07); }
+
+    .status-line{
+      margin-top: 12px;
+      padding: 12px 14px;
+      border-radius: 16px;
+      border: 1px dashed rgba(15,23,42,.18);
+      background: rgba(255,255,255,.76);
+      color: var(--muted);
+      font-size: 15.5px;
+      line-height: 1.7;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .status-line b{ color: rgba(11,18,32,.92); }
+    .status-err{
+      border-style: solid;
+      border-color: rgba(220, 38, 38, .20);
+      background: rgba(220, 38, 38, .06);
+      color: rgba(120, 20, 20, .92);
+    }
+
+    /* =========================
+       MODAL PROFIL (Voir profil)
+       ========================= */
+    .modal-backdrop{
+      position: fixed;
+      inset: 0;
+      background: rgba(2,8,23,.58);
+      display: none;
+      z-index: 2000;
+    }
+    .modal{
+      position: fixed;
+      inset: 0;
+      display: none;
+      z-index: 2100;
+      padding: 16px;
+      overflow: auto;
+    }
+    .modal-card{
+      width: min(980px, 100%);
+      margin: 18px auto;
+      border-radius: 26px;
+      border: 1px solid rgba(255,255,255,.16);
+      background:
+        radial-gradient(1100px 520px at 15% 0%, rgba(0,168,107,.20), transparent 55%),
+        radial-gradient(1100px 520px at 75% 0%, rgba(11,94,215,.20), transparent 55%),
+        linear-gradient(135deg, #0B1B33, #061A3A);
+      box-shadow: 0 30px 90px rgba(0,0,0,.35);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .modal-close{
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      width: 46px;
+      height: 46px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.18);
+      background: rgba(10,16,28,.55);
+      color: rgba(255,255,255,.92);
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      z-index: 5;
+    }
+    .modal-close:hover{ background: rgba(10,16,28,.70); }
+
+    .profile{
+      display: grid;
+      gap: 16px;
+      padding: 18px;
+    }
+    @media (min-width: 940px){
+      .profile{
+        grid-template-columns: 1.05fr .95fr;
+        align-items: stretch;
+        padding: 20px;
+      }
+    }
+
+    .profile-media{
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.06);
+      overflow: hidden;
+      position: relative;
+      min-height: 320px;
+      display: grid;
+      place-items: center;
+    }
+    .profile-media img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .profile-media .initials-big{
+      width: 100%;
+      height: 100%;
+      display: grid;
+      place-items: center;
+      font-size: 58px;
+      font-weight: 1000;
+      color: rgba(255,255,255,.92);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      background:
+        radial-gradient(600px 360px at 20% 15%, rgba(0,168,107,.30), transparent 60%),
+        radial-gradient(600px 360px at 70% 20%, rgba(11,94,215,.30), transparent 60%),
+        linear-gradient(135deg, rgba(255,255,255,.10), rgba(255,255,255,.04));
+    }
+    .watermark{
+      position: absolute;
+      left: 14px;
+      bottom: 14px;
+      font-size: 13px;
+      color: rgba(255,255,255,.62);
+      background: rgba(10,16,28,.42);
+      border: 1px solid rgba(255,255,255,.12);
+      padding: 8px 10px;
+      border-radius: 999px;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    .profile-info{
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.07);
+      padding: 16px;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0 18px 55px rgba(0,0,0,.20);
+    }
+
+    .profile-head{
+      display: grid;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    .profile-kicker{
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .profile-kicker .pill{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.18);
+      background: rgba(10,16,28,.40);
+      color: rgba(255,255,255,.86);
+      font-weight: 900;
+      font-size: 13px;
+    }
+    .profile-kicker .pill i{
+      width: 9px; height: 9px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--brand-blue), var(--brand-green));
+      display: inline-block;
+    }
+
+    .profile-name{
+      margin: 0;
+      color: rgba(255,255,255,.95);
+      font-size: 30px;
+      letter-spacing: .2px;
+      line-height: 1.12;
+    }
+    .profile-role{
+      color: rgba(255,255,255,.84);
+      font-size: 17px;
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    .profile-tags{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 10px 0 12px;
+    }
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      padding: 9px 11px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.18);
+      background: rgba(10,16,28,.38);
+      color: rgba(255,255,255,.88);
+      font-weight: 900;
+      font-size: 13px;
+      width: fit-content;
+    }
+    .tag i{
+      width: 9px; height: 9px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--brand-blue), var(--brand-green));
+      display: inline-block;
+    }
+    .tag.president{
+      border-color: rgba(255, 193, 7, .30);
+      background: rgba(255, 193, 7, .14);
+      color: rgba(255,255,255,.94);
+    }
+    .tag.president i{
+      background: linear-gradient(135deg, rgba(255,193,7,1), rgba(0,168,107,1));
+    }
+
+    .profile-bio{
+      margin: 0;
+      color: rgba(255,255,255,.86);
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    .profile-contacts{
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px dashed rgba(255,255,255,.18);
+      display: grid;
+      gap: 10px;
+    }
+    .line{
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      flex-wrap: wrap;
+      color: rgba(255,255,255,.86);
+      font-size: 15.5px;
+      line-height: 1.6;
+    }
+    .line b{ color: rgba(255,255,255,.92); }
+    .line a{ color: rgba(255,255,255,.92); }
+
+    .profile-actions{
+      display:flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .profile-actions .btn{
+      box-shadow: 0 16px 44px rgba(0,0,0,.18);
+    }
+
+    /* Footer */
+    footer{
+      padding: 34px 0 46px;
+      color: rgba(11,18,32,.88);
+    }
+
+    .footer-box{
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(255,255,255,.10);
+      background:
+        radial-gradient(900px 380px at 10% 0%, rgba(0,168,107,.25), transparent 60%),
+        radial-gradient(900px 380px at 70% 0%, rgba(11,94,215,.25), transparent 60%),
+        linear-gradient(135deg, #0B1B33, #062048);
+      box-shadow: var(--shadow);
+      padding: 18px;
+      color: rgba(255,255,255,.92);
+    }
+    .footer-box p{
+      margin: 0;
+      font-size: 15.5px;
+      line-height: 1.7;
+      color: rgba(255,255,255,.86);
+    }
+    .footer-box .line{
+      margin-top: 8px;
+      padding-top: 10px;
+      border-top: 1px dashed rgba(255,255,255,.22);
+      color: rgba(255,255,255,.82);
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      html{ scroll-behavior: auto; }
+      .btn, .nav-links a{ transition: none; }
+    }
+
+    :focus-visible{
+      outline: 3px solid rgba(11,94,215,.24);
+      outline-offset: 2px;
+      border-radius: 10px;
+    }
+  </style>
+
+  <!-- Schema.org (Organisation + WebSite + WebPage + Breadcrumb) -->
+  <script type="application/ld+json" id="baseSchema">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":"Organization",
+        "@id":"https://fejebong.org/#organization",
+        "name":"ONG FEJEB",
+        "legalName":"FEJEB (Femmes, Enfants et Jeunes Épanouis du Bénin)",
+        "description":"Organisation Non Gouvernementale à but non lucratif, apolitique et laïque. FEJEB œuvre pour l’épanouissement des femmes, enfants et jeunes au Bénin : éducation, santé, protection sociale, autonomisation et développement durable.",
+        "url":"https://fejebong.org/",
+        "logo":"https://fejebong.org/logo.png",
+        "image":"https://fejebong.org/fond.jpg",
+        "email":"fejeb.ong@gmail.com",
+        "telephone":[ "+2290148484048", "+2290155268484" ],
+        "areaServed":"BJ",
+        "address":{
+          "@type":"PostalAddress",
+          "addressCountry":"BJ",
+          "addressRegion":"Borgou",
+          "addressLocality":"Nikki",
+          "streetAddress":"Quartier Gah-Maro (Nikki)"
+        },
+        "sameAs":[
+          "https://www.facebook.com/profile.php?id=61574007833322"
+        ]
+      },
+      {
+        "@type":"WebSite",
+        "@id":"https://fejebong.org/#website",
+        "url":"https://fejebong.org/",
+        "name":"ONG FEJEB",
+        "publisher":{"@id":"https://fejebong.org/#organization"},
+        "inLanguage":"fr"
+      },
+      {
+        "@type":"WebPage",
+        "@id":"https://fejebong.org/equipe.html#webpage",
+        "url":"https://fejebong.org/equipe.html",
+        "name":"Équipe — ONG FEJEB",
+        "isPartOf":{"@id":"https://fejebong.org/#website"},
+        "about":{"@id":"https://fejebong.org/#organization"},
+        "inLanguage":"fr",
+        "breadcrumb":{"@id":"https://fejebong.org/equipe.html#breadcrumb"}
+      },
+      {
+        "@type":"BreadcrumbList",
+        "@id":"https://fejebong.org/equipe.html#breadcrumb",
+        "itemListElement":[
+          {"@type":"ListItem","position":1,"name":"Accueil","item":"https://fejebong.org/"},
+          {"@type":"ListItem","position":2,"name":"Équipe","item":"https://fejebong.org/equipe.html"}
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Schema dynamique PROFIL (Person) : injecté quand on ouvre un profil -->
+  <script type="application/ld+json" id="personSchema">
+  {}
+  </script>
+</head>
+
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu principal</a>
+
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="container">
+      <div class="header-inner">
+        <a class="brand" href="index.html" aria-label="ONG FEJEB — Accueil">
+          <div class="logo" aria-hidden="true">
+            <img src="logo.png" alt="" />
+          </div>
+          <div class="brand-title">
+            <strong>ONG FEJEB</strong>
+            <span>Femmes • Enfants • Jeunes — Bénin</span>
+          </div>
+        </a>
+
+        <nav class="nav" aria-label="Navigation principale">
+          <div class="nav-links" aria-label="Liens de navigation (bureau)">
+            <a href="index.html">Accueil</a>
+            <a href="apropos.html">À propos</a>
+            <a href="actions.html">Actions</a>
+            <a href="fiche-signalétique.html">Fiche signalétique</a>
+            <a href="equipe.html" aria-current="page">Équipe</a>
+            <a href="actualites.html">Actualités</a>
+            <a href="don.html">Don</a>
+            <a href="contact.html">Contact</a>
+          </div>
+
+          <a class="btn btn-primary" href="don.html" aria-label="Aller à la page Don">Faire un don</a>
+
+          <button class="menu-btn" id="openMenu" type="button" aria-label="Ouvrir le menu" aria-controls="mobileDrawer" aria-expanded="false">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 7h16" stroke="#0b1220" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M4 12h16" stroke="#0b1220" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M4 17h16" stroke="#0b1220" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </button>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="drawer-backdrop" id="drawerBackdrop" hidden></div>
+  <aside class="drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-label="Menu mobile" hidden>
+    <div class="drawer-head">
+      <div class="drawer-title">Menu</div>
+      <button class="drawer-close" id="closeMenu" type="button" aria-label="Fermer le menu">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M7 7l10 10" stroke="#0b1220" stroke-width="1.8" stroke-linecap="round"/>
+          <path d="M17 7L7 17" stroke="#0b1220" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+    <div class="drawer-body">
+      <nav class="drawer-nav" aria-label="Navigation mobile (scrollable)">
+        <a href="index.html">Accueil</a>
+        <a href="apropos.html">À propos</a>
+        <a href="actions.html">Actions</a>
+        <a href="fiche-signalétique.html">Fiche signalétique</a>
+        <a href="equipe.html" aria-current="page">Équipe</a>
+        <a href="actualites.html">Actualités</a>
+        <a href="don.html">Don</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="drawer-actions">
+        <a class="btn btn-primary" href="don.html">Faire un don</a>
+        <a class="btn btn-ghost" href="contact.html">Nous contacter</a>
+      </div>
+    </div>
+  </aside>
+
+  <main id="contenu" class="container" role="main">
+    <!-- HERO -->
+    <section class="hero" aria-label="Équipe FEJEB">
+      <div class="hero-inner">
+        <div>
+          <div class="badge"><i></i> Direction • Membres actifs • Profils partageables</div>
+          <h1>Notre équipe</h1>
+          <p class="lead">
+            Découvrez les personnes engagées au sein de l’ONG FEJEB. Chaque profil est consultable,
+            partageable et conçu pour faciliter la prise de contact (email, téléphone, WhatsApp).
+          </p>
+          <div style="height:12px"></div>
+          <div class="chips" aria-label="Raccourcis">
+            <span class="chip"><i></i> Données synchronisées (Sheet)</span>
+            <span class="chip"><i></i> Recherche & filtres</span>
+            <span class="chip president"><i></i> Président(e) en priorité</span>
+          </div>
+        </div>
+
+        <div class="hero-panel" aria-label="Info">
+          <h3>Astuce</h3>
+          <p>
+            Cliquez sur <b>“Voir profil”</b> pour afficher une fiche complète et partager le lien du membre.
+            Le/la <b>Président(e)</b> est toujours mis(e) en avant en premier.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- OUTILS -->
+    <section class="section" aria-label="Outils de recherche">
+      <div class="section-head">
+        <div>
+          <h2>Rechercher et filtrer</h2>
+          <p>Recherchez un membre par nom, poste ou bio. Filtrez par tag et triez l’affichage.</p>
+        </div>
+      </div>
+
+      <div class="tools" role="group" aria-label="Outils">
+        <div class="field">
+          <label for="teamSearch">Recherche</label>
+          <input class="input" id="teamSearch" type="search" placeholder="Ex: président, secrétaire, Alidou..." autocomplete="off" />
+        </div>
+
+        <div class="field">
+          <label for="teamRole">Filtre tag</label>
+          <select class="select" id="teamRole">
+            <option value="__ALL__">Tous les tags</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="teamSort">Tri</label>
+          <select class="select" id="teamSort">
+            <option value="priority">Priorité (Président(e) puis ordre)</option>
+            <option value="ordre">Ordre (ordre puis nom)</option>
+            <option value="nom">Nom (A → Z)</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label>Statut</label>
+          <div class="count-pill">
+            <span id="teamCount">0</span>
+            <span>membre(s)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="status-line" aria-live="polite">
+        <span id="teamStatusText"><b>Chargement…</b> Récupération des membres depuis le Sheet.</span>
+        <span id="teamError" class="sr-only"></span>
+      </div>
+    </section>
+
+    <!-- GRID -->
+    <section class="section" aria-label="Liste des membres">
+      <div class="section-head">
+        <div>
+          <h2>Membres</h2>
+          <p>Cartes dynamiques. Cliquez sur un profil pour voir la fiche complète et partager.</p>
+        </div>
+      </div>
+
+      <div class="grid cols-3" id="teamGrid" aria-label="Grille des membres"></div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section" aria-label="Contact FEJEB">
+      <div class="section-head">
+        <div>
+          <h2>Contact & collaboration</h2>
+          <p>Vous souhaitez échanger avec l’équipe FEJEB pour un partenariat, un appui ou une information ?</p>
+        </div>
+        <a class="btn btn-primary" href="contact.html">Nous contacter</a>
+      </div>
+
+      <div class="grid cols-2">
+        <article class="member-card">
+          <div class="mc-top">
+            <div class="avatar" aria-hidden="true"><span>FE</span></div>
+            <div class="mc-name">
+              <strong>ONG FEJEB</strong>
+              <span>Femmes • Enfants • Jeunes — Bénin</span>
+            </div>
+          </div>
+          <p class="mc-bio">
+            FEJEB œuvre pour l’épanouissement des femmes, des enfants et des jeunes au Bénin :
+            santé communautaire, éducation, protection sociale, autonomisation et développement durable.
+          </p>
+          <div class="mc-actions">
+            <a class="btn btn-primary btn-sm" href="don.html">Faire un don</a>
+            <a class="btn btn-outline btn-sm" href="contact.html">Écrire à FEJEB</a>
+          </div>
+        </article>
+
+        <article class="member-card">
+          <div class="mc-top">
+            <div class="avatar" aria-hidden="true"><span>OK</span></div>
+            <div class="mc-name">
+              <strong>Transparence</strong>
+              <span>Profils partageables</span>
+            </div>
+          </div>
+          <p class="mc-bio">
+            Les profils sont conçus pour être consultés et partagés. Le lien d’un profil
+            peut être copié et envoyé à un partenaire en un clic.
+          </p>
+          <div class="mc-actions">
+            <a class="btn btn-outline btn-sm" href="#contenu">Remonter</a>
+            <a class="btn btn-primary btn-sm" href="contact.html">Proposer un partenariat</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- MODAL PROFIL -->
+  <div class="modal-backdrop" id="profileBackdrop" hidden></div>
+  <section class="modal" id="profileModal" role="dialog" aria-modal="true" aria-label="Profil membre" hidden>
+    <div class="modal-card" role="document">
+      <button class="modal-close" id="profileClose" type="button" aria-label="Fermer">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M7 7l10 10" stroke="white" stroke-width="1.9" stroke-linecap="round"/>
+          <path d="M17 7L7 17" stroke="white" stroke-width="1.9" stroke-linecap="round"/>
+        </svg>
+      </button>
+
+      <div class="profile" id="profileContent"></div>
+    </div>
+  </section>
+
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-box">
+        <p><b>© FEJEB</b> — Tous droits réservés.</p>
+        <p>Organisation à but non lucratif, apolitique et laïque — Nikki (Borgou), République du Bénin.</p>
+        <p class="line"><b>Site réalisé par DineTech</b></p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    /* =========================
+       FEJEB — JS (Menu mobile + Équipe depuis Sheet + Profils SEO/partage)
+       ========================= */
+
+    /* ----------- Menu mobile ----------- */
+    (function () {
+      const openBtn = document.getElementById("openMenu");
+      const closeBtn = document.getElementById("closeMenu");
+      const drawer = document.getElementById("mobileDrawer");
+      const backdrop = document.getElementById("drawerBackdrop");
+
+      if (!openBtn || !closeBtn || !drawer || !backdrop) return;
+
+      let lastFocus = null;
+
+      const setOpenState = (open) => {
+        document.body.classList.toggle("is-open", open);
+
+        drawer.hidden = !open;
+        backdrop.hidden = !open;
+
+        openBtn.setAttribute("aria-expanded", String(open));
+
+        if (open) {
+          lastFocus = document.activeElement;
+          const firstLink = drawer.querySelector("a, button");
+          if (firstLink) firstLink.focus();
+          document.body.style.overflow = "hidden";
+        } else {
+          document.body.style.overflow = "";
+          if (lastFocus && typeof lastFocus.focus === "function") lastFocus.focus();
+        }
+      };
+
+      const openMenu = () => setOpenState(true);
+      const closeMenu = () => setOpenState(false);
+
+      openBtn.addEventListener("click", openMenu);
+      closeBtn.addEventListener("click", closeMenu);
+      backdrop.addEventListener("click", closeMenu);
+
+      document.addEventListener("keydown", (e) => {
+        if (!document.body.classList.contains("is-open")) return;
+        if (e.key === "Escape") closeMenu();
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (!document.body.classList.contains("is-open")) return;
+        if (e.key !== "Tab") return;
+
+        const focusable = drawer.querySelectorAll("a, button");
+        if (!focusable.length) return;
+
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      });
+
+      drawer.addEventListener("click", (e) => {
+        const a = e.target.closest("a");
+        if (!a) return;
+        closeMenu();
+      });
+    })();
+
+    /* ----------- Équipe (CSV) + Profils ----------- */
+    (function () {
+      const SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQF_fvn6d07XjnISJ6j-_qqCuagDHHSUV4afibtXf6iRlSCZ9qvMEW89UKO5X9WlcIL7FjWxfQX8Yzz/pub?gid=1065043078&single=true&output=csv";
+
+      const grid = document.getElementById("teamGrid");
+      const statusText = document.getElementById("teamStatusText");
+      const countEl = document.getElementById("teamCount");
+      const errorEl = document.getElementById("teamError");
+      const searchEl = document.getElementById("teamSearch");
+      const roleEl = document.getElementById("teamRole");
+      const sortEl = document.getElementById("teamSort");
+
+      const modal = document.getElementById("profileModal");
+      const backdrop = document.getElementById("profileBackdrop");
+      const closeBtn = document.getElementById("profileClose");
+      const profileContent = document.getElementById("profileContent");
+
+      if (!grid || !statusText || !countEl || !errorEl || !searchEl || !roleEl || !sortEl || !modal || !backdrop || !closeBtn || !profileContent) return;
+
+      const DEFAULT_PAGE_TITLE = document.title;
+      const DEFAULT_DESC = getMeta("description") || "Découvrez l’équipe de l’ONG FEJEB : direction et membres actifs. Profils consultables et partageables.";
+      const DEFAULT_OG_TITLE = getMetaProp("og:title") || "Équipe — ONG FEJEB";
+      const DEFAULT_OG_DESC = getMetaProp("og:description") || DEFAULT_DESC;
+      const DEFAULT_OG_IMAGE = getMetaProp("og:image") || "https://fejebong.org/fond.jpg";
+      const DEFAULT_TW_TITLE = getMeta("twitter:title") || DEFAULT_OG_TITLE;
+      const DEFAULT_TW_DESC = getMeta("twitter:description") || DEFAULT_OG_DESC;
+      const DEFAULT_TW_IMAGE = getMeta("twitter:image") || DEFAULT_OG_IMAGE;
+      const DEFAULT_CANON = getCanonical() || "https://fejebong.org/equipe.html";
+
+      let members = [];
+      let filtered = [];
+      let currentProfile = null;
+      let lastFocus = null;
+
+      function setStatus(msg, isError=false){
+        statusText.innerHTML = msg;
+        if (isError) {
+          statusText.parentElement.classList.add("status-err");
+          errorEl.classList.remove("sr-only");
+          errorEl.textContent = msg.replace(/<[^>]*>/g,"");
+        } else {
+          statusText.parentElement.classList.remove("status-err");
+          errorEl.classList.add("sr-only");
+          errorEl.textContent = "";
+        }
+      }
+
+      function safeStr(v){ return (v ?? "").toString().trim(); }
+
+      function normalizePhone(raw){
+        const s = safeStr(raw);
+        if (!s) return "";
+        // garder + et chiffres
+        let t = s.replace(/[^\d+]/g, "");
+        // si commence par 2290... => +229...
+        if (t.startsWith("229") && !t.startsWith("+229")) t = "+" + t;
+        if (t.startsWith("0") && !t.startsWith("+")) {
+          // au cas où c'est local, on ne force pas +229 ici (tu peux)
+          // on laisse tel quel sans espaces
+        }
+        return t;
+      }
+
+      function toWhatsAppLink(phone){
+        const p = normalizePhone(phone).replace(/[^\d]/g,"");
+        if (!p) return "";
+        return "https://wa.me/" + p;
+      }
+
+      function getInitials(name){
+        const n = safeStr(name);
+        if (!n) return "FE";
+        const parts = n.split(/\s+/).filter(Boolean);
+        const first = parts[0] ? parts[0][0] : "";
+        const last = parts.length > 1 ? parts[parts.length-1][0] : (parts[0] ? parts[0][1] : "");
+        const res = (first + (last || "")).toUpperCase();
+        return res || "FE";
+      }
+
+      function slugify(text){
+        const s = safeStr(text).toLowerCase()
+          .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+          .replace(/[^a-z0-9]+/g, "-")
+          .replace(/-+/g, "-")
+          .replace(/^-|-$/g, "");
+        return s || ("membre-" + Math.random().toString(16).slice(2));
+      }
+
+      function parseCSV(text){
+        // Parse CSV simple (gère guillemets)
+        const rows = [];
+        let row = [];
+        let cur = "";
+        let inQuotes = false;
+
+        for (let i=0; i<text.length; i++){
+          const ch = text[i];
+          const next = text[i+1];
+
+          if (ch === '"' ) {
+            if (inQuotes && next === '"'){
+              cur += '"';
+              i++;
+            } else {
+              inQuotes = !inQuotes;
+            }
+            continue;
+          }
+
+          if (!inQuotes && (ch === ",")){
+            row.push(cur);
+            cur = "";
+            continue;
+          }
+
+          if (!inQuotes && (ch === "\n")){
+            row.push(cur);
+            rows.push(row);
+            row = [];
+            cur = "";
+            continue;
+          }
+
+          if (ch === "\r") continue;
+          cur += ch;
+        }
+
+        // dernier champ
+        row.push(cur);
+        rows.push(row);
+
+        return rows.filter(r => r.some(c => safeStr(c)));
+      }
+
+      function mapMembers(rows){
+        const header = rows[0].map(h => safeStr(h).toLowerCase());
+        const idx = (key) => header.indexOf(key);
+
+        const iNom = idx("nom");
+        const iPoste = idx("poste");
+        const iPhoto = idx("photo");
+        const iTel = idx("telephone");
+        const iEmail = idx("email");
+        const iBio = idx("bio");
+        const iOrdre = idx("ordre");
+        const iTag = idx("tag");
+
+        const list = [];
+
+        for (let r=1; r<rows.length; r++){
+          const cols = rows[r];
+          const nom = safeStr(cols[iNom]);
+          if (!nom) continue;
+
+          const poste = safeStr(cols[iPoste]);
+          const photo = safeStr(cols[iPhoto]);
+          const telephone = safeStr(cols[iTel]);
+          const email = safeStr(cols[iEmail]);
+          const bio = safeStr(cols[iBio]);
+          const ordreRaw = safeStr(cols[iOrdre]);
+          const ordre = ordreRaw ? Number(ordreRaw.replace(/[^\d.-]/g,"")) : 999999;
+          const tag = safeStr(cols[iTag]);
+
+          const isPresident = /président|president/i.test(poste) || /présidente|presidente/i.test(poste);
+          const tags = [];
+          if (tag) tags.push(tag);
+          if (isPresident) tags.push("Président(e)");
+
+          const id = slugify(nom + "-" + (poste || "") + "-" + (tag || ""));
+
+          list.push({
+            id,
+            nom,
+            poste,
+            photo,
+            telephone,
+            email,
+            bio,
+            ordre: Number.isFinite(ordre) ? ordre : 999999,
+            tag,
+            isPresident,
+            tags
+          });
+        }
+
+        return list;
+      }
+
+      function uniqueTags(list){
+        const set = new Set();
+        list.forEach(m => {
+          if (m.tag) set.add(m.tag);
+        });
+        return Array.from(set).sort((a,b)=> a.localeCompare(b, "fr"));
+      }
+
+      function renderTagOptions(tags){
+        // garder l'option Tous
+        const current = roleEl.value;
+        roleEl.innerHTML = '<option value="__ALL__">Tous les tags</option>';
+        tags.forEach(t => {
+          const opt = document.createElement("option");
+          opt.value = t;
+          opt.textContent = t;
+          roleEl.appendChild(opt);
+        });
+        // restaurer sélection si possible
+        if ([...roleEl.options].some(o => o.value === current)) roleEl.value = current;
+      }
+
+      function applyFilters(){
+        const q = safeStr(searchEl.value).toLowerCase();
+        const tag = roleEl.value;
+
+        filtered = members.filter(m => {
+          const hay = (m.nom + " " + m.poste + " " + m.bio + " " + (m.tag || "")).toLowerCase();
+          const okQ = !q || hay.includes(q);
+          const okTag = (tag === "__ALL__") || (safeStr(m.tag) === tag) || (m.isPresident && tag === "Président(e)");
+          return okQ && okTag;
+        });
+
+        sortAndRender();
+      }
+
+      function sortAndRender(){
+        const mode = sortEl.value;
+
+        const pres = filtered.filter(m => m.isPresident);
+        const rest = filtered.filter(m => !m.isPresident);
+
+        const byOrdreThenNom = (a,b) => {
+          if ((a.ordre ?? 999999) !== (b.ordre ?? 999999)) return (a.ordre ?? 999999) - (b.ordre ?? 999999);
+          return a.nom.localeCompare(b.nom, "fr");
+        };
+
+        const byNom = (a,b) => a.nom.localeCompare(b.nom, "fr");
+
+        let finalList = [];
+
+        if (mode === "nom") {
+          finalList = [...filtered].sort(byNom);
+          // mais Président(e) toujours en premier => on le remonte
+          const top = finalList.filter(m => m.isPresident).sort(byNom);
+          const other = finalList.filter(m => !m.isPresident).sort(byNom);
+          finalList = [...top, ...other];
+        } else if (mode === "ordre") {
+          const top = pres.sort(byOrdreThenNom);
+          const other = rest.sort(byOrdreThenNom);
+          finalList = [...top, ...other];
+        } else {
+          // priority
+          const top = pres.sort((a,b)=> a.nom.localeCompare(b.nom,"fr"));
+          const other = rest.sort(byOrdreThenNom);
+          finalList = [...top, ...other];
+        }
+
+        renderGrid(finalList);
+        countEl.textContent = String(finalList.length);
+        setStatus(`<b>${finalList.length}</b> membre(s) affiché(s). Cliquez sur <b>Voir profil</b> pour ouvrir la fiche et partager.`);
+
+        // si hash correspond à un profil, garder ouvert même après filtrage (si visible)
+        const wanted = hashToId();
+        if (wanted && (!currentProfile || currentProfile.id !== wanted)) {
+          const found = members.find(m => m.id === wanted);
+          if (found) openProfile(found, {fromHash:true});
+        }
+      }
+
+      function escapeHtml(s){
+        return safeStr(s)
+          .replace(/&/g,"&amp;")
+          .replace(/</g,"&lt;")
+          .replace(/>/g,"&gt;")
+          .replace(/"/g,"&quot;")
+          .replace(/'/g,"&#039;");
+      }
+
+      function renderGrid(list){
+        grid.innerHTML = "";
+
+        if (!list.length){
+          const empty = document.createElement("div");
+          empty.className = "status-line";
+          empty.innerHTML = `<span><b>Aucun résultat.</b> Essayez une autre recherche ou changez le filtre.</span>`;
+          grid.appendChild(empty);
+          return;
+        }
+
+        list.forEach(m => {
+          const card = document.createElement("article");
+          card.className = "member-card";
+          card.setAttribute("data-id", m.id);
+
+          const chipsHtml = [];
+          if (m.tag) chipsHtml.push(`<span class="chip"><i></i>${escapeHtml(m.tag)}</span>`);
+          if (m.isPresident) chipsHtml.push(`<span class="chip president"><i></i>Président(e)</span>`);
+
+          const bioPreview = m.bio ? m.bio : "Profil en cours d’enrichissement.";
+
+          card.innerHTML = `
+            <div class="mc-top">
+              <div class="avatar" aria-label="Photo ou initiales">
+                ${m.photo ? `<img src="${escapeHtml(m.photo)}" alt="Photo de ${escapeHtml(m.nom)}" loading="lazy" />` : `<span>${escapeHtml(getInitials(m.nom))}</span>`}
+              </div>
+              <div class="mc-name">
+                <strong>${escapeHtml(m.nom)}</strong>
+                <span>${escapeHtml(m.poste || "Membre")}</span>
+              </div>
+            </div>
+
+            <div class="chips" aria-label="Badges">${chipsHtml.join("")}</div>
+
+            <p class="mc-bio">${escapeHtml(bioPreview)}</p>
+
+            <div class="mc-actions">
+              <button class="btn btn-primary btn-sm" type="button" data-action="profile">Voir profil</button>
+              <button class="btn btn-outline btn-sm" type="button" data-action="copy">Copier lien</button>
+              ${m.telephone ? `<a class="btn btn-outline btn-sm" href="tel:${escapeHtml(normalizePhone(m.telephone))}">Appeler</a>` : ``}
+              ${m.email ? `<a class="btn btn-outline btn-sm" href="mailto:${escapeHtml(m.email)}">Email</a>` : ``}
+            </div>
+          `;
+
+          // erreurs image => fallback initiales
+          if (m.photo){
+            const img = card.querySelector("img");
+            if (img){
+              img.addEventListener("error", () => {
+                const av = card.querySelector(".avatar");
+                if (!av) return;
+                av.innerHTML = `<span>${escapeHtml(getInitials(m.nom))}</span>`;
+              });
+            }
+          }
+
+          card.addEventListener("click", (e) => {
+            const btn = e.target.closest("button, a");
+            if (!btn) return;
+
+            if (btn.tagName.toLowerCase() === "button"){
+              const action = btn.getAttribute("data-action");
+              if (action === "profile") {
+                openProfile(m);
+              } else if (action === "copy") {
+                copyProfileLink(m);
+              }
+            }
+          });
+
+          grid.appendChild(card);
+        });
+      }
+
+      /* ----------- Modal / Profil ----------- */
+      function setOpenState(open){
+        document.body.classList.toggle("is-profile-open", open);
+
+        modal.hidden = !open;
+        backdrop.hidden = !open;
+
+        modal.style.display = open ? "block" : "none";
+        backdrop.style.display = open ? "block" : "none";
+
+        if (open) {
+          lastFocus = document.activeElement;
+          document.body.style.overflow = "hidden";
+          closeBtn.focus();
+        } else {
+          document.body.style.overflow = "";
+          if (lastFocus && typeof lastFocus.focus === "function") lastFocus.focus();
+        }
+      }
+
+      function renderProfile(m){
+        const tags = [];
+        if (m.tag) tags.push({label: m.tag, president:false});
+        if (m.isPresident) tags.push({label: "Président(e)", president:true});
+
+        const tel = safeStr(m.telephone);
+        const email = safeStr(m.email);
+        const wa = toWhatsAppLink(tel);
+
+        const shareUrl = buildProfileUrl(m);
+        const bio = m.bio ? m.bio : "Bio à compléter.";
+
+        profileContent.innerHTML = `
+          <div class="profile-media" aria-label="Photo du membre">
+            ${m.photo
+              ? `<img src="${escapeHtml(m.photo)}" alt="Photo de ${escapeHtml(m.nom)}" loading="lazy" />`
+              : `<div class="initials-big" aria-hidden="true">${escapeHtml(getInitials(m.nom))}</div>`
+            }
+            <div class="watermark">ONG FEJEB — Profil</div>
+          </div>
+
+          <div class="profile-info">
+            <div class="profile-head">
+              <div class="profile-kicker">
+                <span class="pill"><i></i>${escapeHtml(m.tag || "Membre")}</span>
+                <span class="pill"><i></i>Profil partageable</span>
+              </div>
+              <h2 class="profile-name">${escapeHtml(m.nom)}</h2>
+              <p class="profile-role"><b>${escapeHtml(m.poste || "Membre")}</b></p>
+
+              <div class="profile-tags" aria-label="Badges du profil">
+                ${tags.map(t => `
+                  <span class="tag ${t.president ? "president" : ""}"><i></i>${escapeHtml(t.label)}</span>
+                `).join("")}
+              </div>
+
+              <p class="profile-bio">${escapeHtml(bio)}</p>
+
+              <div class="profile-contacts" aria-label="Contacts">
+                ${tel ? `<div class="line"><b>Téléphone :</b> <a href="tel:${escapeHtml(normalizePhone(tel))}">${escapeHtml(tel)}</a></div>` : ``}
+                ${email ? `<div class="line"><b>Email :</b> <a href="mailto:${escapeHtml(email)}">${escapeHtml(email)}</a></div>` : ``}
+                <div class="line"><b>Lien :</b> <a href="${escapeHtml(shareUrl)}" id="profileLink" target="_blank" rel="noopener">${escapeHtml(shareUrl)}</a></div>
+              </div>
+
+              <div class="profile-actions" aria-label="Actions profil">
+                <button class="btn btn-primary" type="button" id="btnShare">Partager</button>
+                <button class="btn btn-dark" type="button" id="btnCopy">Copier lien</button>
+                ${wa ? `<a class="btn btn-dark" href="${escapeHtml(wa)}" target="_blank" rel="noopener">WhatsApp</a>` : ``}
+                ${email ? `<a class="btn btn-dark" href="mailto:${escapeHtml(email)}">Email</a>` : ``}
+                <a class="btn btn-ghost" href="contact.html">Nous contacter</a>
+              </div>
+            </div>
+          </div>
+        `;
+
+        // image error => fallback initiales
+        if (m.photo){
+          const img = profileContent.querySelector("img");
+          if (img){
+            img.addEventListener("error", () => {
+              const media = profileContent.querySelector(".profile-media");
+              if (!media) return;
+              media.innerHTML = `
+                <div class="initials-big" aria-hidden="true">${escapeHtml(getInitials(m.nom))}</div>
+                <div class="watermark">ONG FEJEB — Profil</div>
+              `;
+            });
+          }
+        }
+
+        const btnCopy = document.getElementById("btnCopy");
+        const btnShare = document.getElementById("btnShare");
+
+        if (btnCopy) btnCopy.addEventListener("click", () => copyText(shareUrl, "Lien copié ✅"));
+        if (btnShare) btnShare.addEventListener("click", () => shareProfile(m));
+      }
+
+      function openProfile(m, opts = {}){
+        currentProfile = m;
+        renderProfile(m);
+        setOpenState(true);
+
+        // hash (partage)
+        if (!opts.fromHash) {
+          setHash(m.id);
+        } else {
+          // si on arrive par hash, on garde tel quel
+        }
+
+        // SEO dynamique profil
+        applyProfileSEO(m);
+      }
+
+      function closeProfile(opts = {}){
+        setOpenState(false);
+        currentProfile = null;
+
+        // reset SEO page
+        resetSEO();
+
+        // si on ferme, on retire le hash (sans casser l'historique)
+        if (!opts.keepHash) clearHash();
+      }
+
+      function hashToId(){
+        const h = safeStr(location.hash);
+        if (!h || h.length < 2) return "";
+        const id = h.slice(1);
+        return id;
+      }
+
+      function setHash(id){
+        const target = "#" + id;
+        if (location.hash === target) return;
+        history.replaceState(null, "", target);
+      }
+
+      function clearHash(){
+        if (!location.hash) return;
+        history.replaceState(null, "", location.pathname + location.search);
+      }
+
+      function buildProfileUrl(m){
+        const base = DEFAULT_CANON.replace(/#.*$/, "");
+        return base + "#" + m.id;
+      }
+
+      async function copyText(text, okMsg){
+        try{
+          await navigator.clipboard.writeText(text);
+          setStatus(`<b>${escapeHtml(okMsg || "Copié ✅")}</b> ${""}`);
+        }catch(e){
+          // fallback
+          const ta = document.createElement("textarea");
+          ta.value = text;
+          ta.style.position = "fixed";
+          ta.style.left = "-9999px";
+          document.body.appendChild(ta);
+          ta.select();
+          try{ document.execCommand("copy"); }catch(_){}
+          ta.remove();
+          setStatus(`<b>Lien copié ✅</b>`);
+        }
+      }
+
+      function copyProfileLink(m){
+        const url = buildProfileUrl(m);
+        copyText(url, "Lien du profil copié ✅");
+      }
+
+      async function shareProfile(m){
+        const url = buildProfileUrl(m);
+        const title = `${m.nom} — ${m.poste || "Membre"} | ONG FEJEB`;
+        const text = `Profil ${m.nom} (${m.poste || "Membre"}) — ONG FEJEB`;
+
+        if (navigator.share){
+          try{
+            await navigator.share({ title, text, url });
+            setStatus(`<b>Partagé ✅</b>`);
+          }catch(e){
+            // si l'utilisateur annule, on ne met pas erreur
+          }
+        } else {
+          copyText(url, "Lien prêt à partager ✅");
+        }
+      }
+
+      /* ----------- SEO dynamique profil ----------- */
+      function getMeta(name){
+        const el = document.querySelector(`meta[name="${CSS.escape(name)}"]`);
+        return el ? el.getAttribute("content") : "";
+      }
+      function setMeta(name, content){
+        let el = document.querySelector(`meta[name="${CSS.escape(name)}"]`);
+        if (!el) {
+          el = document.createElement("meta");
+          el.setAttribute("name", name);
+          document.head.appendChild(el);
+        }
+        el.setAttribute("content", content);
+      }
+      function getMetaProp(prop){
+        const el = document.querySelector(`meta[property="${CSS.escape(prop)}"]`);
+        return el ? el.getAttribute("content") : "";
+      }
+      function setMetaProp(prop, content){
+        let el = document.querySelector(`meta[property="${CSS.escape(prop)}"]`);
+        if (!el) {
+          el = document.createElement("meta");
+          el.setAttribute("property", prop);
+          document.head.appendChild(el);
+        }
+        el.setAttribute("content", content);
+      }
+      function getCanonical(){
+        const link = document.querySelector('link[rel="canonical"]');
+        return link ? link.getAttribute("href") : "";
+      }
+      function setCanonical(url){
+        let link = document.querySelector('link[rel="canonical"]');
+        if (!link) {
+          link = document.createElement("link");
+          link.setAttribute("rel","canonical");
+          document.head.appendChild(link);
+        }
+        link.setAttribute("href", url);
+      }
+
+      function applyProfileSEO(m){
+        const baseName = "ONG FEJEB";
+        const role = m.poste || "Membre";
+        const title = `${m.nom} — ${role} | Équipe ${baseName}`;
+        const desc = (m.bio ? m.bio : `Profil ${m.nom}, ${role} au sein de l’ONG FEJEB.`)
+          .toString()
+          .replace(/\s+/g," ")
+          .trim()
+          .slice(0, 180);
+
+        const url = buildProfileUrl(m);
+        const img = m.photo ? m.photo : DEFAULT_OG_IMAGE;
+
+        document.title = title;
+
+        setMeta("description", desc);
+
+        setMetaProp("og:title", title);
+        setMetaProp("og:description", desc);
+        setMetaProp("og:url", url);
+        setMetaProp("og:image", img);
+        setMetaProp("og:image:secure_url", img);
+
+        setMeta("twitter:title", title);
+        setMeta("twitter:description", desc);
+        setMeta("twitter:image", img);
+
+        setCanonical(url);
+
+        // JSON-LD Person
+        const person = {
+          "@context": "https://schema.org",
+          "@type": "Person",
+          "@id": url + "#person",
+          "name": m.nom,
+          "jobTitle": role,
+          "url": url,
+          "worksFor": {
+            "@type": "Organization",
+            "@id": "https://fejebong.org/#organization",
+            "name": "ONG FEJEB"
+          }
+        };
+
+        if (m.photo) person.image = m.photo;
+        if (m.email) person.email = m.email;
+        if (m.telephone) person.telephone = normalizePhone(m.telephone);
+        if (m.bio) person.description = m.bio;
+
+        const schemaEl = document.getElementById("personSchema");
+        if (schemaEl) schemaEl.textContent = JSON.stringify(person, null, 2);
+      }
+
+      function resetSEO(){
+        document.title = DEFAULT_PAGE_TITLE;
+
+        setMeta("description", DEFAULT_DESC);
+
+        setMetaProp("og:title", DEFAULT_OG_TITLE);
+        setMetaProp("og:description", DEFAULT_OG_DESC);
+        setMetaProp("og:url", DEFAULT_CANON);
+        setMetaProp("og:image", DEFAULT_OG_IMAGE);
+        setMetaProp("og:image:secure_url", DEFAULT_OG_IMAGE);
+
+        setMeta("twitter:title", DEFAULT_TW_TITLE);
+        setMeta("twitter:description", DEFAULT_TW_DESC);
+        setMeta("twitter:image", DEFAULT_TW_IMAGE);
+
+        setCanonical(DEFAULT_CANON);
+
+        const schemaEl = document.getElementById("personSchema");
+        if (schemaEl) schemaEl.textContent = "{}";
+      }
+
+      /* ----------- Focus trap modal ----------- */
+      document.addEventListener("keydown", (e) => {
+        if (modal.hidden) return;
+        if (e.key === "Escape") {
+          closeProfile();
+          return;
+        }
+        if (e.key !== "Tab") return;
+
+        const focusable = modal.querySelectorAll("button, a, input, select, textarea, [tabindex]:not([tabindex='-1'])");
+        if (!focusable.length) return;
+
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      });
+
+      closeBtn.addEventListener("click", () => closeProfile());
+      backdrop.addEventListener("click", () => closeProfile());
+
+      /* ----------- Hash navigation (profil partageable) ----------- */
+      window.addEventListener("hashchange", () => {
+        const id = hashToId();
+        if (!id) {
+          if (!modal.hidden) closeProfile({keepHash:true});
+          return;
+        }
+        const m = members.find(x => x.id === id);
+        if (m) openProfile(m, {fromHash:true});
+      });
+
+      /* ----------- Data fetch + init ----------- */
+      async function load(){
+        try{
+          setStatus("<b>Chargement…</b> Récupération des membres depuis le Sheet.");
+          const res = await fetch(SHEET_CSV_URL, { cache: "no-store" });
+          if (!res.ok) throw new Error("Erreur de chargement CSV (" + res.status + ")");
+
+          const text = await res.text();
+          const rows = parseCSV(text);
+          if (!rows.length) throw new Error("CSV vide.");
+
+          members = mapMembers(rows);
+
+          // Président(e) toujours en 1er : on laisse le tri gérer, mais on valide qu'il existe
+          const tags = uniqueTags(members);
+          // Ajouter aussi "Président(e)" comme filtre si besoin
+          if (!tags.includes("Président(e)")) tags.unshift("Président(e)");
+          renderTagOptions(tags);
+
+          // Bind tools
+          searchEl.addEventListener("input", applyFilters);
+          roleEl.addEventListener("change", applyFilters);
+          sortEl.addEventListener("change", applyFilters);
+
+          // render
+          applyFilters();
+
+          // ouvrir profil si hash direct
+          const id = hashToId();
+          if (id) {
+            const m = members.find(x => x.id === id);
+            if (m) openProfile(m, {fromHash:true});
+          }
+
+        } catch(err){
+          console.error(err);
+          setStatus(`<b>Impossible de charger l’équipe.</b> Vérifiez le lien du Sheet publié (CSV) et la connexion.`, true);
+
+          grid.innerHTML = `
+            <div class="status-line status-err" role="alert">
+              <span><b>Erreur :</b> chargement des données impossible.</span>
+              <span>Astuce : vérifiez que le Sheet est bien publié en CSV.</span>
+            </div>
+          `;
+        }
+      }
+
+      // Click “Voir profil” depuis URL (fallback, si JS tard)
+      function tryOpenFromHashLater(){
+        const id = hashToId();
+        if (!id) return;
+        const m = members.find(x => x.id === id);
+        if (m) openProfile(m, {fromHash:true});
+      }
+
+      // Delegation bouton “Partager” depuis carte, au cas où
+      grid.addEventListener("click", (e) => {
+        const btn = e.target.closest("button");
+        if (!btn) return;
+        const card = e.target.closest("[data-id]");
+        if (!card) return;
+        const id = card.getAttribute("data-id");
+        const m = members.find(x => x.id === id);
+        if (!m) return;
+
+        const action = btn.getAttribute("data-action");
+        if (action === "profile") openProfile(m);
+        if (action === "copy") copyProfileLink(m);
+      });
+
+      // Clean hash if user refreshes after close? we keep
+      load().then(tryOpenFromHashLater);
+    })();
+  </script>
+</body>
+</html>
