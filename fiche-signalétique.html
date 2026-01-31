@@ -6,7 +6,7 @@
   <meta name="format-detection" content="telephone=no" />
 
   <title>Fiche signalétique — ONG FEJEB | Télécharger & consulter le PDF officiel</title>
-  <meta name="description" content="Consultez et téléchargez la fiche signalétique officielle de l’ONG FEJEB (Femmes, Enfants et Jeunes Épanouis du Bénin). Aperçu PDF intégré, version téléchargeable et informations institutionnelles essentielles." />
+  <meta name="description" content="Consultez et téléchargez la fiche signalétique officielle de l’ONG FEJEB (Femmes, Enfants et Jeunes Épanouis du Bénin). Version téléchargeable et informations institutionnelles essentielles." />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <meta name="theme-color" content="#0B5ED7" />
   <meta name="color-scheme" content="light" />
@@ -19,7 +19,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="ONG FEJEB" />
   <meta property="og:title" content="Fiche signalétique — ONG FEJEB" />
-  <meta property="og:description" content="Aperçu et téléchargement de la fiche signalétique officielle de l’ONG FEJEB (PDF)." />
+  <meta property="og:description" content="Téléchargement et ouverture de la fiche signalétique officielle de l’ONG FEJEB (PDF)." />
   <meta property="og:url" content="https://fejebong.org/fiche-signalétique.html" />
   <meta property="og:image" content="https://fejebong.org/fond.jpg" />
   <meta property="og:image:secure_url" content="https://fejebong.org/fond.jpg" />
@@ -30,7 +30,7 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Fiche signalétique — ONG FEJEB" />
-  <meta name="twitter:description" content="Consultez et téléchargez la fiche signalétique officielle (PDF) de l’ONG FEJEB." />
+  <meta name="twitter:description" content="Téléchargement et ouverture de la fiche signalétique officielle (PDF) de l’ONG FEJEB." />
   <meta name="twitter:image" content="https://fejebong.org/fond.jpg" />
 
   <!-- Favicon -->
@@ -40,6 +40,7 @@
   <style>
     /* =========================
        FEJEB — FICHE SIGNALÉTIQUE
+       (SANS APERÇU PDF)
        ========================= */
 
     :root{
@@ -534,7 +535,7 @@
       line-height: 1.6;
     }
 
-    /* Bloc PDF */
+    /* Bloc PDF (sans aperçu) */
     .pdf-wrap{
       border-radius: calc(var(--radius-xl) + 4px);
       border: 1px solid rgba(15,23,42,.12);
@@ -570,82 +571,21 @@
       justify-content: flex-start;
     }
 
-    /* PDF.js Viewer */
-    .pdfjs-shell{
-      padding: 14px;
+    /* Bloc “sans aperçu” propre */
+    .pdf-no-preview{
+      padding: 18px;
       background: rgba(255,255,255,.92);
     }
-    .pdfjs-toolbar{
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 10px;
-      padding: 12px;
-      border-radius: var(--radius-lg);
-      border: 1px solid rgba(15,23,42,.10);
-      background: rgba(255,255,255,.86);
-      box-shadow: 0 14px 30px rgba(2,8,23,.06);
-      margin-bottom: 12px;
-    }
-    .pdfjs-toolbar .mini{
-      padding: 10px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(15,23,42,.10);
-      background: rgba(255,255,255,.9);
-      font-weight: 800;
-      cursor: pointer;
-      user-select: none;
-      font-size: 14px;
-    }
-    .pdfjs-toolbar .mini:active{ transform: translateY(1px); }
-    .pdfjs-meta{
-      display: inline-flex;
-      gap: 10px;
-      align-items: center;
-      color: var(--muted);
-      font-size: 14px;
-      font-weight: 700;
-      flex: 1 1 auto;
-      min-width: 220px;
-    }
-    .pdfjs-stage{
+    .pdf-no-preview-inner{
       border-radius: var(--radius-xl);
-      border: 1px solid rgba(15,23,42,.12);
-      background: #fff;
-      overflow: hidden;
-      box-shadow: 0 16px 40px rgba(2,8,23,.08);
-    }
-    .pdfjs-canvas-wrap{
-      width: 100%;
-      overflow: auto;
-      -webkit-overflow-scrolling: touch;
-      background: #fff;
-    }
-    canvas#pdfCanvas{
-      display: block;
-      margin: 0 auto;
-      width: 100%;
-      height: auto;
-      background: #fff;
-    }
-    .pdfjs-status{
-      margin-top: 10px;
-      padding: 12px 14px;
-      border-radius: var(--radius-lg);
       border: 1px dashed rgba(15,23,42,.18);
-      background: rgba(255,255,255,.76);
-      color: var(--muted);
-      font-size: 15.5px;
-      line-height: 1.7;
+      background: rgba(255,255,255,.78);
+      padding: 16px;
+      display: grid;
+      gap: 10px;
     }
-    .pdfjs-status b{ color: var(--ink); }
-
-    .fallback{
-      margin-top: 12px;
-      padding: 14px;
-      border-radius: var(--radius-lg);
-      border: 1px dashed rgba(15,23,42,.18);
-      background: rgba(255,255,255,.76);
+    .pdf-no-preview-inner p{
+      margin: 0;
       color: var(--muted);
       font-size: 15.5px;
       line-height: 1.7;
@@ -839,15 +779,15 @@
     <section class="hero" aria-label="Fiche signalétique FEJEB">
       <div class="hero-inner">
         <div>
-          <div class="badge"><i></i> Document officiel • Consultation & téléchargement</div>
+          <div class="badge"><i></i> Document officiel • Téléchargement</div>
           <h1>Fiche signalétique</h1>
           <p class="lead">
             Cette page met à disposition la fiche signalétique officielle de l’ONG FEJEB.
-            Vous pouvez la consulter en ligne (aperçu intégré) et la télécharger au format PDF.
+            Vous pouvez l’ouvrir dans un nouvel onglet ou la télécharger au format PDF.
           </p>
 
           <div class="hero-cta">
-            <a class="btn btn-primary" href="#pdf">Voir l’aperçu</a>
+            <a class="btn btn-primary" href="#pdf">Accéder au PDF</a>
             <a class="btn btn-ghost" id="heroDownload" href="fejeb-fiche.pdf" download>Télécharger le PDF</a>
           </div>
         </div>
@@ -855,8 +795,8 @@
         <div class="hero-panel" aria-label="Conseil de lecture">
           <h3>Conseil</h3>
           <p>
-            Si l’aperçu ne s’affiche pas sur votre appareil, utilisez le bouton
-            <b>“Télécharger le PDF”</b> ou ouvrez le document dans un nouvel onglet.
+            Sur certains téléphones, l’aperçu PDF peut déclencher un téléchargement automatique.
+            Ici, on propose uniquement <b>Ouvrir</b> et <b>Télécharger</b> (plus fiable).
           </p>
         </div>
       </div>
@@ -887,12 +827,12 @@
       </div>
     </section>
 
-    <!-- PDF VIEWER -->
-    <section class="section" id="pdf" aria-label="Aperçu et téléchargement du PDF">
+    <!-- PDF (SANS APERÇU) -->
+    <section class="section" id="pdf" aria-label="Téléchargement du PDF">
       <div class="section-head">
         <div>
-          <h2>Aperçu du document (PDF)</h2>
-          <p>Aperçu intégré (PDF.js). Si l’affichage ne charge pas, utilisez les boutons “Ouvrir” ou “Télécharger”.</p>
+          <h2>Fiche signalétique (PDF)</h2>
+          <p>Choisis l’action souhaitée : ouvrir le document ou le télécharger. Aucun aperçu n’est affiché.</p>
         </div>
       </div>
 
@@ -904,43 +844,17 @@
           </div>
 
           <div class="pdf-actions" aria-label="Actions PDF">
-            <a class="btn btn-primary" id="downloadPdf" href="fejeb-fiche.pdf" download>Télécharger</a>
-            <a class="btn btn-ghost" id="openPdf" href="fejeb-fiche.pdf" target="_blank" rel="noopener">Ouvrir dans un nouvel onglet</a>
+            <a class="btn btn-primary" id="openPdf" href="fejeb-fiche.pdf" target="_blank" rel="noopener">Ouvrir dans un nouvel onglet</a>
+            <a class="btn btn-ghost" id="downloadPdf" href="fejeb-fiche.pdf" download>Télécharger</a>
           </div>
         </div>
 
-        <!-- PDF.js -->
-        <div class="pdfjs-shell">
-          <div class="pdfjs-toolbar" aria-label="Outils de lecture">
-            <button class="mini" id="pdfPrev" type="button">◀ Précédent</button>
-            <button class="mini" id="pdfNext" type="button">Suivant ▶</button>
-
-            <div class="pdfjs-meta" aria-live="polite">
-              <span>Page <b id="pdfPageNum">1</b>/<b id="pdfPageCount">–</b></span>
-              <span>•</span>
-              <span>Zoom <b id="pdfZoomLabel">100%</b></span>
-            </div>
-
-            <button class="mini" id="pdfZoomOut" type="button">−</button>
-            <button class="mini" id="pdfZoomIn" type="button">+</button>
-            <button class="mini" id="pdfFit" type="button">Ajuster</button>
-          </div>
-
-          <div class="pdfjs-stage">
-            <div class="pdfjs-canvas-wrap" id="pdfCanvasWrap">
-              <canvas id="pdfCanvas" aria-label="Aperçu du PDF"></canvas>
-            </div>
-          </div>
-
-          <div class="pdfjs-status" id="pdfStatus" role="note" aria-live="polite">
-            <b>Chargement…</b> Si ça bloque, clique sur “Ouvrir dans un nouvel onglet” ou “Télécharger”.
+        <div class="pdf-no-preview" role="note" aria-label="Information PDF">
+          <div class="pdf-no-preview-inner">
+            <p><b>Aperçu désactivé.</b> Cela évite les bugs sur mobile (téléchargement automatique / écran vide).</p>
+            <p>Utilise <b>Ouvrir</b> si tu veux lire dans le navigateur, ou <b>Télécharger</b> pour enregistrer le fichier.</p>
           </div>
         </div>
-      </div>
-
-      <div class="fallback" role="note">
-        <b>Astuce :</b> sur certains téléphones, l’aperçu PDF classique (iframe) ne marche pas.
-        Ici, l’aperçu est rendu par <b>PDF.js</b> (plus fiable). En cas d’échec : <b>Ouvrir</b> ou <b>Télécharger</b>.
       </div>
     </section>
 
@@ -976,9 +890,6 @@
       </div>
     </div>
   </footer>
-
-  <!-- PDF.js (CDN) -->
-  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@4.7.76/build/pdf.min.js"></script>
 
   <script>
     /* =========================
@@ -1046,10 +957,10 @@
     })();
 
     /* =========================
-       FEJEB — PDF.js Viewer
+       FEJEB — PDF (sans aperçu)
        ========================= */
     (function () {
-      const PDF_FILE = "fejeb-fiche.pdf";
+      const PDF_FILE = "fejeb-fiche.pdf"; // NE PAS CHANGER
 
       const nameEl = document.getElementById("pdfName");
       const downloadEl = document.getElementById("downloadPdf");
@@ -1060,203 +971,6 @@
       if (downloadEl) downloadEl.setAttribute("href", PDF_FILE);
       if (openEl) openEl.setAttribute("href", PDF_FILE);
       if (heroDownloadEl) heroDownloadEl.setAttribute("href", PDF_FILE);
-
-      const statusEl = document.getElementById("pdfStatus");
-      const canvas = document.getElementById("pdfCanvas");
-      const wrap = document.getElementById("pdfCanvasWrap");
-
-      const prevBtn = document.getElementById("pdfPrev");
-      const nextBtn = document.getElementById("pdfNext");
-      const zoomInBtn = document.getElementById("pdfZoomIn");
-      const zoomOutBtn = document.getElementById("pdfZoomOut");
-      const fitBtn = document.getElementById("pdfFit");
-
-      const pageNumEl = document.getElementById("pdfPageNum");
-      const pageCountEl = document.getElementById("pdfPageCount");
-      const zoomLabelEl = document.getElementById("pdfZoomLabel");
-
-      if (!canvas || !wrap || !statusEl || !prevBtn || !nextBtn || !zoomInBtn || !zoomOutBtn || !fitBtn) return;
-      if (typeof window.pdfjsLib === "undefined") {
-        statusEl.innerHTML = "<b>Erreur :</b> PDF.js ne s’est pas chargé. Vérifie ta connexion ou le lien CDN.";
-        return;
-      }
-
-      // Worker PDF.js (obligatoire)
-      window.pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdn.jsdelivr.net/npm/pdfjs-dist@4.7.76/build/pdf.worker.min.js";
-
-      let pdfDoc = null;
-      let pageNum = 1;
-      let scale = 1;
-      let rendering = false;
-      let pendingPage = null;
-
-      const clamp = (v, min, max) => Math.max(min, Math.min(max, v));
-
-      const setStatus = (html) => { statusEl.innerHTML = html; };
-
-      const updateUI = () => {
-        if (pageNumEl) pageNumEl.textContent = String(pageNum);
-        if (pageCountEl) pageCountEl.textContent = pdfDoc ? String(pdfDoc.numPages) : "–";
-        if (zoomLabelEl) zoomLabelEl.textContent = Math.round(scale * 100) + "%";
-        prevBtn.disabled = !pdfDoc || pageNum <= 1;
-        nextBtn.disabled = !pdfDoc || (pdfDoc && pageNum >= pdfDoc.numPages);
-      };
-
-      const computeFitScale = async () => {
-               if (!pdfDoc) return scale;
-
-        const page = await pdfDoc.getPage(pageNum);
-        const viewport = page.getViewport({ scale: 1 });
-
-        // Largeur dispo dans le conteneur (moins un petit padding de confort)
-        const available = Math.max(320, (wrap.clientWidth || 0) - 18);
-        const fitScale = available / viewport.width;
-
-        return clamp(fitScale, 0.6, 2.6);
-      };
-
-      const renderPage = async (num) => {
-        if (!pdfDoc || rendering) {
-          pendingPage = num;
-          return;
-        }
-
-        rendering = true;
-        try{
-          setStatus("<b>Rendu…</b> Merci de patienter.");
-          const page = await pdfDoc.getPage(num);
-
-          // viewport selon scale actuel
-          const viewport = page.getViewport({ scale });
-
-          // Canvas en "vraie" résolution (retina)
-          const ctx = canvas.getContext("2d", { alpha: false });
-          const dpr = window.devicePixelRatio || 1;
-
-          canvas.width = Math.floor(viewport.width * dpr);
-          canvas.height = Math.floor(viewport.height * dpr);
-          canvas.style.width = Math.floor(viewport.width) + "px";
-          canvas.style.height = Math.floor(viewport.height) + "px";
-
-          ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-          ctx.imageSmoothingEnabled = true;
-
-          const renderTask = page.render({
-            canvasContext: ctx,
-            viewport
-          });
-
-          await renderTask.promise;
-
-          setStatus("<b>OK :</b> document chargé. Utilise Précédent/Suivant et le zoom si besoin.");
-          updateUI();
-        } catch (err){
-          console.error(err);
-          setStatus(
-            "<b>Échec d’affichage.</b> Le PDF ne peut pas être rendu ici. " +
-            "Utilise “Ouvrir dans un nouvel onglet” ou “Télécharger”."
-          );
-        } finally{
-          rendering = false;
-          if (pendingPage !== null) {
-            const next = pendingPage;
-            pendingPage = null;
-            renderPage(next);
-          }
-        }
-      };
-
-      const queueRender = (num) => {
-        pageNum = num;
-        updateUI();
-        renderPage(num);
-      };
-
-      const loadPdf = async () => {
-        try{
-          setStatus("<b>Chargement…</b> Récupération du PDF en cours.");
-          updateUI();
-
-          // Cache-buster léger pour éviter vieux cache Vercel/GitHub
-          const url = PDF_FILE + "?v=" + Date.now();
-
-          const loadingTask = window.pdfjsLib.getDocument({
-            url,
-            // petit confort : si certains serveurs bloquent
-            withCredentials: false
-          });
-
-          pdfDoc = await loadingTask.promise;
-
-          // Fix: sur certains Android, un <a download> peut forcer le download si cliqué,
-          // mais ici on ne clique jamais automatiquement.
-          setStatus("<b>PDF chargé.</b> Rendu de la première page…");
-
-          pageNum = 1;
-
-          // Ajuster à la largeur au premier rendu
-          scale = await computeFitScale();
-          updateUI();
-
-          await renderPage(pageNum);
-        } catch (err){
-          console.error(err);
-          pdfDoc = null;
-          updateUI();
-          setStatus(
-            "<b>Impossible de charger le PDF.</b> " +
-            "Vérifie que le fichier est bien à la racine et accessible (pas 404), " +
-            "puis utilise “Ouvrir” ou “Télécharger”."
-          );
-        }
-      };
-
-      // Actions
-      prevBtn.addEventListener("click", () => {
-        if (!pdfDoc || pageNum <= 1) return;
-        queueRender(pageNum - 1);
-      });
-
-      nextBtn.addEventListener("click", () => {
-        if (!pdfDoc || pageNum >= pdfDoc.numPages) return;
-        queueRender(pageNum + 1);
-      });
-
-      zoomInBtn.addEventListener("click", () => {
-        if (!pdfDoc) return;
-        scale = clamp(scale + 0.15, 0.6, 3.0);
-        updateUI();
-        renderPage(pageNum);
-      });
-
-      zoomOutBtn.addEventListener("click", () => {
-        if (!pdfDoc) return;
-        scale = clamp(scale - 0.15, 0.6, 3.0);
-        updateUI();
-        renderPage(pageNum);
-      });
-
-      fitBtn.addEventListener("click", async () => {
-        if (!pdfDoc) return;
-        scale = await computeFitScale();
-        updateUI();
-        renderPage(pageNum);
-      });
-
-      // Refit au resize (orientation/mobile)
-      let resizeTimer = null;
-      window.addEventListener("resize", () => {
-        if (!pdfDoc) return;
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(async () => {
-          scale = await computeFitScale();
-          updateUI();
-          renderPage(pageNum);
-        }, 180);
-      });
-
-      // Lancement
-      loadPdf();
     })();
   </script>
 </body>
