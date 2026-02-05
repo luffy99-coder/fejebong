@@ -1170,7 +1170,7 @@
           <div class="panel-body">  
             <!-- 1) Montant -->  
             <div class="fieldset" aria-label="Montant">  
-              <h3>1) Montant (FCFA)</h3>  
+              <h3>1) Montant (€)</h3>  
               <p class="hint">Sélectionnez un montant ou indiquez “Autre”.</p>  
   
               <div class="chip-row" role="group" aria-label="Montants rapides">  
@@ -1486,9 +1486,9 @@ Merci de me confirmer le moyen de paiement et la procédure.
       // Helpers  
       const formatFCFA = (n) => {  
         try{  
-          return new Intl.NumberFormat("fr-FR").format(Number(n)) + " FCFA";  
+          return new Intl.NumberFormat("fr-FR").format(Number(n)) + " €";  
         }catch(_){  
-          return String(n) + " FCFA";  
+          return String(n) + " €";  
         }  
       };  
 
@@ -1734,5 +1734,6 @@ Merci de me confirmer le moyen de paiement et la procédure.
   </script>  
 </body>  
 </html>
+
 
 
